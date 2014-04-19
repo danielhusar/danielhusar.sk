@@ -1,4 +1,4 @@
 danielhusar.sk
 ==============
 
-jekyll blog
+its a jekyll app
