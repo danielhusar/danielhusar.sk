@@ -3,3 +3,13 @@
     @include cols($i);
   }
 }
+
+.row{
+  @extend .cf;
+  > * {
+    margin-top: $padding;
+  }
+  &.no-spacing{
+    margin-top: 0;
+  }
+}

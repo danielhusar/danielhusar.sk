@@ -172,17 +172,17 @@ textarea {
  *    `:before` to contain the top-margins of child elements.
  */
 
-.clearfix:before,
-.clearfix:after {
+.cf:before,
+.cf:after {
     content: " "; /* 1 */
     display: table; /* 2 */
 }
 
-.clearfix:after {
+.cf:after {
     clear: both;
 }
 
-.clearfix {
+.cf {
     *zoom: 1;
     clear: both;
 }

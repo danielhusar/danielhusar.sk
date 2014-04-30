@@ -3,7 +3,7 @@ $padding: 20px;
 $cols: 12;
 $font: Arial;
 
-//responsive breaks - if you change this, dont forget to cahnge also js variabiles inside global.js so javascript will know what version it is
-$largeBreakpoint: 1140px;
+//responsive breaks
+$largeBreakpoint: 1000px;
 $mediumBreakpoint: 768px;
 $smallBreakpoint: 480px;

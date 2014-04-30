@@ -1,42 +1,62 @@
 ---
 layout: default
-title: Your New Jekyll Site
+title: Daniel Husar
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
+<div id="page-home">
 
-  <!-- This loops through the paginated posts -->
-  {% for post in paginator.posts %}
-    <a href="{{ post.url }}">{{ post.title }}</a>
-    <p class="author">
-      <span class="date">{{ post.date }}</span>
-    </p>
-  {% endfor %}
-
-  <!-- Pagination links -->
-  {% if paginator.total_pages > 1 %}
-    <div class="pagination">
-      {% if paginator.previous_page %}
-        {% if paginator.previous_page == 1 %}
-          <a href="/" class="previous">Predosla</a>
-        {% else %}
-          <a href="/{{site.paginate_subpath}}/{{ paginator.previous_page }}" class="previous">Predosla</a>
-        {% endif %}
-      {% endif %}
-      <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-      {% if paginator.next_page %}
-        <a href="/{{site.paginate_subpath}}/{{ paginator.next_page }}" class="next">Dalsia</a>
-      {% endif %}
+  <header>
+    <div class="inner">
+      <div class="center">
+        Hello
+      </div>
     </div>
-  {% endif %}
+  </header>
+
+  <div class="center">
+    <div class="row">
+      <div class="col-md-4">
+        <ul>
+          {% for category in site.categories %}
+            <li>
+              <a href="/{{site.category_dir}}/{{ category | first | slug}}/">{{ category | first }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="col-md-8">
+        <!-- This loops through the paginated posts -->
+        {% for post in paginator.posts %}
+          <a href="{{ post.url }}">{{ post.title }}</a>
+          <p class="author">
+            <span class="date">{{ post.date }}</span>
+          </p>
+        {% endfor %}
+
+        <!-- Pagination links -->
+        {% if paginator.total_pages > 1 %}
+          <div class="pagination">
+            {% if paginator.previous_page %}
+              {% if paginator.previous_page == 1 %}
+                <a href="/" class="previous">Predosla</a>
+              {% else %}
+                <a href="/{{site.paginate_subpath}}/{{ paginator.previous_page }}" class="previous">Predosla</a>
+              {% endif %}
+            {% endif %}
+            <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+            {% if paginator.next_page %}
+              <a href="/{{site.paginate_subpath}}/{{ paginator.next_page }}" class="next">Dalsia</a>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+
+
 
 </div>
 
-<ul>
-{% for category in site.categories %}
-  <li>
-    <a href="/{{site.category_dir}}/{{ category | first | slug}}/">{{ category | first }}</a>
-  </li>
-{% endfor %}
-</ul>
+
