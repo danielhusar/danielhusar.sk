@@ -2,13 +2,17 @@ name: Daniel Husar
 markdown: redcarpet
 pygments: true
 permalink: /:title
+timezone: Dublin/Ireland
+paginate: 5
+paginate_subpath: strana
+paginate_path: "/strana/:num"
 
 #RSS settings
 url: www.danielhusar.sk
 author: Daniel Husar
 rss_post_limit: 10
 
-#files to exclude, array
+#Files to exclude, array
 exclude:
   - README.md
   - LICENSE

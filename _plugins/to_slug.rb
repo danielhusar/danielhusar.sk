@@ -123,6 +123,7 @@ class String # This reopns the string class
   end
 end
 
+#Register Liquid filter for slug
 module Jekyll
   module Slug
     def slug(input)

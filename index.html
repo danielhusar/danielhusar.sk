@@ -5,11 +5,32 @@ title: Your New Jekyll Site
 
 <div id="home">
   <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+
+  <!-- This loops through the paginated posts -->
+  {% for post in paginator.posts %}
+    <a href="{{ post.url }}">{{ post.title }}</a>
+    <p class="author">
+      <span class="date">{{ post.date }}</span>
+    </p>
+  {% endfor %}
+
+  <!-- Pagination links -->
+  {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+      {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+          <a href="/" class="previous">Predosla</a>
+        {% else %}
+          <a href="/{{site.paginate_subpath}}/{{ paginator.previous_page }}" class="previous">Predosla</a>
+        {% endif %}
+      {% endif %}
+      <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+      {% if paginator.next_page %}
+        <a href="/{{site.paginate_subpath}}/{{ paginator.next_page }}" class="next">Dalsia</a>
+      {% endif %}
+    </div>
+  {% endif %}
+
 </div>
 
 <ul>
