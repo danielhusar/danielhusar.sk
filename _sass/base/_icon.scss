@@ -1,0 +1,12 @@
+[class^="icon-"],
+.icon{
+  display: inline-block;
+  border: none;
+  overflow: hidden;
+  vertical-align: middle;
+  &:before{
+    vertical-align: bottom;
+    display: inline-block;
+    content: '';
+  }
+}

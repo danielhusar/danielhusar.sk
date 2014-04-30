@@ -1,0 +1,41 @@
+p,ul{
+  line-height: 1.5;
+}
+a{
+  text-decoration: none;
+}
+.text-center{
+  text-align: center;
+}
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right;
+}
+.uppercase{
+  text-transform: uppercase;
+}
+.lowercase{
+  text-transform: lowercase;
+}
+.italic{
+  font-style: italic;
+}
+.bold{
+  font-weight: 700;
+}
+.light{
+  font-weight: 100;
+}
+.unstyled{
+  margin: 0;
+  padding: 0;
+}
+.unstyled-items{
+  ul,
+  ol,
+  p{
+    @extend .unstyled;
+  }
+}

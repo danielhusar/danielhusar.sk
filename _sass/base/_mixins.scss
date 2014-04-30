@@ -1,0 +1,72 @@
+//cross browser gradient
+@mixin gradient($start, $end){
+  background-color: $end;
+  @include background-image(linear-gradient($start, $end));
+  filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr="#{$start}", endColorStr="#{$end}");
+}
+
+//hardware accelerated transitions
+@mixin transformHW($prop: ""){
+  @include transform(#{$prop} translate3d(0,0,0));
+}
+
+ //skew
+@mixin skew($prop){
+  @include transformHW(skew($prop));
+}
+
+//scale
+@mixin scale($prop){
+  @include transformHW(scale($prop));
+}
+
+//rotate
+@mixin rotate($prop){
+  @include transformHW(rotate($prop));
+}
+
+//grid mixins
+$one_col: (100% - ($gutter * ($cols - 1))) / $cols;
+@mixin cols($num) {
+  width: ($one_col * $num) + ($gutter * ($num - 1));
+}
+@mixin sub_cols($num_child, $num_parent) {
+  $parent_size: ($one_col * $num_parent) + ($gutter * ($num_parent - 1));
+  $child_size: ($one_col * $num_child) + ($gutter * ($num_child - 1));
+  margin-left: ($gutter / $parent_size) * 100%;
+  width: ($child_size / $parent_size) * 100%;
+}
+
+//line mixin for the button in mobile nav
+@mixin line {
+  display: inline-block;
+  width: $navButtonSize;
+  height: $navButtonSize/7;
+  background: $navButtonColor;
+  border-radius: $navButtonSize/14;
+  transition: $navButtonTransition;
+}
+
+@mixin grey{
+  filter: grayscale(100%) contrast(120%);
+  filter: gray; /* For IE 6 - 9 */
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+}
+
+//css triangle mixin
+@mixin triangle($dir, $size, $color) {
+  border: $size transparent solid;
+
+  @if ($dir == "top" or $dir == "up") {
+    border-bottom-color: $color;
+  }
+  @else if ($dir == "right" or $dir == "after") {
+    border-left-color: $color;
+  }
+  @else if ($dir == "bottom" or $dir == "down") {
+    border-top-color: $color;
+  }
+  @else if ($dir == "left" or $dir == "before") {
+    border-right-color: $color;
+  }
+}

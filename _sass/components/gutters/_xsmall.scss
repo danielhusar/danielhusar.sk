@@ -1,0 +1,28 @@
+.gutter-oxs-right,
+.gutter-xs-right{
+  padding-right: $padding;
+}
+.gutter-oxs-left,
+.gutter-xs-left{
+  padding-left: $padding;
+}
+.gutter-oxs-top,
+.gutter-xs-top{
+  padding-top: $padding;
+}
+.gutter-oxs-bottom,
+.gutter-xs-bottom{
+  padding-bottom: $padding;
+}
+.gutter-xs-right-half{
+  padding-right: $padding/2;
+}
+.gutter-xs-left-half{
+  padding-left: $padding/2;
+}
+.gutter-xs-top-half{
+  padding-top: $padding/2;
+}
+.gutter-xs-bottom-half{
+  padding-bottom: $padding/2;
+}

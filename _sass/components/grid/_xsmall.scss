@@ -1,0 +1,10 @@
+#{enumerate('.col-xs', 1, $cols - 1, '')} {
+  float: left;
+  margin-left: $gutter;
+}
+
+@for $i from 1 through $cols {
+  .col-xs-#{$i} {
+    @include cols($i);
+  }
+}

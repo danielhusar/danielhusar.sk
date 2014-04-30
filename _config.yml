@@ -16,6 +16,8 @@ rss_post_limit: 10
 exclude:
   - README.md
   - LICENSE
+  - gulpfile.js
+  - package.json
 
 #Categories
 category_dir: tag

@@ -1,0 +1,10 @@
+#{enumerate('.col-sm', 1, $cols - 1, '')} {
+  float: left;
+  margin-left: $gutter;
+}
+
+@for $i from 1 through $cols {
+  .col-sm-#{$i} {
+    @include cols($i);
+  }
+}

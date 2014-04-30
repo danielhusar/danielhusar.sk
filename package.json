@@ -1,0 +1,26 @@
+{
+  "name": "danielhusar.sk",
+  "description": "Daniel Husar",
+  "keywords": [
+    "frontend",
+    "development"
+  ],
+  "version": "0.1.0",
+  "author": "Daniel Husar",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-rename": "*",
+    "gulp-concat": "*",
+    "gulp-jshint": "*",
+    "gulp-uglify": "*",
+    "gulp-sass": "*",
+    "gulp-cssmin": "*",
+    "gulp-imagemin": "*",
+    "gulp-autoprefixer": "*",
+    "gulp.spritesmith": "*",
+    "jshint-stylish": "*",
+    "mocha": "*",
+    "chai": "*",
+    "sinon": "*"
+  }
+}

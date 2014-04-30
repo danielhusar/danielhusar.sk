@@ -1,0 +1,72 @@
+@keyframes bounceLeft{
+  0%   {left: 0;}
+  50%  {left: -10px;}
+  100% {left: 0;}
+}
+@keyframes bounceRight{
+  0%   {right: 0;}
+  50%  {right: -10px;}
+  100% {right: 0}
+}
+@keyframes bounceTop{
+  0%   {top: 0;}
+  50%  {top: -10px;}
+  100% {top: 0;}
+}
+@keyframes bounceBottom{
+  0%   {bottom: 0;}
+  50%  {bottom: -10px;}
+  100% {bottom: 0;}
+}
+
+
+/*
+  <div class="loading">
+    <div></div>
+  </div> - See more at: http://cssload.net/#sthash.uoSzQLLU.dpuf
+ */
+
+.loading{
+  width: 75px;
+  div,
+  div:before,
+  div:after{
+    position: relative;
+    background-color: transparent;
+    float: left;
+    height: 10px;
+    width: 10px;
+    animation-name: loading;
+    animation-duration: 1.35s;
+    animation-iteration-count: infinite;
+    animation-direction: linear;
+    border-radius: 7px;
+    animation-delay: 0.63s;
+  }
+  div{
+    &:before{
+      content: ' ';
+      display: block;
+      animation-delay: 0.27s;
+      position: absolute;
+      left: -15px;
+    }
+    &:after{
+      content: ' ';
+      display: block;
+      animation-delay: 0.80s;
+      position: absolute;
+      right: -15px;
+    }
+  }
+}
+
+@keyframes loading{
+  0%{}
+  50%{
+    background-color: $blue;
+  }
+  100%{}
+}
+
+
