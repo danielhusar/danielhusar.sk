@@ -13,15 +13,9 @@ title: Your New Jekyll Site
 </div>
 
 <ul>
-  {% for category in site.categories %}
-    <li><a name="{{ category | first }}">{{ category }}</a>
-      <ul>
-      {% for posts in category %}
-        {% for post in posts %}
-          {% if post.url %} <li><a href="{{ post.url }}">{{ post.title }}</a></li>{% endif %}
-        {% endfor %}
-      {% endfor %}
-      </ul>
-    </li>
-  {% endfor %}
+{% for category in site.categories %}
+  <li>
+    <a href="/{{site.category_dir}}/{{ category | first | slug}}/">{{ category | first }}</a>
+  </li>
+{% endfor %}
 </ul>
