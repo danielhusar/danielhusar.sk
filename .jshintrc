@@ -1,0 +1,15 @@
+{
+  "undef": true,
+  "unused": false,
+  "sub": true,
+  "eqeqeq": true,
+  "node": true,
+  "curly": true,
+  "freeze": true,
+  "immed": true,
+  "noempty": true,
+  "nonbsp": true,
+  "quotmark": "single",
+  "strict": true,
+  "trailing": true
+}
