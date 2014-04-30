@@ -7,22 +7,22 @@ module.exports = function(gulp){
 
   //sprites
   gulp.task('sprite', function () {
-    var spriteData = gulp.src('assets/icons/*.png').pipe(spritesmith({
+    var spriteData = gulp.src('_assets/icons/*.png').pipe(spritesmith({
       imgName: 'icons.png',
-      imgPath: '../img/icons.png',
-      cssName: 'icons.less',
+      imgPath: '/img/icons.png',
+      cssName: '_icons.scss',
       engine: 'phantomjs',
       algorithm: 'binary-tree',
       cssTemplate: 'css.mustache'
     }));
-    spriteData.img.pipe(gulp.dest('public/img/'));
-    spriteData.css.pipe(gulp.dest('less/base/'));
+    spriteData.img.pipe(gulp.dest('_site/img/'));
+    spriteData.css.pipe(gulp.dest('_sass/base/'));
   });
 
   gulp.task('imagemin', function () {
-    gulp.src('public/img/*.png')
+    gulp.src('_site/img/*.png')
         .pipe(imagemin())
-        .pipe(gulp.dest('public/img/'));
+        .pipe(gulp.dest('_site/img/'));
   });
 
 };

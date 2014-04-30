@@ -1,8 +1,3 @@
-#{enumerate('.col-lg', 1, $cols - 1, '')} {
-  float: left;
-  margin-left: $gutter;
-}
-
 @for $i from 1 through $cols {
   .col-lg-#{$i} {
     @include cols($i);

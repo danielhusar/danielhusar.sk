@@ -19,7 +19,7 @@ module.exports = function(gulp, jsFiles){
   gulp.task('scripts', function () {
     return gulp.src(jsFiles)
     .pipe(concat('app.js'))
-    .pipe(gulp.dest('public/js'))
+    .pipe(gulp.dest('_site/js'))
     .pipe(rename('app.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('_site/js'));

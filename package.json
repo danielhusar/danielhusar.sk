@@ -19,8 +19,11 @@
     "gulp-autoprefixer": "*",
     "gulp.spritesmith": "*",
     "jshint-stylish": "*",
+    "fs-extra": "*",
     "mocha": "*",
     "chai": "*",
+    "express": "*",
+    "serve-index": "*",
     "sinon": "*"
   }
 }

@@ -18,6 +18,8 @@ exclude:
   - LICENSE
   - gulpfile.js
   - package.json
+  - css.mustache
+  - node_modules
 
 #Categories
 category_dir: tag

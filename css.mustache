@@ -1,0 +1,16 @@
+{{#items}}
+$icon-{{name}}-x : {{px.offset_x}};
+$icon-{{name}}-y : {{px.offset_y}};
+$icon-{{name}}-width : {{px.width}};
+$icon-{{name}}-height : {{px.height}};
+$icon-{{name}}-image : '{{{escaped_image}}}';
+{{/items}}
+
+{{#items}}
+.icon-{{name}} {
+  background-image: url({{{escaped_image}}});
+  background-position: {{px.offset_x}} {{px.offset_y}};
+  width: {{px.width}};;
+  height: {{px.height}};
+}
+{{/items}}

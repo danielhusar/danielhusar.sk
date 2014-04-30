@@ -1,0 +1,12 @@
+$icon-me-x : 0px;
+$icon-me-y : 0px;
+$icon-me-width : 400px;
+$icon-me-height : 400px;
+$icon-me-image : '/img/icons.png';
+
+.icon-me {
+  background-image: url(/img/icons.png);
+  background-position: 0px 0px;
+  width: 400px;;
+  height: 400px;
+}
