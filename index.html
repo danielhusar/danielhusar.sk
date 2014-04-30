@@ -11,3 +11,17 @@ title: Your New Jekyll Site
     {% endfor %}
   </ul>
 </div>
+
+<ul>
+  {% for category in site.categories %}
+    <li><a name="{{ category | first }}">{{ category }}</a>
+      <ul>
+      {% for posts in category %}
+        {% for post in posts %}
+          {% if post.url %} <li><a href="{{ post.url }}">{{ post.title }}</a></li>{% endif %}
+        {% endfor %}
+      {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+</ul>

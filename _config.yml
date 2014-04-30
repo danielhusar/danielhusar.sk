@@ -12,3 +12,7 @@ rss_post_limit: 10
 exclude:
   - README.md
   - LICENSE
+
+#Categories
+category_dir: tag
+category_title_prefix: ''
