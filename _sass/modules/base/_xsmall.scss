@@ -18,13 +18,21 @@ main{
 .center{
   padding: $padding $padding/2;
 }
+.sidebar{
+  padding-top: $padding;
+  overflow: hidden;
+  h3{
+    margin-top: 0;
+  }
+}
 .tags{
-  margin: 0;
   padding: 0;
+  margin: 0;
   @extend .cf;
   .tag{
     list-style: none;
-    margin-bottom: $padding/2;
+    float: left;
+    margin: 0 $padding/2 $padding/2 0;
     a{
       font-size: .9em;
       border-radius: 5px;
@@ -107,9 +115,12 @@ article{
     }
   }
   .more{
-    font-size: .9em;
+    font-size: .8em;
     color: $altColor;
     display: inline-block;
     margin-top: $padding/2;
+    &:hover{
+      opacity: 0.8;
+    }
   }
 }

@@ -4,4 +4,29 @@ header{
   background-attachment: fixed;
   height: 300px;
   transition: filter 1s;
+  .me{
+    text-align: center;
+    width: 320px;
+    margin: 30px auto 0;
+    .icon{
+      border-radius: 50%;
+      position: relative;
+      z-index: 2;
+    }
+    span{
+      padding-top: 10px;
+      position: relative;
+      z-index: 1;
+      top: 10px;
+      font-size: 2em;
+      font-weight: 100;
+      padding-right: $padding/2;
+      display: none;
+      color: #534949;
+    }
+    .icon + span{
+      padding-right: 0;
+      padding-left: $padding/2;
+    }
+  }
 }

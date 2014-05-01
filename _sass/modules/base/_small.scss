@@ -10,7 +10,8 @@ article{
     &:before{
       content: '|';
       position: absolute;
-      margin-left: -$padding/2;
+      color: $altColor;
+      margin-left: -$padding/2 - 4px;
     }
   }
 }
