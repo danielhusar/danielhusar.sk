@@ -1,35 +1,40 @@
 ---
 layout: default
 ---
+<div id="page-post">
+  <div class="center">
+    <a href="/" class="btn" data-trigger="back">Späť</a>
+    <article>
+      <h1 class="title">
+        <span>{{ page.title }}</span>
+        <ul class="tags">
+          {% for category in page.categories %}
+            <li class="tag">
+              <a href="/{{site.category_dir}}/{{ category | slug }}/">{{ category }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </h1>
 
-<div class="center">
-  <article>
-    <h1>{{ page.title }}</h1>
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {% include date.html date=page.date %}
+      </time>
+      <div class="read-time">
+        Odhadovaný čas čítania: {{ content.size | readtime }}
+      </div>
 
-    <time datetime="{{ page.date | date_to_xmlschema }}">
-      {% include date.html date=page.date %}
-    </time>
-    <div class="read-time">
-      Odhadovaný čas čítania: {{ content.size | readtime }}
-    </div>
-    <ul class="tags">
-      {% for category in page.categories %}
-        <li class="tag">
-          <a href="/{{site.category_dir}}/{{ category | slug }}/">{{ category }}</a>
-        </li>
-      {% endfor %}
-    </ul>
 
-    <div class="content">
-      {{ content }}
-    </div>
+      <div class="content">
+        {{ content }}
+      </div>
 
-  </article>
+    </article>
 
-  <div class="comments">
-    <button type="button" class="btn" data-trigger="comments">Otvoriť diskusiu</button>
-    <div id="disqus_thread">
-      <p></p>
+    <div class="comments">
+      <button type="button" class="btn" data-trigger="comments">Otvoriť diskusiu</button>
+      <div id="disqus_thread">
+        <p></p>
+      </div>
     </div>
   </div>
 </div>

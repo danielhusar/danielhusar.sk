@@ -3,7 +3,7 @@ markdown: redcarpet
 pygments: true
 permalink: /:title
 timezone: Europe/Dublin
-paginate: 5
+paginate: 10
 paginate_subpath: strana
 paginate_path: "/strana/:num"
 

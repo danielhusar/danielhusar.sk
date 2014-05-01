@@ -19,18 +19,22 @@ title: Daniel Husar
 
         <!-- Pagination links -->
         {% if paginator.total_pages > 1 %}
-          <div class="pagination">
-            {% if paginator.previous_page %}
-              {% if paginator.previous_page == 1 %}
-                <a href="/" class="previous">Predosla</a>
-              {% else %}
-                <a href="/{{site.paginate_subpath}}/{{ paginator.previous_page }}" class="previous">Predosla</a>
+          <div class="pagination row">
+            <div class="col-xs-4 prev">
+              {% if paginator.previous_page %}
+                {% if paginator.previous_page == 1 %}
+                  <a href="/">&#10094; Novšie</a>
+                {% else %}
+                  <a href="/{{site.paginate_subpath}}/{{ paginator.previous_page }}">&#10094; Novšie</a>
+                {% endif %}
               {% endif %}
-            {% endif %}
-            <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-            {% if paginator.next_page %}
-              <a href="/{{site.paginate_subpath}}/{{ paginator.next_page }}" class="next">Dalsia</a>
-            {% endif %}
+            </div>
+            <div class="col-xs-4 numbers">Strana: {{ paginator.page }} z {{ paginator.total_pages }}</div>
+            <div class="col-xs-4 next">
+              {% if paginator.next_page %}
+                <a href="/{{site.paginate_subpath}}/{{ paginator.next_page }}">Staršie &#10095;</a>
+              {% endif %}
+            </div>
           </div>
         {% endif %}
 
