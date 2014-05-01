@@ -9,15 +9,15 @@ layout: default
   <div class="center">
     <div class="row">
 
-      <div class="col-md-4">
-        {% include categories.html %}
-      </div>
-
-      <div class="col-md-8">
+      <div class="col-md-9 right posts">
         <h1>{{ page.title }}</h1>
         {% for post in site.categories[page.category] %}
           {% include post.html post=post %}
         {% endfor %}
+      </div>
+
+      <div class="col-md-3">
+        {% include categories.html %}
       </div>
 
     </div>

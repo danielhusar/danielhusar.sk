@@ -1,8 +1,8 @@
-<ul>
+<ul class="tags">
   {% for category in site.categories %}
-    <li>
+    <li class="tag">
       <a href="/{{site.category_dir}}/{{ category | first | slug}}/">
-        {{ category | first }} {{category | last | size }}
+        {{ category | first }} <span>{{category | last | size }}</span>
       </a>
     </li>
   {% endfor %}

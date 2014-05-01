@@ -1,0 +1,16 @@
+article{
+  time{
+    display: inline-block;
+    margin-bottom: $padding/2;
+  }
+  .read-time{
+    display: inline-block;
+    margin-left: $padding/2;
+    padding-left: $padding/2;
+    &:before{
+      content: '|';
+      position: absolute;
+      margin-left: -$padding/2;
+    }
+  }
+}

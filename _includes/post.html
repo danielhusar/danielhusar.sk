@@ -1,19 +1,22 @@
 <article>
-  <a href="{{ include.post.url }}">{{ include.post.title }}</a>
+  <h3 class="title">
+    <a href="{{ include.post.url }}">{{ include.post.title }}</a>
+  </h3>
   <time datetime="{{ include.post.date | date_to_xmlschema }}">
     {% include date.html date=include.post.date %}
   </time>
-  </p>
-  <ul>
+  <div class="read-time">
+    Odhadovaný čas čítania: {{ include.post.content.size | readtime }}
+  </div>
+  <ul class="tags">
     {% for category in post.categories %}
-      <li>
+      <li class="tag">
         <a href="/{{site.category_dir}}/{{ category | slug }}/">{{ category }}</a>
       </li>
     {% endfor %}
   </ul>
-  Odhadovany cas citannia: {{ include.post.content.size | readtime }}
   <div class="content">
     {{ include.post.content | truncatewords:40}}<br>
-    <a href="{{ include.post.url }}">Viac...</a><br><br>
+    <a href="{{ include.post.url }}" class="more">Čítať viac</a><br><br>
   </div>
 </article>

@@ -23,9 +23,9 @@ module Jekyll
       rt = 1 if rt < 1
 
       if rt == 1
-        rc = ' minuta'
+        rc = ' minúta'
       elsif rt < 5
-        rc = ' minuty'
+        rc = ' minúty'
       else
         rc = ' minút'
       end

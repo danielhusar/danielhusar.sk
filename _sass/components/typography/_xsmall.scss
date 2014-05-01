@@ -3,6 +3,10 @@ p,ul{
 }
 a{
   text-decoration: none;
+  color: $color;
+  &:hover{
+    color: $altColor;
+  }
 }
 .text-center{
   text-align: center;
@@ -37,5 +41,13 @@ a{
   ol,
   p{
     @extend .unstyled;
+  }
+}
+body{ //wrapper so it overwrite columns floats
+  .left{
+    float: left;
+  }
+  .right{
+    float: right;
   }
 }

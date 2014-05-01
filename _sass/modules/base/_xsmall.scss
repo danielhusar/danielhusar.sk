@@ -7,6 +7,7 @@ body{
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: none;
   font-family: $font;
+  color: $color;
 }
 main{
   min-height: 100%;
@@ -16,4 +17,99 @@ main{
 }
 .center{
   padding: $padding $padding/2;
+}
+.tags{
+  margin: 0;
+  padding: 0;
+  @extend .cf;
+  .tag{
+    list-style: none;
+    margin-bottom: $padding/2;
+    a{
+      font-size: .9em;
+      border-radius: 5px;
+      background-color: #707070;
+      box-shadow: inset 0px 0px 11px 1px rgba(0, 0, 0, 0.15);
+      color: white;
+      display: inline-block;
+      padding: 1px $padding/4;
+      color: white;
+      &:hover{
+        box-shadow: none;
+      }
+      span{
+        padding-left: $padding/2;
+        &:after{
+          content: 'x';
+        }
+      }
+    }
+  }
+}
+article{
+  position: relative;
+  .title{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .tags .tag{
+    float: left;
+    margin-right: $padding/2;
+  }
+  time{
+    color: $altColor;
+    font-size: .9em;
+    display: block;
+    margin-top: $padding/2;
+  }
+  .read-time{
+    color: $altColor;
+    font-size: .9em;
+    display: block;
+    margin: $padding/4 $padding/2 $padding/2 0;
+  }
+  .content{
+    font-size: .95em;
+  }
+  .tag{
+    font-size: .8em;
+  }
+}
+
+.posts article{
+  margin-top: $padding * 2;
+  &:first-child{
+    margin-top: 0;
+    &:after{
+      display: none;
+    }
+  }
+  &:after{
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: -$padding;
+    left: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid #F1F1F1;
+  }
+  .content{
+    margin-top: $padding/2;
+    p:first-child{
+      margin-top: 0;
+    }
+    p:last-child{
+      margin-bottom: 0
+    }
+    br:last-child{
+      display: none;
+    }
+  }
+  .more{
+    font-size: .9em;
+    color: $altColor;
+    display: inline-block;
+    margin-top: $padding/2;
+  }
 }
