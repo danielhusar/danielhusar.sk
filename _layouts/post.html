@@ -2,8 +2,14 @@
 layout: default
 ---
 <div id="page-post">
+  <header>
+    <div class="center">
+      <a href="/" class="btn" data-trigger="back">Späť</a>
+    </div>
+  </header>
+
   <div class="center">
-    <a href="/" class="btn" data-trigger="back">Späť</a>
+
     <article>
       <h1 class="title">
         <span>{{ page.title }}</span>
@@ -15,19 +21,15 @@ layout: default
           {% endfor %}
         </ul>
       </h1>
-
       <time datetime="{{ page.date | date_to_xmlschema }}">
         {% include date.html date=page.date %}
       </time>
       <div class="read-time">
         Odhadovaný čas čítania: {{ content.size | readtime }}
       </div>
-
-
       <div class="content">
         {{ content }}
       </div>
-
     </article>
 
     <div class="comments">
@@ -36,5 +38,6 @@ layout: default
         <p></p>
       </div>
     </div>
+
   </div>
 </div>

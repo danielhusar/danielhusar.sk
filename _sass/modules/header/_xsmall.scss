@@ -1,9 +1,12 @@
 header{
+  border-bottom: 1px solid #F1F1F1;
   background: transparent url(/img/header.png) no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 300px;
-  transition: filter 1s;
+  &.hero{
+
+    height: 300px;
+  }
   .me{
     text-align: center;
     width: 320px;
