@@ -3,8 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
     <title>{{ page.title }}</title>
+    {% if page.description %}
+      <meta name="description" content="{{ page.description }}">
+    {% else %}
+      <meta name="description" content="default">
+    {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
 
     <link rel="shortcut icon" href="/img/favicons/favicon.ico">
     <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
@@ -25,16 +32,20 @@
     <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
 
     <link rel="alternate" type="application/rss+xml" title="Blog" href="/rss.xml">
+    <link rel="canonical" href="http://www.danielhusar.sk">
 
-    <meta property="og:title" content="">
-    <meta property="og:description" content="" >
+    <meta content="{{ page.title }}" property="og:title">
+    {% if page.description %}
+      <meta property="og:description" content="{{ page.description }}">
+    {% else %}
+      <meta property="og:description"content="default">
+    {% endif %}
     <meta property="og:image" content="/img/favicons/logo.png">
-    <meta property="og:url" content="">
-    <meta property="og:site_name" content="">
+    <meta property="og:url" content="{{page.url}}">
 
     <!-- assets -->
     <link rel="stylesheet" href="/css/style{% if site.prod %}.min{% endif %}.css">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:100,400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <!--[if (lt IE 9)&(!IEMobile)]>
       <link rel="stylesheet" href="css/IE{% if site.prod %}.min{% endif %}.css">
     <![endif]-->

@@ -13,11 +13,11 @@
     {% include date.html date=include.post.date %}
   </time>
   <div class="read-time">
-    Odhadovaný čas čítania: {{ include.post.content.size | readtime }}
+    {{ include.post.content.size | readtime }} čítania
   </div>
 
   <div class="content">
     {{ include.post.content | truncatewords:40}}<br>
-    <a href="{{ include.post.url }}" class="more">Čítať viac</a><br><br>
+    <a href="{{ include.post.url }}" class="more">Čítať viac...</a><br><br>
   </div>
 </article>

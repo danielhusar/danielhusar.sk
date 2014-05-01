@@ -3,11 +3,9 @@ footer{
   margin-top: -80px;
   border-top: 1px solid #F1F1F1;
   .center{
-    padding-top: 0;
+    font-size: 0.8em;
     .content{
-
-      padding-top: $padding;
-      font-size: 0.8em;
+      overflow: hidden;
     }
     ul{
       @extend .unstyled;
