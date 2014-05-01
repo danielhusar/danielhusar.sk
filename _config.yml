@@ -8,7 +8,7 @@ paginate_subpath: strana
 paginate_path: "/strana/:num"
 
 #RSS settings
-url: www.danielhusar.sk
+url: http://www.danielhusar.sk
 author: Daniel Husar
 rss_post_limit: 10
 
