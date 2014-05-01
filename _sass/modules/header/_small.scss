@@ -16,7 +16,7 @@ header{
         opacity: 1;
       }
     }
-    .icon + span{
+    a + span{
       padding-right: 0;
       padding-left: $padding;
       transform: translate3d(-165px, 0, 0);

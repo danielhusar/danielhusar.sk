@@ -4,7 +4,7 @@
   //wait a little and add class to body so we can trigger some animations
   window.setTimeout(function(){
     document.getElementsByTagName('body')[0].className+=' page-loaded';
-  }, 300);
+  }, 10);
 
   //add class to body when user scroll
   window.onscroll = function(e, data){
