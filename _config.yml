@@ -24,3 +24,6 @@ exclude:
 #Categories
 category_dir: tag
 category_title_prefix: ''
+
+#Production
+prod: false

@@ -31,10 +31,10 @@
     <meta property="og:site_name" content="">
 
     <!-- assets -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style{% if site.prod %}.min{% endif %}.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <!--[if (lt IE 9)&(!IEMobile)]>
-      <link rel="stylesheet" href="css/IE.min.css">
+      <link rel="stylesheet" href="css/IE{% if site.prod %}.min{% endif %}.css">
     <![endif]-->
     <script src="/js/libraries/modernizr-2.7.1.min.js"></script>
   </head>
@@ -48,7 +48,7 @@
         Footer
       </div>
     </footer>
-    <script src="/js/app.js" async></script>
+    <script src="/js/app{% if site.prod %}.min{% endif %}.js" async></script>
     <!-- Genarated on: {{site.time}} -->
   </body>
 </html>
