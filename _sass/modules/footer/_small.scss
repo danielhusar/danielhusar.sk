@@ -1,0 +1,17 @@
+footer{
+  height: 50px;
+  margin-top: -50px;
+  .center{
+    ul{
+      clear: none;
+      float: left;
+      &:after{
+        clear: none;
+      }
+    }
+    .copy{
+      margin-top: 0;
+      float: right;
+    }
+  }
+}

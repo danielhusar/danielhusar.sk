@@ -1,7 +1,22 @@
 footer{
-  height: 100px;
-  background: #ccc;
-  margin-top: -100px;
+  height: 80px;
+  margin-top: -80px;
+  .center{
+    border-top: 1px solid #F1F1F1;
+    font-size: 0.8em;
+    ul{
+      @extend .unstyled;
+      @extend .cf;
+      list-style: none;
+      li{
+        float: left;
+        margin-right: 30px;
+      }
+    }
+    .copy{
+      margin-top: $padding/2;
+    }
+  }
 }
 
 //footer always on bottom
