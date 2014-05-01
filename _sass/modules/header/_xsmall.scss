@@ -1,6 +1,7 @@
 header{
   background: transparent url(/img/header.png) no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   height: 300px;
   transition: filter 1s;
 }

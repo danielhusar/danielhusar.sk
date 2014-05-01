@@ -1,4 +1,4 @@
 danielhusar.sk
 ==============
 
-its a jekyll app
+Its a jekyll app

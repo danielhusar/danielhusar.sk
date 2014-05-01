@@ -1,6 +1,7 @@
 #Liquid filters
 #
 module Jekyll
+
   module Slug
     def slug(input)
       "#{input.to_slug}"
@@ -13,7 +14,30 @@ module Jekyll
     end
   end
 
+  module ReadTimeFilter
+    def readtime(input)
+      charcount = 4.5
+      wpm = 180
+
+      rt = (input.to_f/charcount/wpm).round
+      rt = 1 if rt < 1
+
+      if rt == 1
+        rc = ' minuta'
+      elsif rt < 5
+        rc = ' minuty'
+      else
+        rc = ' minút'
+      end
+
+      rt.to_s + rc
+    end
+  end
+
 end
+
+
 
 Liquid::Template.register_filter(Jekyll::Slug)
 Liquid::Template.register_filter(Jekyll::Extract)
+Liquid::Template.register_filter(Jekyll::ReadTimeFilter)
