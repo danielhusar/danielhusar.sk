@@ -2,11 +2,25 @@
 layout: default
 ---
 
-<div id="categories">
-  <h1>{{ page.title }}</h1>
-  <ul class="posts">
-    {% for post in site.categories[page.category] %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+<div id="page-category">
+
+  {% include header.html %}
+
+  <div class="center">
+    <div class="row">
+      <div class="col-md-4">
+        {% include categories.html %}
+      </div>
+
+      <div class="col-md-8">
+        <h1>{{ page.title }}</h1>
+        {% for post in site.categories[page.category] %}
+          {% include post.html post=post %}
+        {% endfor %}
+      </div>
+
+    </div>
+
+  </div>
+
 </div>

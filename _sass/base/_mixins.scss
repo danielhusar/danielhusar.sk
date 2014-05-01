@@ -39,11 +39,11 @@ $one_col: 100% / $cols;
 }
 
 @mixin blur($radius){
-  filter: blur('{$radius}px');
-  -webkit-filter: blur('{$radius}px');
-  -moz-filter: blur('{$radius}px');
-  -o-filter: blur('{$radius}px');
-  -ms-filter: blur('{$radius}px');
+  filter: blur($radius * 1px);
+  -webkit-filter: blur($radius * 1px);
+  -moz-filter: blur($radius * 1px);
+  -o-filter: blur($radius * 1px);
+  -ms-filter: blur($radius * 1px);
   filter: url(/img/blur.svg#blur);
   filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='{$radius}');
 }

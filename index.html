@@ -5,33 +5,19 @@ title: Daniel Husar
 
 <div id="page-home">
 
-  <header>
-    <div class="inner">
-      <div class="center">
-        Hello
-      </div>
-    </div>
-  </header>
+  {% include header.html %}
 
   <div class="center">
     <div class="row">
       <div class="col-md-4">
-        <ul>
-          {% for category in site.categories %}
-            <li>
-              <a href="/{{site.category_dir}}/{{ category | first | slug}}/">{{ category | first }}</a>
-            </li>
-          {% endfor %}
-        </ul>
+        {% include categories.html %}
       </div>
 
       <div class="col-md-8">
-        <!-- This loops through the paginated posts -->
+
+        <!-- Posts loop -->
         {% for post in paginator.posts %}
-          <a href="{{ post.url }}">{{ post.title }}</a>
-          <p class="author">
-            <span class="date">{{ post.date }}</span>
-          </p>
+          {% include post.html post=post %}
         {% endfor %}
 
         <!-- Pagination links -->
@@ -50,6 +36,7 @@ title: Daniel Husar
             {% endif %}
           </div>
         {% endif %}
+
       </div>
 
     </div>

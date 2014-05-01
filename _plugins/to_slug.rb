@@ -122,14 +122,3 @@ class String # This reopns the string class
 
   end
 end
-
-#Register Liquid filter for slug
-module Jekyll
-  module Slug
-    def slug(input)
-      "#{input.to_slug}"
-    end
-  end
-end
-
-Liquid::Template.register_filter(Jekyll::Slug)

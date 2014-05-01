@@ -1,0 +1,9 @@
+<ul>
+  {% for category in site.categories %}
+    <li>
+      <a href="/{{site.category_dir}}/{{ category | first | slug}}/">
+        {{ category | first }} {{category | last | size }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

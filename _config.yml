@@ -2,7 +2,7 @@ name: Daniel Husar
 markdown: redcarpet
 pygments: true
 permalink: /:title
-timezone: Dublin/Ireland
+timezone: Europe/Dublin
 paginate: 5
 paginate_subpath: strana
 paginate_path: "/strana/:num"

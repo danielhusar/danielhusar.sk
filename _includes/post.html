@@ -1,0 +1,18 @@
+<article>
+  <a href="{{ include.post.url }}">{{ include.post.title }}</a>
+  <time datetime="{{ include.post.date | date_to_xmlschema }}">
+    {% include date.html date=include.post.date %}
+  </time>
+  </p>
+  <ul>
+    {% for category in post.categories %}
+      <li>
+        <a href="/{{site.category_dir}}/{{ category | slug }}/">{{ category }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="content">
+    {{ include.post.content | truncatewords:40}}<br>
+    <a href="{{ include.post.url }}">Read more...</a><br><br>
+  </div>
+</article>
