@@ -38,6 +38,6 @@ gulp.task('watch', function () {
   app.listen(8000);
   console.log('listen on: http://localhost:8000')
   gulp.watch(['_sass/*.scss', '_sass/**/*.scss', '_sass/**/**/*.scss', '_sass/**/**/**/*.scss'], ['sass']);
-  gulp.watch(['_plugins/*.rb','_posts/*.md', '_posts/*.markdown','_layouts/*.html', '_includes/*.html', '*.html', '*.yml'], ['jekyll']);
+  gulp.watch(['_plugins/*.rb','_posts/*.md', '_posts/*.markdown', '_layouts/*.html', '_includes/*.html', '*.html', '*.yml'], ['jekyll']);
   gulp.watch(jsFiles, ['lint', 'scripts']);
 });

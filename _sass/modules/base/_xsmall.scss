@@ -8,7 +8,7 @@ body{
   -webkit-text-size-adjust: none;
   font-family: $font;
   color: $color;
-  font-weight: 100;
+  font-weight: $fontWeight;
 }
 main{
   min-height: 100%;
@@ -26,6 +26,11 @@ main{
     margin-top: 0;
   }
 }
+.comments{
+  margin-top: $padding * 2;
+  text-align: center;
+}
+
 .tags{
   padding: 0;
   margin: 0;
@@ -82,6 +87,10 @@ article{
   }
   .tag{
     font-size: .8em;
+  }
+  > h1{
+    font-size: 1.7em;
+    margin-bottom: 0;
   }
 }
 

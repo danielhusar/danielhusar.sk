@@ -1,30 +1,28 @@
 .btn {
   position: relative;
   display: inline-block;
-  padding: 10px 0 5px 0;
+  padding: 5px 20px;
   border: none;
   background-image: none;
-  border-radius: 4px;
-  background-color: #ccc;
+  border-radius: 15px;
+  background-color: white;
+  border: 1px solid #ccc;
   background-color: rgba(255, 255, 255, 0.27);
-  color: white !important;
-  font-size: 25px;
+  color: $color;
+  font-size: .9em;
   line-height: 1.4;
   text-align: center;
   text-decoration: none;
   overflow: visible;
   white-space: nowrap;
   font-family: $font;
-  font-weight: 400;
+  font-weight: $fontWeight;
   *zoom: 1;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
        -o-user-select: none;
           user-select: none;
-  .lt-ie9 & {
-    line-height: 1.1;
-  }
   &.disabled,
   &[disabled]{
     pointer-events: none;
@@ -33,5 +31,8 @@
     filter: alpha(opacity=65);
     -webkit-box-shadow: none;
             box-shadow: none;
+  }
+  &:hover{
+    border-color: $altColor;
   }
 }
