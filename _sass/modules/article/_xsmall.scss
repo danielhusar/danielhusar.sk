@@ -78,7 +78,7 @@ article{
     left: 0;
     right: 0;
     height: 1px;
-    border-top: 1px solid #F1F1F1;
+    border-top: 1px solid $border;
   }
   .content{
     p:first-child{
@@ -103,7 +103,7 @@ article{
 }
 
 .highlight pre{
-  border: 1px solid #F1F1F1;
+  border: 1px solid $border;
   background-color: #FFF7F7;
   font-size: .9em;
   padding: 10px;
@@ -127,7 +127,7 @@ article{
 .author{
   margin-top: $padding * 2;
   padding: $padding;
-  border: 1px solid #F1F1F1;
+  border: 1px solid $border;
   background-color: #FDFDFD;
   h3{
     margin-top: 0;

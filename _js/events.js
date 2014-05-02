@@ -4,7 +4,7 @@
   //wait a little and add class to body so we can trigger some animations
   window.setTimeout(function(){
     document.getElementsByTagName('body')[0].className += ' page-loaded';
-  }, 10);
+  }, 100);
 
   //open discussion
   var commentsTrigger = document.querySelector('[data-trigger="comments"]');
@@ -28,6 +28,25 @@
         window.history.back();
       }
     }, false);
+  }
+
+  //open popup
+  var popupTriggers = document.querySelectorAll('[data-trigger="popup"]');
+  var popupTrigger;
+  for(var i = 0, length = popupTriggers.length; i < length; i++){
+    if(popupTrigger = popupTriggers[i]){
+      console.log(popupTrigger);
+      popupTrigger.addEventListener('click', function(e){
+        var left = (screen.width / 2)  - (700 / 2);
+        var top = (screen.height / 2) - (500 / 2);
+        var href = this.href;
+        var title = this.title;
+        window.open(href,
+                    title,
+                    'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=700, height=500, top=' + top + ', left=' + left);
+          e.preventDefault();
+      }, false);
+    }
   }
 
 })(this, this.document);
