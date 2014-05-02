@@ -3,7 +3,7 @@ layout: post
 title:  Hello World
 date:   2014-04-20 20:06:18
 description: test
-categories: programovanie
+categories: Programovanie
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non massa vestibulum, sagittis nisl at, mattis ligula. Duis eget arcu eu velit blandit condimentum. In pulvinar risus euismod lacus aliquet tincidunt. Cras sit amet vestibulum felis. Sed mattis posuere tempus. Donec sem urna, posuere non dapibus id, sagittis eget diam. Quisque pharetra nisi eu scelerisque pretium. Sed imperdiet diam ac urna congue, vitae suscipit dui iaculis. Pellentesque ullamcorper tortor vitae arcu viverra porta a vehicula ligula. Donec fringilla sit amet dui ac consectetur. Aenean accumsan eleifend velit consequat consequat. Nunc ultricies tellus in nulla imperdiet, at porta diam rutrum.

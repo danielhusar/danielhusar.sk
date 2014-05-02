@@ -19,6 +19,7 @@ module.exports = function(gulp){
     spriteData.css.pipe(gulp.dest('_sass/base/'));
   });
 
+  //minify images
   gulp.task('imagemin', function () {
     gulp.src('_site/img/*.png')
         .pipe(imagemin())

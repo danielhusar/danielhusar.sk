@@ -15,9 +15,10 @@
   <div class="read-time">
     {{ include.post.content.size | readtime }} čítania
   </div>
-
-  <div class="content">
-    {{ include.post.content | truncatewords:40}}<br>
-    <a href="{{ include.post.url }}" class="more">Čítať viac...</a><br><br>
-  </div>
+  {% if include.preview %}
+    <div class="content">
+      {{ include.post.content | truncatewords:40}}<br>
+      <a href="{{ include.post.url }}" class="more">Čítať viac...</a><br><br>
+    </div>
+  {% endif %}
 </article>

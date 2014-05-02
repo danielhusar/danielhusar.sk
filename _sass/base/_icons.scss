@@ -1,12 +1,34 @@
-$icon-me-x : 0px;
-$icon-me-y : 0px;
-$icon-me-width : 150px;
-$icon-me-height : 150px;
-$icon-me-image : '/img/icons.png';
+$icon-facebook-x : 0px;
+$icon-facebook-y : 0px;
+$icon-facebook-width : 30px;
+$icon-facebook-height : 30px;
+$icon-facebook-image : '/img/icons.png';
+$icon-linkedin-x : -30px;
+$icon-linkedin-y : 0px;
+$icon-linkedin-width : 30px;
+$icon-linkedin-height : 30px;
+$icon-linkedin-image : '/img/icons.png';
+$icon-twitter-x : 0px;
+$icon-twitter-y : -30px;
+$icon-twitter-width : 30px;
+$icon-twitter-height : 30px;
+$icon-twitter-image : '/img/icons.png';
 
-.icon-me {
+.icon-facebook {
   background-image: url(/img/icons.png);
   background-position: 0px 0px;
-  width: 150px;;
-  height: 150px;
+  width: 30px;;
+  height: 30px;
+}
+.icon-linkedin {
+  background-image: url(/img/icons.png);
+  background-position: -30px 0px;
+  width: 30px;;
+  height: 30px;
+}
+.icon-twitter {
+  background-image: url(/img/icons.png);
+  background-position: 0px -30px;
+  width: 30px;;
+  height: 30px;
 }

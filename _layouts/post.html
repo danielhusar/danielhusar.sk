@@ -1,10 +1,16 @@
 ---
 layout: default
 ---
-<div id="page-post">
-  <header>
+<section id="page-post">
+  <header class="small">
     <div class="center">
-      <a href="/" class="btn" data-trigger="back">Späť</a>
+      <nav>
+        <ul>
+          <li><a href="/" data-trigger="back">Späť</a></li>
+          <li><a href="/archiv/">Archív</a></li>
+          <li><a href="/autor/">Autor</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
@@ -32,6 +38,23 @@ layout: default
       </div>
     </article>
 
+    <div class="author">
+      <div class="row no-spacing">
+        <div class="col-xs-3 col-md-2">
+          <img src="/img/me.png" alt="fotka">
+        </div>
+        <div class="col-xs-9 col-md-10">
+          <h3>Daniel Husár</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non massa vestibulum, sagittis nisl at, mattis ligula. Duis eget arcu eu velit blandit condimentum. In pulvinar risus euismod lacus aliquet tincidunt. Cras sit amet vestibulum felis. Sed mattis posuere tempus.</p>
+          <p>
+            <a href="#"><i class="icon icon-facebook"></i></a>
+            <a href="#"><i class="icon icon-twitter"></i></a>
+            <a href="#"><i class="icon icon-linkedin"></i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
     <div class="comments">
       <button type="button" class="btn" data-trigger="comments">Otvoriť diskusiu</button>
       <div id="disqus_thread">
@@ -40,4 +63,4 @@ layout: default
     </div>
 
   </div>
-</div>
+</section>

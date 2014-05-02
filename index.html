@@ -10,11 +10,11 @@ title: Daniel Husar
   <div class="center">
     <div class="row">
 
-      <div class="col-md-9 right posts">
+      <div class="col-xs-12 col-md-9 right posts">
 
         <!-- Posts loop -->
         {% for post in paginator.posts %}
-          {% include post.html post=post %}
+          {% include post.html post=post preview=true %}
         {% endfor %}
 
         <!-- Pagination links -->
@@ -40,7 +40,7 @@ title: Daniel Husar
 
       </div>
 
-      <div class="col-md-3 sidebar">
+      <div class="col-xs-12 col-md-3 sidebar">
         {% include categories.html %}
       </div>
 

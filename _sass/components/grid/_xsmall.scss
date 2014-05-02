@@ -20,7 +20,7 @@
   > * {
     margin-top: $padding;
   }
-  &.no-spacing{
+  &.no-spacing > *{
     margin-top: 0;
   }
 }

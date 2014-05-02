@@ -1,9 +1,10 @@
 <h3>Kategórie</h3>
 <ul class="tags">
   {% for category in site.categories %}
-    <li class="tag {% if include.active == (category | first) %}active{% endif %}">
-      <a href="/{{site.category_dir}}/{{ category | first | slug}}/">
-        {{ category | first }} <span>{{category | last | size }}</span>
+    {% capture cat %}{{ category | first }}{% endcapture %}
+    <li class="tag">
+      <a href="/{{site.category_dir}}/{{ category | first | slug}}/" class="{% if include.active == cat %}active{% endif %}">
+        {{ cat }} <span>{{category | last | size }}</span>
       </a>
     </li>
   {% endfor %}

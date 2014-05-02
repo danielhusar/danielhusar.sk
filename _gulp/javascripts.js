@@ -12,10 +12,12 @@ var insert = function (obj, index, item) {
 
 module.exports = function(gulp, jsFiles){
 
+  //lint js files
   gulp.task('lint', function () {
     return gulp.src(jsFiles).pipe(jshint()).pipe(jshint.reporter(stylish));
   });
 
+  //concate and uglify
   gulp.task('scripts', function () {
     return gulp.src(jsFiles)
     .pipe(concat('app.js'))
