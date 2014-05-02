@@ -50,6 +50,7 @@ main{
       color: white;
       &:hover{
         box-shadow: none;
+        background-color: darken(#A7A7A7, 10%);
       }
       span{
         padding-left: $padding/2;
