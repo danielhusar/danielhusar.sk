@@ -1,6 +1,6 @@
 footer{
-  height: 80px;
-  margin-top: -80px;
+  height: 93px;
+  margin-top: -93px;
   border-top: 1px solid #F1F1F1;
   .center{
     font-size: 0.8em;
@@ -17,12 +17,12 @@ footer{
       }
     }
     .copy{
-      margin-top: $padding/2;
+      margin-top: 15px;
     }
   }
 }
 
 //footer always on bottom
 main{
-  padding-bottom: 80px;
+  padding-bottom: 93px;
 }

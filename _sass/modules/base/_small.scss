@@ -15,4 +15,25 @@ article{
       margin-left: -$padding/2 - 4px;
     }
   }
+  .title{
+    margin-top: 0;
+    margin-bottom: 0;
+    .tags{
+      display: inline-block;
+      margin-top: 0;
+      .tag{
+        margin-bottom: 0;
+        top: 3px;
+        position: relative;
+        margin-right: 0;
+        margin-left: $padding/2;
+        #page-post &{
+          top: 4px;
+        }
+        a{
+          font-size: 12px;
+        }
+      }
+    }
+  }
 }

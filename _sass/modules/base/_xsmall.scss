@@ -70,20 +70,7 @@ article{
     margin-top: 0;
     margin-bottom: 0;
     .tags{
-      display: inline-block;
-      .tag{
-        margin-bottom: 0;
-        top: 3px;
-        position: relative;
-        margin-right: 0;
-        margin-left: $padding/2;
-        #page-post &{
-          top: 4px;
-        }
-        a{
-          font-size: 12px;
-        }
-      }
+      margin-top: $padding/2;
     }
   }
   .tags .tag{

@@ -4,32 +4,73 @@ header{
   background-size: cover;
   background-attachment: fixed;
   &.hero{
-
     height: 300px;
   }
   .me{
     text-align: center;
-    width: 320px;
+    width: 320px - $padding;
     margin: 30px auto 0;
     .icon{
       border-radius: 50%;
       position: relative;
       z-index: 2;
+      height: 120px;
     }
     span{
       padding-top: 10px;
       position: relative;
       z-index: 1;
       top: 10px;
-      font-size: 2em;
+      font-size: 1.5em;
       font-weight: 100;
       padding-right: $padding/2;
-      display: none;
+      display: inline-block;
       color: #534949;
+      opacity: 0;
+      transition: all 0.6s ease-out;
+      transform: translate3d(165px, 0, 0);
+      .page-loaded &{
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
     }
     a + span{
       padding-right: 0;
       padding-left: $padding/2;
+      transform: translate3d(-165px, 0, 0);
+      .page-loaded &{
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+    }
+  }
+  nav{
+    text-align: left;
+    margin-top: 80px;
+    border-top: 1px solid rgba(255,255,255, 0.5);
+    ul{
+      @extend .unstyled;
+      list-style: none;
+      li{
+        float: left;
+        text-transform: uppercase;
+        font-size: .75em;
+        font-weight: 700;
+        width: 33.33%;
+        a{
+          border-top: 1px solid transparent;
+          color: white;
+          color: rgba(255,255,255, 0.5);
+          margin-top: -1px;
+          padding: $padding / 2 $padding * 2 $padding / 4 $padding * 2;
+          display: block;
+          &.active,
+          &:hover{
+            border-top: 1px solid rgba(255,255,255, 0.9);
+            color: rgba(255,255,255, 0.9);
+          }
+        }
+      }
     }
   }
 }
