@@ -32,7 +32,7 @@
     <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
 
     <link rel="alternate" type="application/rss+xml" title="Blog" href="/rss.xml">
-    <link rel="canonical" href="http://www.danielhusar.sk">
+    <link rel="canonical" href="{{site.url}}">
 
     <meta content="{{ page.title }}" property="og:title">
     {% if page.description %}
@@ -40,8 +40,8 @@
     {% else %}
       <meta property="og:description"content="default">
     {% endif %}
-    <meta property="og:image" content="/img/favicons/logo.png">
-    <meta property="og:url" content="http://{{ site.host }}{{page.url}}">
+    <meta property="og:image" content="{{site.url}}/img/favicons/logo.png">
+    <meta property="og:url" content="{{site.url}}{{page.url}}">
 
     <!-- assets -->
     <link rel="stylesheet" href="/css/style{% if site.prod %}.min{% endif %}.css">

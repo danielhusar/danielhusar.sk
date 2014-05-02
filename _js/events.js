@@ -35,7 +35,6 @@
   var popupTrigger;
   for(var i = 0, length = popupTriggers.length; i < length; i++){
     if(popupTrigger = popupTriggers[i]){
-      console.log(popupTrigger);
       popupTrigger.addEventListener('click', function(e){
         var left = (screen.width / 2)  - (700 / 2);
         var top = (screen.height / 2) - (500 / 2);
