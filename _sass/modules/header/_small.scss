@@ -1,6 +1,6 @@
 header{
   .me{
-    width: 480px;
+    width: $smallBreakpoint - $padding;
     .icon{
       height: 150px;
     }
@@ -9,7 +9,7 @@ header{
     }
   }
   nav{
-    width: 480px;
+    width: $smallBreakpoint - $padding;
     margin: 55px auto 0 auto;
   }
   &.small nav{

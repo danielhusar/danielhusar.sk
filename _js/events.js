@@ -1,3 +1,4 @@
+/** events **/
 (function(window, document){
   'use strict';
 
@@ -23,7 +24,7 @@
   var historyTrigger = document.querySelector('[data-trigger="back"]');
   if(historyTrigger){
     historyTrigger.addEventListener('click', function(e){
-      if(document.referrer && document.referrer.indexOf('http://localhost:8000/') !== -1 && window.history.back){
+      if(document.referrer && document.referrer.indexOf(window.location.origin) !== -1 && window.history.back){
         e.preventDefault();
         window.history.back();
       }
@@ -33,18 +34,19 @@
   //open popup
   var popupTriggers = document.querySelectorAll('[data-trigger="popup"]');
   var popupTrigger;
+  var popupOpener = function(e){
+    var left = (window.screen.width / 2)  - (700 / 2);
+    var top = (window.screen.height / 2) - (500 / 2);
+    var href = this.href;
+    var title = this.title;
+    window.open(href,
+                title,
+                'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=700, height=500, top=' + top + ', left=' + left);
+    e.preventDefault();
+  };
   for(var i = 0, length = popupTriggers.length; i < length; i++){
-    if(popupTrigger = popupTriggers[i]){
-      popupTrigger.addEventListener('click', function(e){
-        var left = (screen.width / 2)  - (700 / 2);
-        var top = (screen.height / 2) - (500 / 2);
-        var href = this.href;
-        var title = this.title;
-        window.open(href,
-                    title,
-                    'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=700, height=500, top=' + top + ', left=' + left);
-          e.preventDefault();
-      }, false);
+    if(popupTriggers[i]){
+       popupTriggers[i].addEventListener('click', popupOpener, false);
     }
   }
 
