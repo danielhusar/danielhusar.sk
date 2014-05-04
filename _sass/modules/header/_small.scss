@@ -1,11 +1,18 @@
 header{
   .me{
     width: $smallBreakpoint - $padding;
-    .icon{
-      height: 150px;
+    .name,
+    .surname,
+    .photo{
+      width: 33.33%;
     }
     span{
+      padding-top: 35px;
       font-size: 2.5em;
+      transform: translate3d(165px, 0, 0);
+    }
+    div + div span{
+      transform: translate3d(-165px, 0, 0);
     }
   }
   nav{

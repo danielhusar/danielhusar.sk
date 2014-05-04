@@ -10,35 +10,44 @@ header{
   .me{
     text-align: center;
     width: 320px - $padding;
-    margin: 30px auto 0;
+    margin: 10px auto 0;
+    .name,
+    .surname{
+      width: 30%;
+      float: left;
+    }
+    .photo{
+      width: 40%;
+      float: left;
+    }
     .icon{
       border-radius: 50%;
       position: relative;
       z-index: 2;
-      height: 120px;
+      width: 100%;
     }
     span{
-      padding-top: 10px;
+      padding-top: 30px;
       position: relative;
       z-index: 1;
       top: 10px;
       font-size: 1.5em;
-      padding-right: $padding/2;
       display: inline-block;
       color: white;
       opacity: 0;
-      transition: all 0.6s ease-out;
-      transform: translate3d(165px, 0, 0);
-      .page-loaded &{
+      transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+      transform: translate3d(150px, 0, 0);
+      .page-loaded &,
+      .no-js &{
         transform: translate3d(0, 0, 0);
         opacity: 1;
       }
     }
-    a + span{
+    div + div span{
       padding-right: 0;
-      padding-left: $padding/2;
-      transform: translate3d(-165px, 0, 0);
-      .page-loaded &{
+      transform: translate3d(-150px, 0, 0);
+      .page-loaded &,
+      .no-js &{
         transform: translate3d(0, 0, 0);
         opacity: 1;
       }
@@ -87,10 +96,11 @@ header{
 
 header + .center{
   opacity: 0;
-  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
   transform: translate3d(0, 20px, 0);
+  .no-js &,
   .page-loaded &{
     transform: translate3d(0, 0, 0);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
     opacity: 1;
   }
 }
