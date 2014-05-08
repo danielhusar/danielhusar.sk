@@ -4,13 +4,13 @@ module Jekyll
 
   module Slug
     def slug(input)
-      "#{input.to_slug}"
+      '#{input.to_slug}'
     end
   end
 
   module Extract
     def extract(input)
-      input[0,200] + "..."
+      input[0,200] + '...'
     end
   end
 
