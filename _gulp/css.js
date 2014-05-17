@@ -7,9 +7,9 @@ var prefix = require('gulp-autoprefixer');
 
 module.exports = function(gulp){
 
-  //run less
+  //run sass
   gulp.task('sass', function () {
-    gulp.src(['./_sass/style.scss', './_sass/IE.scss'])
+    return gulp.src(['./_sass/style.scss', './_sass/IE.scss'])
       .pipe(sass())
       .pipe(prefix('last 5 versions', '> 1%', 'ie 8', 'ie 9'))
       .pipe(gulp.dest('./_site/css'))

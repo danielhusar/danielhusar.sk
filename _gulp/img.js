@@ -17,13 +17,14 @@ module.exports = function(gulp){
     }));
     spriteData.img.pipe(gulp.dest('_site/img/'));
     spriteData.css.pipe(gulp.dest('_sass/base/'));
+    return spriteData;
   });
 
   //minify images
   gulp.task('imagemin', function () {
-    gulp.src('_site/img/*.png')
-        .pipe(imagemin())
-        .pipe(gulp.dest('_site/img/'));
+    return gulp.src('_site/img/*.png')
+      .pipe(imagemin())
+      .pipe(gulp.dest('_site/img/'));
   });
 
 };

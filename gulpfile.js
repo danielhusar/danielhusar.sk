@@ -24,7 +24,7 @@ gulp.task('default', ['jekyll', 'sass', 'scripts']);
 
 //run jekyll
 gulp.task('jekyll', function(){
-  require('child_process').spawn('jekyll', ['build'], {stdio: 'inherit'});
+  return require('child_process').spawn('jekyll', ['build'], {stdio: 'inherit'});
 });
 
 //watch Files For Changes
@@ -33,7 +33,7 @@ gulp.task('server', function () {
   app.use(express.static('_site'));
   app.use(directory('_site'));
   app.listen(8000);
-  console.log('listen on: http://localhost:8000')
+  console.log('listen on: http://localhost:8000');
   gulp.watch(['_sass/*.scss', '_sass/**/*.scss', '_sass/**/**/*.scss', '_sass/**/**/**/*.scss'], ['sass']);
   gulp.watch(['_plugins/*.rb','_posts/*.md', '_posts/*.markdown', '_layouts/*.html', 'archiv/*.html', 'autor/*.html', '_includes/*.html', '*.html', '*.yml'], ['jekyll']);
   gulp.watch(jsFiles, ['lint', 'scripts']);
