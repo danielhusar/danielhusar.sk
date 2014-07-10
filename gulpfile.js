@@ -20,10 +20,11 @@ require('./_gulp/css.js')(gulp);
 require('./_gulp/img.js')(gulp);
 
 //default task
-gulp.task('default', ['jekyll', 'sass', 'scripts']);
+gulp.task('default', ['jekyll']);
+gulp.task('assets', ['sass', 'scripts']);
 
 //run jekyll
-gulp.task('jekyll', function(){
+gulp.task('jekyll', ['assets'], function(){
   return require('child_process').spawn('jekyll', ['build'], {stdio: 'inherit'});
 });
 
