@@ -38,3 +38,5 @@ gulp.task('server', function () {
   gulp.watch(['_plugins/*.rb','_posts/*.md', '_posts/*.markdown', '_layouts/*.html', 'archiv/*.html', 'autor/*.html', '_includes/*.html', '*.html', '*.yml'], ['jekyll']);
   gulp.watch(jsFiles, ['lint', 'scripts']);
 });
+
+module.exports = gulp;
