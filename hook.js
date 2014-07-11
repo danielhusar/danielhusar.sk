@@ -3,7 +3,7 @@
 var express = require('express');
 var app = express();
 var xhub = require('express-x-hub');
-var secret = require('hook.json').secret;
+var secret = require('./hook.json').secret;
 app.use(xhub({ algorithm: 'sha1', secret: secret }));
 
 app.post('/generate', function(req, res){
