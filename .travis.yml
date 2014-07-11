@@ -4,5 +4,5 @@ node_js:
 before_install:
   - gem install jekyll
   - npm install -g gulp
-  - npm install
+before_script:
   - gulp
