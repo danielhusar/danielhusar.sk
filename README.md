@@ -3,6 +3,7 @@ danielhusar.sk
 
 ###Its a jekyll app
 
+Rename hook.sample.json to hook.json and put your git web hook secret key there.
 
 Install all dependencies
 
