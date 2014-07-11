@@ -25,8 +25,11 @@ gulp.task('default', ['jekyll'], function(){
 });
 
 //run jekyll
-gulp.task('jekyll', function(){
-  return require('child_process').spawn('jekyll', ['build'], {stdio: 'inherit'});
+gulp.task('jekyll', function(cb){
+  require('child_process').exec('jekyll build', function(err, stdout, stderr) {
+      console.log(stdout);
+      cb();
+  });
 });
 
 //watch Files For Changes
