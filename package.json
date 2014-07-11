@@ -19,7 +19,7 @@
     "gulp-sass": "^0.7.1",
     "gulp-cssmin": "^0.1.4",
     "gulp-imagemin": "^0.5.0",
-    "gulp-autoprefixer": "^0.0.7",
+    "gulp-autoprefixer": "^0.0.8",
     "gulp.spritesmith": "^0.5.0",
     "jshint-stylish": "^0.2.0",
     "fs-extra": "^0.8.1",
