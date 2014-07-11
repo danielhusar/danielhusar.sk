@@ -22,6 +22,7 @@
     "fs-extra": "^0.8.1",
     "mocha": "^1.18.2",
     "express": "^4.5.1",
-    "serve-index": "^1.0.2"
+    "serve-index": "^1.0.2",
+    "express-x-hub": "^1.0.1"
   }
 }
