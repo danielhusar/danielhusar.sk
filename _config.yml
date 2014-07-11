@@ -17,6 +17,7 @@ exclude:
   - README.md
   - LICENSE
   - gulpfile.js
+  - hook.js
   - package.json
   - css.mustache
   - node_modules
