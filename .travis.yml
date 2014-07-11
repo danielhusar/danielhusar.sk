@@ -2,6 +2,6 @@ language: node_js
 node_js:
   - '0.10'
 before_install:
-  - gem install travis
+  - gem install jekyll
   - npm install -g gulp
   - gulp
