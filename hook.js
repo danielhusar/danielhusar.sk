@@ -10,7 +10,6 @@ app.post('/generate', function(req, res){
   require('child_process').exec('gulp', function(err, stdout, stderr) {
     res.json({done: true});
   });
-
 });
 
 app.listen(3001);
