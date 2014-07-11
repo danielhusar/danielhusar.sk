@@ -5,6 +5,9 @@
     "frontend",
     "development"
   ],
+  "scripts": {
+    "test": "mocha -R spec _test/test.js"
+  },
   "version": "0.1.0",
   "author": "Daniel Husar",
   "devDependencies": {
