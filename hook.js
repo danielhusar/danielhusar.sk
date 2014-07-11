@@ -3,7 +3,7 @@
 var express = require('express');
 var app = express();
 
-app.get('/generate', function(req, res){
+app.post('/generate', function(req, res){
   console.dir(req.body);
   res.json({done: true});
 });
