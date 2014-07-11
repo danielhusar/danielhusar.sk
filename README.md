@@ -1,4 +1,4 @@
-danielhusar.sk
+danielhusar.sk [![Build Status](http://img.shields.io/travis/danielhusar/danielhusar.sk.svg?style=flat)](http://travis-ci.org/danielhusar/danielhusar.sk)
 ==============
 
 ###Its a jekyll app
