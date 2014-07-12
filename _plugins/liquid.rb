@@ -4,7 +4,7 @@ module Jekyll
 
   module Slug
     def slug(input)
-      '#{input.to_slug}'
+      input.to_slug
     end
   end
 
