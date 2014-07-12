@@ -21,7 +21,7 @@ require('./_gulp/img.js')(gulp);
 
 //default task
 gulp.task('default', ['jekyll'], function(){
-  gulp.start('sass', 'scripts');
+  return gulp.start('sass', 'scripts');
 });
 
 //run jekyll
