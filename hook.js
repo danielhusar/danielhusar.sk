@@ -2,6 +2,7 @@
 
 var express = require('express');
 var xhub = require('express-x-hub');
+var exec = require('exec-chainable');
 var secret = require('./hook.json').secret;
 
 var app = express();
@@ -11,9 +12,11 @@ app.get('/', function(req, res){
   res.json({running: true});
 });
 
-app.post('/generate', function(req, res){
+app.post('/generate', function(req, res) {
   if (req.isXHub) {
-    require('child_process').exec('gulp', function(err, stdout, stderr) {
+    exec('git pull').then(function () {
+      return exec('gulp');
+    }).done( function () {
       res.json({error: false});
     });
   } else {
