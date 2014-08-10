@@ -24,4 +24,12 @@ app.post('/generate', function(req, res) {
   }
 });
 
+app.get('/generate', function(req, res) {
+  exec('git pull').then(function () {
+    return exec('gulp');
+  }).done( function () {
+    res.json({error: false});
+  });
+});
+
 app.listen(3001);
