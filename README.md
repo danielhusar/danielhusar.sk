@@ -7,24 +7,36 @@ Rename hook.sample.json to hook.json and put your git web hook secret key there.
 
 Install all dependencies
 
-	npm install
+```sh
+npm install
+```
 
 Install gulp
 
-	npm install -g gulp
+```sh
+npm install -g gulp
+```
 
 Install phantom.js
 
-	brew install phantomjs
+```sh
+brew install phantomjs
+```
 
 Install jekyll
 
-	gem install jekyll
+```sh
+gem install jekyll
+```
 
 Generate full site:
 
-	gulp
+```sh
+gulp
+```
 
 Run tests
 
-	npm test
+```sh
+npm test
+```
