@@ -6,7 +6,7 @@ var rename = require('gulp-rename');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 
-var insert = function (obj, index, item) {
+function insert (obj, index, item) {
   obj.splice(index, 0, item);
 };
 
