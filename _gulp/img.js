@@ -3,7 +3,7 @@
 var spritesmith = require('gulp.spritesmith');
 var imagemin = require('gulp-imagemin');
 
-module.exports = function(gulp){
+module.exports = function (gulp) {
 
   //sprites
   gulp.task('sprite', function () {
