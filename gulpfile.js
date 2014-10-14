@@ -20,13 +20,13 @@ require('./_gulp/css.js')(gulp);
 require('./_gulp/img.js')(gulp);
 
 //default task
-gulp.task('default', ['jekyll'], function(){
+gulp.task('default', ['jekyll'], function () {
   return gulp.start('sass', 'scripts');
 });
 
 //run jekyll
-gulp.task('jekyll', function(cb){
-  require('child_process').exec('jekyll build', function(err, stdout, stderr) {
+gulp.task('jekyll', function (cb) {
+  require('child_process').exec('jekyll build', function (err, stdout, stderr) {
     console.log(stdout);
     cb();
   });
