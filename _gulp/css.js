@@ -5,7 +5,7 @@ var sass = require('gulp-sass');
 var cssmin = require('gulp-cssmin');
 var prefix = require('gulp-autoprefixer');
 
-module.exports = function(gulp){
+module.exports = function (gulp) {
 
   //run sass
   gulp.task('sass', function () {
