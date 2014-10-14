@@ -8,7 +8,7 @@ var secret = require('./hook.json').secret;
 var app = express();
 app.use(xhub({ algorithm: 'sha1', secret: secret }));
 
-var generate = function (req, res) {
+function generate (req, res) {
   if (req.isXHub) {
     exec('git pull').then(function () {
       return exec('gulp');
@@ -20,7 +20,7 @@ var generate = function (req, res) {
   }
 };
 
-app.get('/', function (req, res){
+app.get('/', function (req, res) {
   res.json({running: true});
 });
 app.get('/generate', generate);
