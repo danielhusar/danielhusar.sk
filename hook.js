@@ -23,8 +23,7 @@ function generate (req, res) {
 app.get('/', function (req, res) {
   res.json({running: true});
 });
-app.get('/generate', generate);
-app.post('/generate', generate);
 
+app.post('/generate', generate);
 
 app.listen(3001);
