@@ -25,5 +25,4 @@ app.get('/', function (req, res) {
 });
 
 app.post('/generate', generate);
-
 app.listen(3001);
