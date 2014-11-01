@@ -6,3 +6,5 @@ before_install:
   - npm install -g gulp
 before_script:
   - gulp
+notifications:
+  email: false
