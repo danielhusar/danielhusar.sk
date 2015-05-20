@@ -5,8 +5,8 @@
 <body>
   <h1>{{ title }}</h1>
 
-  {% for as in pagination.files %}
-    {{as.excerpt | safe }}
+  {% for file in pagination.files %}
+    {{file.excerpt | safe }}
   {% endfor %}
 
 </body>
