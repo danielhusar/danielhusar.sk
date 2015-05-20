@@ -1,10 +1,16 @@
 'use strict';
 
 var metalsmith   = require('metalsmith');
+
 var drafts       = require('metalsmith-drafts');
 var markdown     = require('metalsmith-markdown');
 var permalinks   = require('metalsmith-permalinks');
 var templates    = require('metalsmith-templates');
+var excerpts     = require('metalsmith-excerpts');
+var collections  = require('metalsmith-collections');
+var feed         = require('metalsmith-feed');
+var pagination   = require('metalsmith-pagination')
+
 var assets       = require('metalsmith-assets');
 var sass         = require('metalsmith-sass');
 var autoprefixer = require('metalsmith-autoprefixer');
@@ -14,8 +20,16 @@ var imagemin     = require('metalsmith-imagemin');
 
 function build (cb) {
   metalsmith(__dirname)
+    // core
     .source('posts')
     .destination('_build')
+    .metadata({
+      site: {
+        title: 'Geocities',
+        url: 'http://example.com',
+        author: 'Philodemus'
+      }
+    })
 
     // html
     .use(drafts())
@@ -25,6 +39,23 @@ function build (cb) {
       engine: 'swig',
       directory: 'layouts'
     }))
+    .use(excerpts())
+
+    //pagination
+    .use(collections())
+    .use(feed({collection: 'articles'}))
+    .use(pagination({
+      'collections.articles': {
+        perPage: 2,
+        template: 'post.html',
+        first: 'index.html',
+        path: 'archiv/:num/index.html',
+        pageMetadata: {
+          title: 'Archive'
+        }
+      }
+    }))
+
 
     // assets
     .use(assets({
