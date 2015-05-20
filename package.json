@@ -1,32 +1,21 @@
 {
-  "name": "danielhusar.sk",
-  "description": "Daniel Husar",
-  "keywords": [
-    "frontend",
-    "development"
-  ],
-  "scripts": {
-    "test": "mocha -R spec _test/test.js"
+  "name": "jekyll-example",
+  "dependencies": {
+    "mocha": "*",
+    "autoprefixer": "*",
+    "handlebars": "^2.0.0-alpha.2",
+    "metalsmith": "^1.0.0",
+    "metalsmith-assets": "^0.1.0",
+    "metalsmith-autoprefixer": "^1.0.0",
+    "metalsmith-drafts": "0.0.1",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-permalinks": "^0.1.0",
+    "metalsmith-sass": "^0.7.0",
+    "metalsmith-templates": "^0.6.1",
+    "metalsmith-uglify": "^1.0.1"
   },
-  "version": "0.1.0",
-  "author": "Daniel Husar",
-  "devDependencies": {
-    "gulp": "^3.8.8",
-    "gulp-rename": "^1.2.0",
-    "gulp-concat": "^2.2.0",
-    "gulp-jshint": "^1.5.5",
-    "gulp-uglify": "^1.0.1",
-    "gulp-sass": "^1.1.0",
-    "gulp-cssmin": "^0.1.6",
-    "gulp-imagemin": "^1.0.1",
-    "gulp-autoprefixer": "^1.0.1",
-    "gulp.spritesmith": "^1.4.0",
-    "jshint-stylish": "^1.0.0",
-    "fs-extra": "^0.12.0",
-    "mocha": "^1.21.5",
-    "express": "^4.5.1",
-    "serve-index": "^1.0.2",
-    "express-x-hub": "^1.0.1",
-    "exec-chainable": "^0.0.3"
+  "scripts": {
+    "build": "node build",
+    "test": "mocha"
   }
 }

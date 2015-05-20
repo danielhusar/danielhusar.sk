@@ -1,15 +1,13 @@
 {
-  "undef": true,
-  "unused": false,
-  "sub": true,
-  "eqeqeq": true,
-  "node": true,
-  "curly": true,
-  "freeze": true,
-  "immed": true,
-  "noempty": true,
-  "nonbsp": true,
-  "quotmark": "single",
-  "strict": true,
-  "trailing": true
+	"node": true,
+	"esnext": true,
+	"bitwise": true,
+	"camelcase": true,
+	"curly": true,
+	"immed": true,
+	"newcap": true,
+	"noarg": true,
+	"undef": true,
+	"unused": "vars",
+	"strict": true
 }
