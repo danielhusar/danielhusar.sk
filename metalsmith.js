@@ -9,6 +9,7 @@ var assets       = require('metalsmith-assets');
 var sass         = require('metalsmith-sass');
 var autoprefixer = require('metalsmith-autoprefixer');
 var uglify       = require('metalsmith-uglify');
+var imagemin     = require('metalsmith-imagemin');
 
 
 function build (cb) {
@@ -27,26 +28,23 @@ function build (cb) {
 
     // assets
     .use(assets({
-      source: './scss/',
-      destination: './css/'
-    }))
-    .use(assets({
-      source: './js',
-      destination: './js/'
+      source: './assets/',
+      destination: './'
     }))
 
     // css
     .use(sass({
-      includePaths: ['./scss']
+      includePaths: ['./assets/scss']
     }))
     .use(autoprefixer())
 
     // js
     .use(uglify())
 
-    .build(function (err) {
-      cb(err);
-    });
+    // images
+    .use(imagemin())
+
+    .build(cb);
 }
 
 module.exports = build;
