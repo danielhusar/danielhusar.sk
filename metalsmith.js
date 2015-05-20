@@ -35,25 +35,27 @@ function build (cb) {
     .use(drafts())
     .use(markdown())
     .use(permalinks(':title'))
-    .use(templates({
-      engine: 'swig',
-      directory: 'layouts'
-    }))
     .use(excerpts())
 
-    //pagination
+    // pagination
     .use(collections())
     .use(feed({collection: 'articles'}))
     .use(pagination({
       'collections.articles': {
         perPage: 2,
-        template: 'post.html',
+        template: 'loop.html',
         first: 'index.html',
         path: 'archiv/:num/index.html',
         pageMetadata: {
           title: 'Archive'
         }
       }
+    }))
+
+    // templates
+    .use(templates({
+      engine: 'swig',
+      directory: 'layouts'
     }))
 
 
