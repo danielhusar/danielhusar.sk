@@ -1,8 +1,7 @@
 {
-  "name": "jekyll-example",
+  "name": "danielhusar.sk",
+  "repository": "danielhusar/danielhusar.sk",
   "dependencies": {
-    "autoprefixer": "*",
-    "handlebars": "^2.0.0-alpha.2",
     "metalsmith": "^1.0.0",
     "metalsmith-assets": "^0.1.0",
     "metalsmith-autoprefixer": "^1.0.0",
@@ -22,6 +21,6 @@
   },
   "scripts": {
     "build": "node build",
-    "test": "mocha"
+    "test": "node node_modules/mocha/bin/mocha"
   }
 }
