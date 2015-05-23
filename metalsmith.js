@@ -9,7 +9,7 @@ var templates    = require('metalsmith-templates');
 var excerpts     = require('metalsmith-excerpts');
 var collections  = require('metalsmith-collections');
 var feed         = require('metalsmith-feed');
-var pagination   = require('metalsmith-pagination')
+var pagination   = require('metalsmith-pagination');
 
 var assets       = require('metalsmith-assets');
 var sass         = require('metalsmith-sass');
@@ -25,9 +25,9 @@ function build (cb) {
     .destination('_build')
     .metadata({
       site: {
-        title: 'Geocities',
-        url: 'http://example.com',
-        author: 'Philodemus'
+        title: 'Daniel Husar Blog',
+        url: 'http://danielhusar.sk',
+        author: 'Daniel Husar'
       }
     })
 
@@ -67,7 +67,7 @@ function build (cb) {
 
     // css
     .use(sass({
-      includePaths: ['./assets/scss']
+      includePaths: ['./assets/css']
     }))
     .use(autoprefixer())
 
