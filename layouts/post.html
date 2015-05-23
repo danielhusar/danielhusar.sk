@@ -1,10 +1,8 @@
-<html>
-<head>
-  <title>My Blog</title>
-</head>
-<body>
-  <h1>{{ title }}</h1>
+{% extends '_layout.html' %}
+
+{% block content %}
+
   <time>{{ date | date('d. m. Y') }}</time>
   {{ contents | safe }}
-</body>
-</html>
+
+{% endblock %}

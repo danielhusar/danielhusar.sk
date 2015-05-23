@@ -1,13 +1,9 @@
-<html>
-<head>
-  <title>My Blog</title>
-</head>
-<body>
-  <h1>{{ title }}</h1>
+{% extends '_layout.html' %}
+
+{% block content %}
 
   {% for file in pagination.files %}
     {{file.excerpt | safe }}
   {% endfor %}
 
-</body>
-</html>
+{% endblock %}
