@@ -1,21 +1,21 @@
 'use strict';
 
-var metalsmith   = require('metalsmith');
+const metalsmith   = require('metalsmith');
 
-var drafts       = require('metalsmith-drafts');
-var markdown     = require('metalsmith-markdown');
-var permalinks   = require('metalsmith-permalinks');
-var templates    = require('metalsmith-templates');
-var excerpts     = require('metalsmith-excerpts');
-var collections  = require('metalsmith-collections');
-var feed         = require('metalsmith-feed');
-var pagination   = require('metalsmith-pagination');
+const drafts       = require('metalsmith-drafts');
+const markdown     = require('metalsmith-markdown');
+const permalinks   = require('metalsmith-permalinks');
+const templates    = require('metalsmith-templates');
+const excerpts     = require('metalsmith-excerpts');
+const collections  = require('metalsmith-collections');
+const feed         = require('metalsmith-feed');
+const pagination   = require('metalsmith-pagination');
 
-var assets       = require('metalsmith-assets');
-var sass         = require('metalsmith-sass');
-var autoprefixer = require('metalsmith-autoprefixer');
-var uglify       = require('metalsmith-uglify');
-var imagemin     = require('metalsmith-imagemin');
+const assets       = require('metalsmith-assets');
+const sass         = require('metalsmith-sass');
+const autoprefixer = require('metalsmith-autoprefixer');
+const uglify       = require('metalsmith-uglify');
+//var imagemin     = require('metalsmith-imagemin');
 
 
 function build (cb) {
@@ -26,7 +26,7 @@ function build (cb) {
     .metadata({
       site: {
         title: 'Daniel Husar Blog',
-        url: 'http://danielhusar.sk',
+        url: 'https://www.danielhusar.sk',
         author: 'Daniel Husar'
       }
     })
@@ -42,12 +42,12 @@ function build (cb) {
     .use(feed({collection: 'articles'}))
     .use(pagination({
       'collections.articles': {
-        perPage: 2,
+        perPage: 4,
         template: 'loop.html',
         first: 'index.html',
         path: 'archiv/:num/index.html',
         pageMetadata: {
-          title: 'Archive'
+          title: 'Daniel Husar Blog'
         }
       }
     }))
@@ -75,7 +75,7 @@ function build (cb) {
     .use(uglify())
 
     // images
-    .use(imagemin())
+    //.use(imagemin())
 
     .build(cb);
 }
