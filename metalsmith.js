@@ -18,8 +18,8 @@ const uglify       = require('metalsmith-uglify');
 //var imagemin     = require('metalsmith-imagemin');
 
 
-function build (cb) {
-  metalsmith(__dirname)
+function config() {
+  return metalsmith(__dirname)
     // core
     .source('posts')
     .destination('_build')
@@ -43,21 +43,20 @@ function build (cb) {
     .use(pagination({
       'collections.articles': {
         perPage: 4,
-        template: 'loop.html',
+        template: 'index.html',
         first: 'index.html',
-        path: 'archiv/:num/index.html',
+        path: ':num/index.html',
         pageMetadata: {
           title: 'Daniel Husar Blog'
         }
       }
     }))
 
-    // templates
+    templates
     .use(templates({
       engine: 'swig',
       directory: 'layouts'
     }))
-
 
     // assets
     .use(assets({
@@ -72,12 +71,7 @@ function build (cb) {
     .use(autoprefixer())
 
     // js
-    .use(uglify())
-
-    // images
-    //.use(imagemin())
-
-    .build(cb);
+    .use(uglify());
 }
 
-module.exports = build;
+module.exports = config;
