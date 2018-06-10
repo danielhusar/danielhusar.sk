@@ -1,9 +1,0 @@
-{% extends '_layout.html' %}
-
-{% block content %}
-
-  {% for file in pagination.files %}
-    {{file.excerpt | safe }}
-  {% endfor %}
-
-{% endblock %}
