@@ -1,0 +1,6 @@
+{
+  "files.exclude": {
+    "public": true,
+    ".cache": true
+  }
+}
