@@ -9,7 +9,8 @@
     "start": "gatsby develop",
     "test": "npm run type-check",
     "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch"
+    "type-check:watch": "npm run type-check -- --watch",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "repository": {
     "type": "git",
@@ -42,6 +43,7 @@
     "gatsby-plugin-typescript": "^2.0.0",
     "gatsby-source-filesystem": "^2.0.1",
     "gatsby-transformer-sharp": "^2.1.1",
+    "gh-pages": "^2.0.0",
     "husky": "1.0.0-rc.13",
     "lint-staged": "^7.3.0",
     "prettier": "^1.14.2",
