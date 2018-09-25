@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
 
 html {
   font-family: sans-serif;
@@ -18,7 +18,7 @@ html *:after{
 
 body {
   background: white;
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 16px;
   line-height: 1.6;
   font-weight: 300;
@@ -33,6 +33,7 @@ body {
 }
 
 img,
+picture,
 svg,
 video {
   max-width: 100%;
@@ -40,10 +41,11 @@ video {
 
 a {
   color: inherit;
+  text-decoration: none;
+}
 
-  &:hover {
-    text-decoration: none;
-  }
+a:hover {
+  text-decoration: underline;
 }
 
 ::selection {
