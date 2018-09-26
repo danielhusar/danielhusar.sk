@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { Col, Row } from 'react-styled-flexboxgrid';
 import { SocialIcon } from 'react-social-icons';
 import Layout from '../components/layout';
+import Spacer from '../components/spacer';
 import { File } from '../types/graphql';
 
 interface Props {
@@ -73,8 +74,7 @@ export default ({ data }: Props) => (
         <About>
           <SubHeadline>Hi!</SubHeadline>
           My name is Daniel and I’m product engineer based in San Francisco.
-          <br />
-          <br />
+          <Spacer size={3} />
           Right now I’m working on{' '}
           {data.intercom.childImageSharp && data.intercom.childImageSharp.fixed ? (
             <IntercomLogo>
@@ -83,11 +83,9 @@ export default ({ data }: Props) => (
           ) : null}
           <a href="https://www.intercom.com">Intercom</a> <a href="https://www.intercom.com/messenger">Messenger</a> to make internet business
           personal.
-          <br />
-          <br />
+          <Spacer size={3} />
           You learn more about me here:
-          <br />
-          <br />
+          <Spacer size={3} />
           <SocialIcon url="http://twitter.com/DanoHusar" style={iconStyle} />
           <SocialIcon url="https://github.com/danielhusar" style={iconStyle} />
           <SocialIcon url="https://www.linkedin.com/in/daniel-husar-60783958/" style={iconStyle} />
@@ -96,6 +94,7 @@ export default ({ data }: Props) => (
         </About>
       </Col>
     </Row>
+    <Spacer size={7} />
   </Layout>
 );
 
