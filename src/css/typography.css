@@ -52,3 +52,12 @@ a:hover {
   background: #0076CE;
   color: white;
 }
+
+.social-icon {
+  opacity: .7;
+  transition: opacity .3s;
+}
+
+.social-icon:hover {
+  opacity: 1;
+}

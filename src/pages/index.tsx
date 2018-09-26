@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-import { Flex, Box } from 'reflexbox';
+import { Col, Row } from 'react-styled-flexboxgrid';
 import { SocialIcon } from 'react-social-icons';
 import Layout from '../components/layout';
 import { File } from '../types/graphql';
@@ -27,7 +27,7 @@ const Headline = styled.h1`
 
 const SubHeadline = styled.h2`
   font-size: 22px;
-  margin: -5px 0 20px;
+  margin: -10px 0 20px;
 `;
 
 const Portrait = styled.div`
@@ -44,8 +44,12 @@ const IntercomLogo = styled.div`
 
 const About = styled.div`
   font-size: 20px;
-  margin-bottom: 20px;
   max-width: 500px;
+  padding-left: 30px;
+
+  @media (max-width: 45.99em) {
+    padding: 40px 0 0;
+  }
 `;
 
 const iconStyle = {
@@ -57,15 +61,15 @@ const iconStyle = {
 export default ({ data }: Props) => (
   <Layout>
     <Headline>Daniel Husar</Headline>
-    <Flex wrap={true}>
-      <Box w={[1, 1 / 3]}>
+    <Row>
+      <Col xs={12} sm={5} md={5} lg={5}>
         {data.portrait.childImageSharp && data.portrait.childImageSharp.fluid ? (
           <Portrait>
             <Img fluid={data.portrait.childImageSharp.fluid} alt="My portrait" fadeIn={false} />
           </Portrait>
         ) : null}
-      </Box>
-      <Box w={[1, 2 / 3]} pl={[0, 4]} pt={[3, 0]}>
+      </Col>
+      <Col xs={12} sm={7} md={7} lg={7}>
         <About>
           <SubHeadline>Hi!</SubHeadline>
           My name is Daniel and I’m product engineer based in San Francisco.
@@ -82,14 +86,16 @@ export default ({ data }: Props) => (
           <br />
           <br />
           You learn more about me here:
+          <br />
+          <br />
+          <SocialIcon url="http://twitter.com/DanoHusar" style={iconStyle} />
+          <SocialIcon url="https://github.com/danielhusar" style={iconStyle} />
+          <SocialIcon url="https://www.linkedin.com/in/daniel-husar-60783958/" style={iconStyle} />
+          <SocialIcon url="https://www.instagram.com/efrafa/" style={iconStyle} />
+          <SocialIcon url="mailto:dano.husar@gmail.com" style={iconStyle} />
         </About>
-        <SocialIcon url="http://twitter.com/DanoHusar" style={iconStyle} />
-        <SocialIcon url="https://github.com/danielhusar" style={iconStyle} />
-        <SocialIcon url="https://www.linkedin.com/in/daniel-husar-60783958/" style={iconStyle} />
-        <SocialIcon url="https://www.instagram.com/efrafa/" style={iconStyle} />
-        <SocialIcon url="mailto:dano.husar@gmail.com" style={iconStyle} />
-      </Box>
-    </Flex>
+      </Col>
+    </Row>
   </Layout>
 );
 

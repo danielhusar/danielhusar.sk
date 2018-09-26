@@ -6590,6 +6590,10 @@ lodash.isequal@^4.0.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
 
+lodash.isinteger@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/lodash.isinteger/-/lodash.isinteger-4.0.4.tgz#619c0af3d03f8b04c31f5882840b77b11cd68343"
+
 lodash.kebabcase@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.kebabcase/-/lodash.kebabcase-4.1.1.tgz#8489b1cb0d29ff88195cceca448ff6d6cc295c36"
@@ -8295,7 +8299,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@^15.5.4, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -8541,6 +8545,12 @@ react-social-icons@^3.0.0:
     babel-runtime "^6.11.6"
     classnames "^2.2.5"
 
+react-styled-flexboxgrid@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/react-styled-flexboxgrid/-/react-styled-flexboxgrid-2.6.0.tgz#a4e498da928f100c65a2b1f9839cc2959b0f2400"
+  dependencies:
+    lodash.isinteger "^4.0.4"
+
 react-testing-library@^4.1.7:
   version "4.1.9"
   resolved "https://registry.yarnpkg.com/react-testing-library/-/react-testing-library-4.1.9.tgz#a96fe41fd2a6205d6a2029604f46df18b9cda2d2"
@@ -8678,12 +8688,6 @@ redux@^3.6.0:
     lodash-es "^4.2.1"
     loose-envify "^1.1.0"
     symbol-observable "^1.0.3"
-
-reflexbox@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/reflexbox/-/reflexbox-3.0.1.tgz#8c4876520c508d2ae743c71d4f9fb92d6ad38993"
-  dependencies:
-    prop-types "^15.5.10"
 
 regenerate-unicode-properties@^7.0.0:
   version "7.0.0"

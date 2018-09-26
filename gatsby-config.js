@@ -13,8 +13,8 @@ module.exports = {
         name: 'Daniel Husar',
         short_name: 'Daniel Husar',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#209cee',
+        theme_color: '#209cee',
         display: 'minimal-ui',
         icon: 'src/images/icon.png', // This path is relative to the root of the site.
       },
@@ -29,7 +29,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
+        trackingId: 'UA-50596448-1',
         head: false,
         anonymize: true,
         respectDNT: true,
@@ -41,6 +41,6 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-typescript',
-    // 'gatsby-plugin-offline',
+    'gatsby-plugin-offline',
   ],
 };
