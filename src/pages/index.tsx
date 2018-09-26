@@ -84,7 +84,7 @@ export default ({ data }: Props) => (
           <a href="https://www.intercom.com">Intercom</a> <a href="https://www.intercom.com/messenger">Messenger</a> to make internet business
           personal.
           <Spacer size={3} />
-          You learn more about me here:
+          You can learn more about me here:
           <Spacer size={3} />
           <SocialIcon url="http://twitter.com/DanoHusar" style={iconStyle} />
           <SocialIcon url="https://github.com/danielhusar" style={iconStyle} />
