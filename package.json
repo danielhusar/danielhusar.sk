@@ -7,7 +7,7 @@
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
-    "test": "npm run type-check",
+    "test": "yarn type-check && yarn build",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
@@ -36,7 +36,6 @@
     "gatsby-image": "^2.0.8",
     "gatsby-plugin-favicon": "^3.1.4",
     "gatsby-plugin-google-analytics": "^2.0.6",
-    "gatsby-plugin-manifest": "^2.0.2",
     "gatsby-plugin-offline": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-sharp": "^2.0.5",
