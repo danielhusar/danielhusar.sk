@@ -8,19 +8,21 @@ interface Props {
   children: ReactNode;
 }
 
-const Layout = ({ children }: Props) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-            description
-            keywords
-          }
-        }
+const query = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        keywords
       }
-    `}
+    }
+  }
+`;
+
+export default ({ children }: Props) => (
+  <StaticQuery
+    query={query}
     render={data => {
       const { title, description, keywords } = data.site.siteMetadata;
       return (
@@ -36,5 +38,3 @@ const Layout = ({ children }: Props) => (
     }}
   />
 );
-
-export default Layout;

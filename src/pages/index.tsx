@@ -100,14 +100,14 @@ export default ({ data }: Props) => (
 
 export const query = graphql`
   query {
-    portrait: file(relativePath: { eq: "portrait.jpeg" }) {
+    portrait: file(relativePath: { eq: "images/portrait.jpeg" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    intercom: file(relativePath: { eq: "intercom.png" }) {
+    intercom: file(relativePath: { eq: "images/intercom.png" }) {
       childImageSharp {
         fixed(width: 16) {
           ...GatsbyImageSharpFixed

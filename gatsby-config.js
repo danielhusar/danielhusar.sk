@@ -1,5 +1,3 @@
-const path = require('path');
-
 module.exports = {
   siteMetadata: {
     title: 'Daniel Husar',
@@ -7,6 +5,13 @@ module.exports = {
     keywords: 'blog,javascript,react',
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: `${__dirname}/src/`,
+      },
+    },
     {
       resolve: 'gatsby-plugin-favicon',
       options: {
@@ -37,14 +42,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: path.join(__dirname, 'src', 'images'),
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-50596448-1',
         head: false,
@@ -53,6 +51,7 @@ module.exports = {
         cookieDomain: 'danielhusar.sk',
       },
     },
+    'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sharp',
