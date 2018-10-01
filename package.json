@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "start": "gatsby develop",
+    "start": "gatsby develop --port 4000",
     "test": "yarn type-check && yarn build",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
@@ -23,17 +23,21 @@
   },
   "lint-staged": {
     "linters": {
-      "*.{js,json,md}": [
+      "*.{js,json,md,mdx,ts,tsx}": [
         "prettier --write",
         "git add"
       ]
     }
   },
   "dependencies": {
+    "@mdx-js/mdx": "^0.15.4",
+    "@mdx-js/tag": "^0.15.0",
     "@types/react-helmet": "^5.0.7",
     "babel-plugin-styled-components": "^1.7.1",
     "gatsby": "^2.0.0",
     "gatsby-image": "^2.0.8",
+    "gatsby-mdx": "^0.1.4",
+    "gatsby-plugin-catch-links": "^2.0.3",
     "gatsby-plugin-favicon": "^3.1.4",
     "gatsby-plugin-google-analytics": "^2.0.6",
     "gatsby-plugin-offline": "^2.0.5",
@@ -41,6 +45,8 @@
     "gatsby-plugin-sharp": "^2.0.5",
     "gatsby-plugin-styled-components": "^3.0.0",
     "gatsby-plugin-typescript": "^2.0.0",
+    "gatsby-remark-images": "^2.0.3",
+    "gatsby-remark-prismjs": "^3.0.1",
     "gatsby-source-filesystem": "^2.0.1",
     "gatsby-transformer-remark": "^2.1.4",
     "gatsby-transformer-sharp": "^2.1.1",
@@ -48,6 +54,7 @@
     "husky": "1.0.0-rc.13",
     "lint-staged": "^7.3.0",
     "prettier": "^1.14.2",
+    "prismjs": "^1.15.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
