@@ -73,17 +73,18 @@ const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
   }, []);
 
   pages.forEach((page, index) => {
+    ++index;
     const previousPagePath = `${pathPrefix}/${index + 1}`;
-    const nextPagePath = index === 1 ? pathPrefix : `${pathPrefix}/${index - 1}`;
+    const nextPagePath = index === 2 ? pathPrefix : `${pathPrefix}/${index - 1}`;
 
     createPage({
-      path: index > 0 ? `${pathPrefix}/${index}` : `${pathPrefix}`,
+      path: index > 1 ? `${pathPrefix}/${index}` : `${pathPrefix}`,
       component: path.resolve(`src/templates/blog.tsx`),
       context: {
         pagination: {
           page,
-          nextPagePath: index === 0 ? null : nextPagePath,
-          previousPagePath: index === pages.length - 1 ? null : previousPagePath,
+          nextPagePath: index === 1 ? null : nextPagePath,
+          previousPagePath: index === pages.length ? null : previousPagePath,
           pageCount: pages.length,
           pathPrefix,
         },

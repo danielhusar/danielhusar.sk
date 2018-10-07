@@ -14,7 +14,7 @@ export default ({ data: { allMdx }, pageContext: { pagination, activeCategory } 
     <>
       <Nav active={activeCategory ? activeCategory : 'home'} />
       <Layout>
-        <Spacer size={5} />
+        <Spacer size={8} />
         {posts.map(({ node: post }) => (
           <div key={post.id}>
             {post.frontmatter.banner && (
