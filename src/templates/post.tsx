@@ -2,50 +2,33 @@ import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
-
+import Spacer from '../components/spacer';
 import Layout from '../components/layout';
-import Link from '../components/link';
+import Nav from '../components/nav';
+import { mdx } from '../types';
 
-const CategoryList = ({ list = [] }) => (
-  <Fragment>
-    Categories:
-    <ul>
-      {list.map(category => (
-        <li key={category}>
-          <Link to={`/blog/categories/${category}`}>{category}</Link>
-        </li>
-      ))}
-    </ul>
-  </Fragment>
-);
+interface Props {
+  data: {
+    mdx: mdx;
+  };
+}
 
-export default function Post({ data: { mdx }, pageContext: { next, prev } }) {
+export default function Post({ data: { mdx } }: Props) {
+  const banner =
+    mdx.frontmatter.banner && mdx.frontmatter.banner.childImageSharp && mdx.frontmatter.banner.childImageSharp.sizes
+      ? mdx.frontmatter.banner.childImageSharp.sizes
+      : null;
   return (
-    <Layout frontmatter={mdx.frontmatter}>
-      <h1>{mdx.frontmatter.title}</h1>
-      <h2>{mdx.frontmatter.date}</h2>
-
-      {mdx.frontmatter.banner && <Img sizes={mdx.frontmatter.banner.childImageSharp.sizes} />}
-
-      <MDXRenderer>{mdx.code.body}</MDXRenderer>
-
-      <div>
-        <CategoryList list={mdx.frontmatter.categories} />
-
-        <hr />
-
-        {prev && (
-          <span>
-            Previous <Link to={prev.fields.slug}>{prev.fields.title}</Link>
-          </span>
-        )}
-        {next && (
-          <span>
-            Next <Link to={next.fields.slug}>{next.fields.title}</Link>
-          </span>
-        )}
-      </div>
-    </Layout>
+    <>
+      <Nav active="post" />
+      <Layout title={mdx.frontmatter.title} image={banner ? banner.src : null}>
+        <h1>{mdx.frontmatter.title}</h1>
+        <h2>{mdx.frontmatter.date}</h2>
+        {banner ? <Img sizes={banner} /> : null}
+        <MDXRenderer>{mdx.code.body}</MDXRenderer>
+        <Spacer size={8} />
+      </Layout>
+    </>
   );
 }
 
@@ -62,8 +45,6 @@ export const pageQuery = graphql`
             }
           }
         }
-        slug
-        categories
       }
       code {
         body

@@ -33,11 +33,7 @@ const PaginationItem = styled.span`
 export default ({ nextPagePath, previousPagePath }: Props) =>
   nextPagePath || previousPagePath ? (
     <Pagination>
-      <PaginationItem position="right" active={!!nextPagePath}>
-        {nextPagePath && <Link to={nextPagePath}>Next Page</Link>}
-      </PaginationItem>
-      <PaginationItem position="left" active={!!previousPagePath}>
-        {previousPagePath && <Link to={previousPagePath}>Previous Page</Link>}
-      </PaginationItem>
+      <PaginationItem position="right">{nextPagePath && <Link to={nextPagePath}>Next Page</Link>}</PaginationItem>
+      <PaginationItem position="left">{previousPagePath && <Link to={previousPagePath}>Previous Page</Link>}</PaginationItem>
     </Pagination>
   ) : null;

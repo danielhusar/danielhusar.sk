@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components';
 import { File } from '../types/graphql';
 
 interface Props {
-  active: 'home' | 'english' | 'slovak';
+  active: 'home' | 'english' | 'slovak' | 'post';
 }
 
 interface Data {

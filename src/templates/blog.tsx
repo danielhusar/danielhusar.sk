@@ -13,15 +13,15 @@ export default ({ data: { allMdx }, pageContext: { pagination, activeCategory } 
   return (
     <>
       <Nav active={activeCategory ? activeCategory : 'home'} />
-      <Layout>
+      <Layout title="Blog">
         <Spacer size={8} />
         {posts.map(({ node: post }) => (
           <div key={post.id}>
-            {post.frontmatter.banner && (
+            {post.frontmatter.banner ? (
               <Link to={post.fields.url}>
                 <Img sizes={post.frontmatter.banner.childImageSharp.sizes} />
               </Link>
-            )}
+            ) : null}
             <h2>
               <Link to={post.fields.url}>{post.frontmatter.title}</Link>
             </h2>

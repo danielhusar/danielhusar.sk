@@ -6,11 +6,7 @@ categories: ['english']
 banner: './images/san-francisco.jpg'
 ---
 
-import Link from "$components/link";
-
 The central theme of this book is GraphQL in modern applications. While GraphQL is only a specification that can be used in many programming languages, this book focuses on GraphQL in JavaScript. Facebook--the company behind the GraphQL--didn't release GraphQL's reference implementation in JavaScript, but it remains one of the more compelling languages for mordern client-server architecture. Using Facebook's specification as their blueprint, other programming languages like Python and Java followed.
-
-<Link to="https://roadtoreact.com/">Find out more about it</Link>
 
 GraphQL a query language that can be used anywhere, but it often bridges the gap between client and server applications. It isn't opionated about which network layer is used, so data can be read and written between client and server applications. It is used to complement the network stack for many libraries and frameworks in JavaScript. The client side takes advancategorye of popular solutions like React, Angular, and Vue, while the server side can use middleware libraries like Express, Koa, and Hapi in a Node.js environment. It is just a matter of sending GraphQL operations with plain HTTP across the wire.
 
