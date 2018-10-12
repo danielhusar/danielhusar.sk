@@ -41,9 +41,9 @@ export default ({ data: { allMdx }, pageContext: { pagination, activeCategory } 
                 </Link>
               ) : null}
               <h2>
-                <Link to={post.fields.url}>{post.frontmatter.title}</Link>
+                <Link to={post.fields.url}>{post.fields.title}</Link>
               </h2>
-              <small>{post.frontmatter.date}</small>
+              <small>{post.fields.date}</small>
               <p>{post.excerpt}</p>
               <Link to={post.fields.url}>Continue Reading</Link>
               <Spacer size={8} />
@@ -65,10 +65,10 @@ export const pageQuery = graphql`
           id
           fields {
             url
-          }
-          frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
+          }
+          frontmatter {
             banner {
               childImageSharp {
                 sizes(maxWidth: 920) {

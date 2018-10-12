@@ -40,7 +40,11 @@ const createCategoryPages = (createPage, edges) => {
 
 const createPosts = (createPage, edges) => {
   const postTs = path.resolve('./src/templates/post.tsx');
-  exec('yarn babel --presets @babel/preset-typescript ./src/templates/post.tsx --out-file ./src/templates/post.js', (err, stdout, stderr) => {
+  const command =
+    process.env.NODE_ENV === 'production'
+      ? 'echo 0'
+      : 'yarn babel --presets @babel/preset-typescript ./src/templates/post.tsx --out-file ./src/templates/post.js';
+  exec(command, (err, stdout, stderr) => {
     if (err) throw err;
     const postJs = path.resolve('./src/templates/post.js');
 

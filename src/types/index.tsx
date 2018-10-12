@@ -5,11 +5,13 @@ export interface allMdx {
 }
 
 export interface mdx {
-  frontmatter: {
+  fields: {
     title: string;
     slug: string;
     categories: string[];
     date: Date;
+  };
+  frontmatter: {
     banner?: {
       childImageSharp: ImageSharp;
     };
@@ -29,10 +31,10 @@ export interface node {
   excerpt: string;
   fields: {
     url: string;
-  };
-  frontmatter: {
     title: string;
     date: Date;
+  };
+  frontmatter: {
     banner?: {
       childImageSharp: ImageSharp;
     };

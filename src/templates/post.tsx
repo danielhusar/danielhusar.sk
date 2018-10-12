@@ -19,9 +19,9 @@ export default function Post({ data: { mdx } }: Props) {
   return (
     <>
       <Nav active="post" />
-      <Layout title={mdx.frontmatter.title} image={banner ? banner.src : null}>
-        <h1>{mdx.frontmatter.title}</h1>
-        <h2>{mdx.frontmatter.date}</h2>
+      <Layout title={mdx.fields.title} image={banner ? banner.src : null}>
+        <h1>{mdx.fields.title}</h1>
+        <h2>{mdx.fields.date}</h2>
         {banner ? <Img sizes={banner} /> : null}
         <MDXRenderer>{mdx.code.body}</MDXRenderer>
         <Spacer size={8} />
@@ -33,9 +33,11 @@ export default function Post({ data: { mdx } }: Props) {
 export const pageQuery = graphql`
   query($id: String!) {
     mdx(fields: { id: { eq: $id } }) {
-      frontmatter {
+      fields {
         title
         date(formatString: "MMMM DD, YYYY")
+      }
+      frontmatter {
         banner {
           childImageSharp {
             sizes(maxWidth: 920) {
