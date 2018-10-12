@@ -2,10 +2,11 @@ import React, { ReactNode } from 'react';
 import { Link, graphql, StaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import styled, { css } from 'styled-components';
+import { categories } from '../types';
 import { File } from '../types/graphql';
 
 interface Props {
-  active: 'home' | 'english' | 'slovak' | 'post';
+  active: categories;
 }
 
 interface Data {

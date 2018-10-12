@@ -1,5 +1,6 @@
 const path = require('path');
 const componentWithMDXScope = require('gatsby-mdx/component-with-mdx-scope');
+const { exec } = require('child_process');
 
 const PAGINATION_OFFSET = 2;
 
@@ -38,13 +39,19 @@ const createCategoryPages = (createPage, edges) => {
 };
 
 const createPosts = (createPage, edges) => {
-  edges.forEach(({ node }, i) => {
-    createPage({
-      path: node.fields.url,
-      component: componentWithMDXScope(path.resolve(`./src/templates/post.tsx`), node.code.scope, __dirname),
-      context: {
-        id: node.id,
-      },
+  const postTs = path.resolve('./src/templates/post.tsx');
+  exec('yarn babel --presets @babel/preset-typescript ./src/templates/post.tsx --out-file ./src/templates/post.js', (err, stdout, stderr) => {
+    if (err) throw err;
+    const postJs = path.resolve('./src/templates/post.js');
+
+    edges.forEach(({ node }, i) => {
+      createPage({
+        path: node.fields.url,
+        component: componentWithMDXScope(postJs, node.code.scope, __dirname),
+        context: {
+          id: node.id,
+        },
+      });
     });
   });
 };

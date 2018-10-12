@@ -2,10 +2,11 @@ import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
+import { oc } from 'ts-optchain';
 import Spacer from '../components/spacer';
 import Layout from '../components/layout';
 import Nav from '../components/nav';
-import { mdx } from '../types';
+import { mdx } from '../types'; // eslint-disable-line
 
 interface Props {
   data: {
@@ -14,10 +15,7 @@ interface Props {
 }
 
 export default function Post({ data: { mdx } }: Props) {
-  const banner =
-    mdx.frontmatter.banner && mdx.frontmatter.banner.childImageSharp && mdx.frontmatter.banner.childImageSharp.sizes
-      ? mdx.frontmatter.banner.childImageSharp.sizes
-      : null;
+  const banner = oc(mdx).frontmatter.banner.childImageSharp.sizes();
   return (
     <>
       <Nav active="post" />

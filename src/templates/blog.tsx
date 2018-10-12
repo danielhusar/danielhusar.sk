@@ -5,32 +5,51 @@ import Layout from '../components/layout';
 import Nav from '../components/nav';
 import Pagination from '../components/pagination';
 import Spacer from '../components/spacer';
+import { allMdx, categories, edge } from '../types';
 
-export default ({ data: { allMdx }, pageContext: { pagination, activeCategory } }) => {
+interface Props {
+  data: {
+    allMdx: allMdx;
+  };
+  pageContext: {
+    pagination: {
+      page: number[];
+      nextPagePath: string;
+      previousPagePath: string;
+    };
+    activeCategory: categories;
+  };
+}
+
+export default ({ data: { allMdx }, pageContext: { pagination, activeCategory } }: Props) => {
   const { page, nextPagePath, previousPagePath } = pagination;
-  const posts = page.map(id => allMdx.edges.find(edge => edge.node.id === id));
+  const posts: (edge | undefined)[] = page.map(id => allMdx.edges.find(edge => edge.node.id === id));
 
   return (
     <>
       <Nav active={activeCategory ? activeCategory : 'home'} />
       <Layout title="Blog">
         <Spacer size={8} />
-        {posts.map(({ node: post }) => (
-          <div key={post.id}>
-            {post.frontmatter.banner ? (
-              <Link to={post.fields.url}>
-                <Img sizes={post.frontmatter.banner.childImageSharp.sizes} />
-              </Link>
-            ) : null}
-            <h2>
-              <Link to={post.fields.url}>{post.frontmatter.title}</Link>
-            </h2>
-            <small>{post.frontmatter.date}</small>
-            <p>{post.excerpt}</p>
-            <Link to={post.fields.url}>Continue Reading</Link>
-            <Spacer size={8} />
-          </div>
-        ))}
+        {posts.map((edge: edge | undefined) => {
+          if (!edge) return;
+          const { node: post } = edge;
+          return (
+            <div key={post.id}>
+              {post.frontmatter.banner && post.frontmatter.banner.childImageSharp && post.frontmatter.banner.childImageSharp.sizes ? (
+                <Link to={post.fields.url}>
+                  <Img sizes={post.frontmatter.banner.childImageSharp.sizes} />
+                </Link>
+              ) : null}
+              <h2>
+                <Link to={post.fields.url}>{post.frontmatter.title}</Link>
+              </h2>
+              <small>{post.frontmatter.date}</small>
+              <p>{post.excerpt}</p>
+              <Link to={post.fields.url}>Continue Reading</Link>
+              <Spacer size={8} />
+            </div>
+          );
+        })}
         <Pagination nextPagePath={nextPagePath} previousPagePath={previousPagePath} />
       </Layout>
     </>

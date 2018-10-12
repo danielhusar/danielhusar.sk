@@ -4,14 +4,19 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { Col, Row } from 'react-styled-flexboxgrid';
 import { SocialIcon } from 'react-social-icons';
+import { oc } from 'ts-optchain';
 import Layout from '../components/layout';
 import Spacer from '../components/spacer';
-import { File } from '../types/graphql';
+import { ImageSharp } from '../types/graphql';
 
 interface Props {
   data: {
-    portrait: File;
-    intercom: File;
+    portrait: {
+      childImageSharp?: ImageSharp;
+    };
+    intercom: {
+      childImageSharp?: ImageSharp;
+    };
   };
 }
 
@@ -59,44 +64,48 @@ const iconStyle = {
   marginRight: '10px',
 };
 
-export default ({ data }: Props) => (
-  <Layout>
-    <Headline>Daniel Husar</Headline>
-    <Row>
-      <Col xs={12} sm={5} md={5} lg={5}>
-        {data.portrait.childImageSharp && data.portrait.childImageSharp.fluid ? (
-          <Portrait>
-            <Img fluid={data.portrait.childImageSharp.fluid} alt="My portrait" fadeIn={false} />
-          </Portrait>
-        ) : null}
-      </Col>
-      <Col xs={12} sm={7} md={7} lg={7}>
-        <About>
-          <SubHeadline>Hi!</SubHeadline>
-          My name is Daniel and I’m product engineer based in San Francisco.
-          <Spacer size={3} />
-          Right now I’m working on{' '}
-          {data.intercom.childImageSharp && data.intercom.childImageSharp.fixed ? (
-            <IntercomLogo>
-              <Img fixed={data.intercom.childImageSharp.fixed} alt="Intercom" fadeIn={false} />
-            </IntercomLogo>
+export default ({ data }: Props) => {
+  const portrait = oc(data).portrait.childImageSharp.fluid();
+  const intercomLogo = oc(data).intercom.childImageSharp.fixed();
+  return (
+    <Layout>
+      <Headline>Daniel Husar</Headline>
+      <Row>
+        <Col xs={12} sm={5} md={5} lg={5}>
+          {portrait ? (
+            <Portrait>
+              <Img fluid={portrait} alt="My portrait" fadeIn={false} />
+            </Portrait>
           ) : null}
-          <a href="https://www.intercom.com">Intercom</a> <a href="https://www.intercom.com/messenger">Messenger</a> to make internet business
-          personal.
-          <Spacer size={3} />
-          You can learn more about me here:
-          <Spacer size={3} />
-          <SocialIcon url="http://twitter.com/DanoHusar" style={iconStyle} />
-          <SocialIcon url="https://github.com/danielhusar" style={iconStyle} />
-          <SocialIcon url="https://www.linkedin.com/in/daniel-husar-60783958/" style={iconStyle} />
-          <SocialIcon url="https://www.instagram.com/efrafa/" style={iconStyle} />
-          <SocialIcon url="mailto:dano.husar@gmail.com" style={iconStyle} />
-        </About>
-      </Col>
-    </Row>
-    <Spacer size={7} />
-  </Layout>
-);
+        </Col>
+        <Col xs={12} sm={7} md={7} lg={7}>
+          <About>
+            <SubHeadline>Hi!</SubHeadline>
+            My name is Daniel and I’m product engineer based in San Francisco.
+            <Spacer size={3} />
+            Right now I’m working on{' '}
+            {intercomLogo ? (
+              <IntercomLogo>
+                <Img fixed={intercomLogo} alt="Intercom" fadeIn={false} />
+              </IntercomLogo>
+            ) : null}
+            <a href="https://www.intercom.com">Intercom</a> <a href="https://www.intercom.com/messenger">Messenger</a> to make internet business
+            personal.
+            <Spacer size={3} />
+            You can learn more about me here:
+            <Spacer size={3} />
+            <SocialIcon url="http://twitter.com/DanoHusar" style={iconStyle} />
+            <SocialIcon url="https://github.com/danielhusar" style={iconStyle} />
+            <SocialIcon url="https://www.linkedin.com/in/daniel-husar-60783958/" style={iconStyle} />
+            <SocialIcon url="https://www.instagram.com/efrafa/" style={iconStyle} />
+            <SocialIcon url="mailto:dano.husar@gmail.com" style={iconStyle} />
+          </About>
+        </Col>
+      </Row>
+      <Spacer size={7} />
+    </Layout>
+  );
+};
 
 export const query = graphql`
   query {
