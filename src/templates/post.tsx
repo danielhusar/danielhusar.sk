@@ -10,6 +10,7 @@ import Spacer from '../components/spacer';
 import Layout from '../components/layout';
 import Nav from '../components/nav';
 import Small from '../components/small';
+import { LiveEditWrap, LiveErrorWrap, LivePreviewWrap, LiveLabel } from '../components/live';
 import { mdx } from '../types'; // eslint-disable-line
 
 interface Props {
@@ -21,11 +22,17 @@ interface Props {
 const PreComponent = props =>
   props.children.props.props && props.children.props.props.className === 'language-.jsx' ? (
     <LiveProvider mountStylesheet={false} code={props.children.props.children}>
-      <code className="language-js">
+      <LiveEditWrap className="language-jsx">
+        <LiveLabel>Edit</LiveLabel>
         <LiveEditor tabIndex={-1} />
-      </code>
-      <LiveError />
-      <LivePreview />
+      </LiveEditWrap>
+      <LiveErrorWrap>
+        <LiveError />
+      </LiveErrorWrap>
+      <LivePreviewWrap>
+        <LiveLabel onWhiteBg={true}>Preview</LiveLabel>
+        <LivePreview />
+      </LivePreviewWrap>
     </LiveProvider>
   ) : (
     <PrismCode className={props.children.props.props.className}>{props.children.props.children}</PrismCode>

@@ -25,11 +25,11 @@ const foo = a => {
 ```
 
 ```.jsx
-() => (
-  <h3>
-    So functional. Much wow!
-  </h3>
-)
+class Foo extends React.Component {
+  render() {
+    return 'foo'
+  }
+}
 ```
 
 The emergence of GraphQL introduces a new era in web development. RESTful applications were the industry favorite for data transfers between client and server applications, but modern requirements have shifted. Applications have to deal with multiple clients--i.e. desktop, web, mobile, wearables--which are all interested in APIs exposed by server applications. The choice becomes one between using multiple client-specific APIs with REST, or just one API with GraphQL for all client applications, which hardly seems like a choice at all. GraphQL is more than just a unified interface, though; its ecosystem offers powerful capbilities and even more potential as its open source community grows.
