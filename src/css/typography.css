@@ -30,6 +30,7 @@ body {
   padding: 0;
   height: 100%;
   min-height: 100%;
+  font-weight: 300;
 }
 
 img,
@@ -60,4 +61,8 @@ a:hover {
 
 .social-icon:hover {
   opacity: 1;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 400;
 }

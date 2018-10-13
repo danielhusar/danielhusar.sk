@@ -1,10 +1,12 @@
 import React, { Fragment } from 'react';
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
+import { oc } from 'ts-optchain';
 import Layout from '../components/layout';
 import Nav from '../components/nav';
 import Pagination from '../components/pagination';
 import Spacer from '../components/spacer';
+import Small from '../components/small';
 import { allMdx, categories, edge } from '../types';
 
 interface Props {
@@ -33,19 +35,22 @@ export default ({ data: { allMdx }, pageContext: { pagination, activeCategory } 
         {posts.map((edge: edge | undefined) => {
           if (!edge) return;
           const { node: post } = edge;
+          const banner = oc(post).frontmatter.banner.childImageSharp.sizes();
           return (
             <div key={post.id}>
-              {post.frontmatter.banner && post.frontmatter.banner.childImageSharp && post.frontmatter.banner.childImageSharp.sizes ? (
+              {banner ? (
                 <Link to={post.fields.url}>
-                  <Img sizes={post.frontmatter.banner.childImageSharp.sizes} />
+                  <Img sizes={banner} />
                 </Link>
               ) : null}
               <h2>
                 <Link to={post.fields.url}>{post.fields.title}</Link>
               </h2>
-              <small>{post.fields.date}</small>
+              <Small>{post.fields.date}</Small>
               <p>{post.excerpt}</p>
-              <Link to={post.fields.url}>Continue Reading</Link>
+              <Link to={post.fields.url}>
+                <Small>Continue Reading</Small>
+              </Link>
               <Spacer size={8} />
             </div>
           );

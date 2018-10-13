@@ -70,14 +70,16 @@ export default ({ active }: Props) => (
           </Link>
         </NavItem>
         <NavItem active={active === 'home'}>
-          <Link to="/blog">Home</Link>
+          <Link to="/blog">Index</Link>
         </NavItem>
+        {/*
         <NavItem active={active === 'english'}>
           <Link to="/blog/categories/english">English posts</Link>
         </NavItem>
         <NavItem active={active === 'slovak'}>
           <Link to="/blog/categories/slovak">Slovak posts</Link>
         </NavItem>
+        */}
       </Nav>
     )}
   />

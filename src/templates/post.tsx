@@ -6,6 +6,7 @@ import { oc } from 'ts-optchain';
 import Spacer from '../components/spacer';
 import Layout from '../components/layout';
 import Nav from '../components/nav';
+import Small from '../components/small';
 import { mdx } from '../types'; // eslint-disable-line
 
 interface Props {
@@ -14,16 +15,17 @@ interface Props {
   };
 }
 
-export default function Post({ data: { mdx } }: Props) {
-  const banner = oc(mdx).frontmatter.banner.childImageSharp.sizes();
+export default function Post({ data: { mdx: post } }: Props) {
+  const banner = oc(post).frontmatter.banner.childImageSharp.sizes();
   return (
     <>
       <Nav active="post" />
-      <Layout title={mdx.fields.title} image={banner ? banner.src : null}>
-        <h1>{mdx.fields.title}</h1>
-        <h2>{mdx.fields.date}</h2>
+      <Layout title={post.fields.title} image={banner ? banner.src : null}>
+        <Spacer size={8} />
         {banner ? <Img sizes={banner} /> : null}
-        <MDXRenderer>{mdx.code.body}</MDXRenderer>
+        <h1>{post.fields.title}</h1>
+        <Small>{post.fields.date}</Small>
+        <MDXRenderer>{post.code.body}</MDXRenderer>
         <Spacer size={8} />
       </Layout>
     </>

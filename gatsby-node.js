@@ -1,18 +1,15 @@
 const path = require('path');
-const componentWithMDXScope = require('gatsby-mdx/component-with-mdx-scope');
 const { exec } = require('child_process');
+const componentWithMDXScope = require('gatsby-mdx/component-with-mdx-scope');
 
-const PAGINATION_OFFSET = 2;
+const PAGINATION_OFFSET = 10;
 
 const pluckCategories = edges =>
   Object.keys(
     edges.reduce((acc, value) => {
       value.node.fields.categories.forEach(category => {
-        if (!acc[category]) {
-          acc[category] = category;
-        }
+        if (!acc[category]) acc[category] = category;
       });
-
       return acc;
     }, {})
   );
@@ -20,9 +17,7 @@ const pluckCategories = edges =>
 const groupByCategory = edges =>
   edges.reduce((acc, value) => {
     value.node.fields.categories.forEach(category => {
-      if (!acc[category]) {
-        acc[category] = [];
-      }
+      if (!acc[category]) acc[category] = [];
       acc[category].push(value);
     });
     return acc;
@@ -30,16 +25,14 @@ const groupByCategory = edges =>
 
 const createCategoryPages = (createPage, edges) => {
   const categories = pluckCategories(edges);
-
   const posts = groupByCategory(edges);
-
   Object.keys(posts).forEach(category => {
     createPaginatedPages(createPage, posts[category], `/blog/categories/${category}`, { categories, activeCategory: category });
   });
 };
 
 const createPosts = (createPage, edges) => {
-  const postTs = path.resolve('./src/templates/post.tsx');
+  // During the gatsby build we cant generate any new pages otherwise build fails
   const command =
     process.env.NODE_ENV === 'production'
       ? 'echo 0'
@@ -68,13 +61,8 @@ const createBlog = (createPage, edges) => {
 const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
   const pages = edges.reduce((acc, value, index) => {
     const pageIndex = Math.floor(index / PAGINATION_OFFSET);
-
-    if (!acc[pageIndex]) {
-      acc[pageIndex] = [];
-    }
-
+    if (!acc[pageIndex]) acc[pageIndex] = [];
     acc[pageIndex].push(value.node.id);
-
     return acc;
   }, []);
 
@@ -82,7 +70,6 @@ const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
     ++index;
     const previousPagePath = `${pathPrefix}/${index + 1}`;
     const nextPagePath = index === 2 ? pathPrefix : `${pathPrefix}/${index - 1}`;
-
     createPage({
       path: index > 1 ? `${pathPrefix}/${index}` : `${pathPrefix}`,
       component: path.resolve(`src/templates/blog.tsx`),
@@ -122,12 +109,8 @@ exports.createPages = ({ actions, graphql }) =>
       }
     }
   `).then(({ data, errors }) => {
-    if (errors) {
-      return Promise.reject(errors);
-    }
-
+    if (errors) return Promise.reject(errors);
     const { edges } = data.allMdx;
-
     createBlog(actions.createPage, edges);
     createPosts(actions.createPage, edges);
     createCategoryPages(actions.createPage, edges);
@@ -146,50 +129,13 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
-
   if (node.internal.type === `Mdx`) {
     const parent = getNode(node.parent);
-
-    createNodeField({
-      name: 'id',
-      node,
-      value: node.id,
-    });
-
-    createNodeField({
-      name: 'title',
-      node,
-      value: node.frontmatter.title,
-    });
-
-    createNodeField({
-      name: 'slug',
-      node,
-      value: node.frontmatter.slug,
-    });
-
-    createNodeField({
-      name: 'date',
-      node,
-      value: node.frontmatter.date || '',
-    });
-
-    createNodeField({
-      name: 'banner',
-      node,
-      banner: node.frontmatter.banner,
-    });
-
-    createNodeField({
-      name: 'categories',
-      node,
-      value: node.frontmatter.categories || [],
-    });
-
-    createNodeField({
-      name: 'url',
-      node,
-      value: `/blog/${node.frontmatter.slug}`,
-    });
+    createNodeField({ node, name: 'id', value: node.id });
+    createNodeField({ node, name: 'title', value: node.frontmatter.title });
+    createNodeField({ node, name: 'slug', value: node.frontmatter.slug });
+    createNodeField({ node, name: 'date', value: node.frontmatter.date || '' });
+    createNodeField({ node, name: 'categories', value: node.frontmatter.categories || [] });
+    createNodeField({ node, name: 'url', value: `/blog/${node.frontmatter.slug}` });
   }
 };
