@@ -12,6 +12,13 @@ GraphQL a query language that can be used anywhere, but it often bridges the gap
 
 ```js
 import React from 'react';
+
+const foo = a => {
+  return {
+    ...a,
+    foo: 'bar',
+  };
+};
 ```
 
 The emergence of GraphQL introduces a new era in web development. RESTful applications were the industry favorite for data transfers between client and server applications, but modern requirements have shifted. Applications have to deal with multiple clients--i.e. desktop, web, mobile, wearables--which are all interested in APIs exposed by server applications. The choice becomes one between using multiple client-specific APIs with REST, or just one API with GraphQL for all client applications, which hardly seems like a choice at all. GraphQL is more than just a unified interface, though; its ecosystem offers powerful capbilities and even more potential as its open source community grows.

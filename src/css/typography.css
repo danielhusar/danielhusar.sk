@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
 
+@font-face{
+  font-family: 'Fira Code';
+  src: url('../fonts/FiraCode-Regular.woff2') format('woff2'),
+       url('../fonts//FiraCode-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -63,6 +71,12 @@ a:hover {
   opacity: 1;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
+}
+
+.gatsby-highlight code[class*="language-"],
+.gatsby-highlight pre[class*="language-"] {
+  font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  border-radius: 3px;
 }
