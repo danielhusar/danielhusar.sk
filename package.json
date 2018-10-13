@@ -59,7 +59,7 @@
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
-    "react-live": "^1.11.0",
+    "react-live": "https://github.com/FormidableLabs/react-live",
     "react-prism": "^4.3.2",
     "react-social-icons": "^3.0.0",
     "react-styled-flexboxgrid": "^2.6.0",

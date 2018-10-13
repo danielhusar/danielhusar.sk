@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import { MDXProvider } from '@mdx-js/tag';
 import PrismCode from 'react-prism';
+// @ts-ignore
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { oc } from 'ts-optchain';
 import Spacer from '../components/spacer';
@@ -19,9 +20,20 @@ interface Props {
   };
 }
 
-const PreComponent = props =>
+interface PreComponentProps {
+  children: {
+    props: {
+      children: React.ReactNode;
+      props: {
+        className: string;
+      };
+    };
+  };
+}
+
+const PreComponent = (props: PreComponentProps) =>
   props.children.props.props && props.children.props.props.className === 'language-.jsx' ? (
-    <LiveProvider mountStylesheet={false} code={props.children.props.children}>
+    <LiveProvider>
       <LiveEditWrap className="language-jsx">
         <LiveLabel>Edit</LiveLabel>
         <LiveEditor tabIndex={-1} />
