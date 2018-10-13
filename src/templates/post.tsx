@@ -2,6 +2,9 @@ import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
+import { MDXProvider } from '@mdx-js/tag';
+import PrismCode from 'react-prism';
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { oc } from 'ts-optchain';
 import Spacer from '../components/spacer';
 import Layout from '../components/layout';
@@ -15,6 +18,19 @@ interface Props {
   };
 }
 
+const PreComponent = props =>
+  props.children.props.props && props.children.props.props.className === 'language-.jsx' ? (
+    <LiveProvider mountStylesheet={false} code={props.children.props.children}>
+      <code className="language-js">
+        <LiveEditor tabIndex={-1} />
+      </code>
+      <LiveError />
+      <LivePreview />
+    </LiveProvider>
+  ) : (
+    <PrismCode className={props.children.props.props.className}>{props.children.props.children}</PrismCode>
+  );
+
 export default function Post({ data: { mdx: post } }: Props) {
   const banner = oc(post).frontmatter.banner.childImageSharp.sizes();
   return (
@@ -25,7 +41,9 @@ export default function Post({ data: { mdx: post } }: Props) {
         {banner ? <Img sizes={banner} /> : null}
         <h1>{post.fields.title}</h1>
         <Small>{post.fields.date}</Small>
-        <MDXRenderer>{post.code.body}</MDXRenderer>
+        <MDXProvider components={{ pre: PreComponent }}>
+          <MDXRenderer>{post.code.body}</MDXRenderer>
+        </MDXProvider>
         <Spacer size={8} />
       </Layout>
     </>

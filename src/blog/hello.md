@@ -8,17 +8,28 @@ banner: './images/san-francisco.jpg'
 
 The central theme of this book is GraphQL in modern applications. While GraphQL is only a specification that can be used in many programming languages, this book focuses on GraphQL in JavaScript. Facebook--the company behind the GraphQL--didn't release GraphQL's reference implementation in JavaScript, but it remains one of the more compelling languages for mordern client-server architecture. Using Facebook's specification as their blueprint, other programming languages like Python and Java followed.
 
-GraphQL a query language that can be used anywhere, but it often bridges the gap between client and server applications. It isn't opionated about which network layer is used, so data can be read and written between client and server applications. It is used to complement the network stack for many libraries and frameworks in JavaScript. The client side takes advancategorye of popular solutions like React, Angular, and Vue, while the server side can use middleware libraries like Express, Koa, and Hapi in a Node.js environment. It is just a matter of sending GraphQL operations with plain HTTP across the wire.
+GraphQL a query language that can be used anywhere, but it often bridges the gap between client and server applications. It isn't opionated about which network layer is used, so data can be read and written between client and server applications. It is used to complement the network stack for many libraries and frameworks in JavaScript. The client side takes advancategorye of popular solutions like React, Angular, and Vue, while the server side can use middleware libraries like Express, Koa, and Hapi in a Node.js environment. It is just a matter of sending GraphQL operations with plain `HTTP =>` across the wire.
 
 ```js
 import React from 'react';
-
 const foo = a => {
   return {
     ...a,
-    foo: 'bar',
+    b: 1,
   };
 };
+```
+
+```jsx
+() => <h3>So functional. Much wow!</h3>;
+```
+
+```.jsx
+() => (
+  <h3>
+    So functional. Much wow!
+  </h3>
+)
 ```
 
 The emergence of GraphQL introduces a new era in web development. RESTful applications were the industry favorite for data transfers between client and server applications, but modern requirements have shifted. Applications have to deal with multiple clients--i.e. desktop, web, mobile, wearables--which are all interested in APIs exposed by server applications. The choice becomes one between using multiple client-specific APIs with REST, or just one API with GraphQL for all client applications, which hardly seems like a choice at all. GraphQL is more than just a unified interface, though; its ecosystem offers powerful capbilities and even more potential as its open source community grows.

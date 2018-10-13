@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import Container from './container';
 import '../css/typography.css';
+import '../css/prism.css';
 
 interface Props {
   children: ReactNode;

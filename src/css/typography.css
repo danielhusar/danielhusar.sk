@@ -74,9 +74,3 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
-
-.gatsby-highlight code[class*="language-"],
-.gatsby-highlight pre[class*="language-"] {
-  font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  border-radius: 3px;
-}
