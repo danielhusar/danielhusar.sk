@@ -41,4 +41,4 @@ export interface node {
   };
 }
 
-export type categories = 'home' | 'english' | 'slovak' | 'post';
+export type categories = 'home' | 'en' | 'sk' | 'post';

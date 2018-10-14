@@ -2,7 +2,7 @@
 slug: 'graphql-book'
 date: '2018-07-18'
 title: 'The Road to GraphQL'
-categories: ['english']
+categories: ['en']
 banner: './images/san-francisco.jpg'
 ---
 

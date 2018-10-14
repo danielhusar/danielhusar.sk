@@ -4,7 +4,6 @@ import Img from 'gatsby-image';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import { MDXProvider } from '@mdx-js/tag';
 import PrismCode from 'react-prism';
-// @ts-ignore
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { oc } from 'ts-optchain';
 import Spacer from '../components/spacer';

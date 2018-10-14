@@ -1,8 +1,13 @@
+const rssPlugin = require('./plugins/rss');
+
 module.exports = {
   siteMetadata: {
     title: 'Daniel Husar',
-    description: 'Daniel Husar personal website',
+    description: 'Product engineer based in San Francisco',
     keywords: 'blog,javascript,react',
+    siteUrl: 'https://www.danielhusar.sk',
+    blogUrl: 'https://www.danielhusar.sk/blog',
+    rssUrl: 'https://www.danielhusar.sk/rss.xml',
   },
   plugins: [
     {
@@ -66,6 +71,7 @@ module.exports = {
         ],
       },
     },
+    rssPlugin,
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
