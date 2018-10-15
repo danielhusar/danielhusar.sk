@@ -1,3 +1,11 @@
+@font-face{
+  font-family: 'Fira Code';
+  src: url('../fonts/FiraCode-Regular.woff2') format('woff2'),
+       url('../fonts//FiraCode-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
 code {
   color: #ccc;
   background: #2d2d2d;

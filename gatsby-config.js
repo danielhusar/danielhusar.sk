@@ -12,6 +12,7 @@ module.exports = {
     siteUrl: 'https://www.danielhusar.sk',
     blogUrl: 'https://www.danielhusar.sk/blog',
     rssUrl: 'https://www.danielhusar.sk/rss.xml',
+    portrait: 'https://www.danielhusar.sk/portrait.jpeg',
   },
   plugins: [
     filesystemPlugin,

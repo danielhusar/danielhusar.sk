@@ -9,8 +9,10 @@ module.exports = {
             description
             siteUrl
             rssUrl
+            portrait
             site_url: siteUrl
             feed_url: rssUrl
+            image_url: portrait
           }
         }
       }
@@ -45,15 +47,6 @@ module.exports = {
                     url
                     date(formatString: "YYYY-MM-DDTHH:MM:SS")
                     categories
-                  }
-                  frontmatter {
-                    banner {
-                      childImageSharp {
-                        sizes(maxWidth: 920) {
-                          src
-                        }
-                      }
-                    }
                   }
                 }
               }

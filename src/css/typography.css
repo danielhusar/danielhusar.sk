@@ -1,20 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
 
-@font-face{
-  font-family: 'Fira Code';
-  src: url('../fonts/FiraCode-Regular.woff2') format('woff2'),
-       url('../fonts//FiraCode-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-
 html {
-  font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
-  height: 100%;
-  min-height: 100%;
   -ms-overflow-x: hidden;
 }
 
