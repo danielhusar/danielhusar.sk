@@ -1,5 +1,5 @@
 module.exports = {
-  resolve: `gatsby-plugin-feed`,
+  resolve: 'gatsby-plugin-feed',
   options: {
     query: `
       {
@@ -8,11 +8,12 @@ module.exports = {
             title
             description
             siteUrl
-            rssUrl
-            portrait
             site_url: siteUrl
-            feed_url: rssUrl
-            image_url: portrait
+            feed_url
+            image_url
+            custom_namespaces {
+              media
+            }
           }
         }
       }

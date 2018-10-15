@@ -11,8 +11,12 @@ module.exports = {
     keywords: 'blog,javascript,react',
     siteUrl: 'https://www.danielhusar.sk',
     blogUrl: 'https://www.danielhusar.sk/blog',
-    rssUrl: 'https://www.danielhusar.sk/rss.xml',
-    portrait: 'https://www.danielhusar.sk/portrait.jpeg',
+
+    feed_url: 'https://www.danielhusar.sk/rss.xml',
+    image_url: 'https://www.danielhusar.sk/portrait.jpeg',
+    custom_namespaces: {
+      media: 'http://search.yahoo.com/mrss/',
+    },
   },
   plugins: [
     filesystemPlugin,
