@@ -26,11 +26,13 @@ interface Props {
 export default ({ data: { allMdx }, pageContext: { pagination, activeCategory } }: Props) => {
   const { page, nextPagePath, previousPagePath } = pagination;
   const posts: (edge | undefined)[] = page.map(id => allMdx.edges.find(edge => edge.node.id === id));
+  const latestPost = posts[0];
+  const ogImage = oc(latestPost).node.frontmatter.banner.childImageSharp.sizes();
 
   return (
     <>
       <Nav active={activeCategory ? activeCategory : 'home'} />
-      <Layout title="Blog">
+      <Layout title="Blog" image={ogImage ? ogImage.src : null}>
         <Spacer size={8} />
         {posts.map((edge: edge | undefined) => {
           if (!edge) return;

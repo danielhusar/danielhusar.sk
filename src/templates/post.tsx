@@ -22,7 +22,7 @@ interface Props {
 interface PreComponentProps {
   children: {
     props: {
-      children: React.ReactNode;
+      children: string;
       props: {
         className: string;
       };
@@ -32,7 +32,7 @@ interface PreComponentProps {
 
 const PreComponent = (props: PreComponentProps) =>
   props.children.props.props && props.children.props.props.className === 'language-.jsx' ? (
-    <LiveProvider>
+    <LiveProvider mountStylesheet={false} code={props.children.props.children}>
       <LiveEditWrap className="language-jsx">
         <LiveLabel>Edit</LiveLabel>
         <LiveEditor tabIndex={-1} />
@@ -54,7 +54,7 @@ export default function Post({ data: { mdx: post } }: Props) {
   return (
     <>
       <Nav active="post" />
-      <Layout title={post.fields.title} image={banner ? banner.src : null}>
+      <Layout title={post.fields.title} description={post.excerpt} image={banner ? banner.src : null}>
         <Spacer size={8} />
         {banner ? <Img sizes={banner} /> : null}
         <h1>{post.fields.title}</h1>
@@ -71,6 +71,7 @@ export default function Post({ data: { mdx: post } }: Props) {
 export const pageQuery = graphql`
   query($id: String!) {
     mdx(fields: { id: { eq: $id } }) {
+      excerpt(pruneLength: 300)
       fields {
         title
         date(formatString: "MMMM DD, YYYY")

@@ -5,6 +5,7 @@ export interface allMdx {
 }
 
 export interface mdx {
+  excerpt: string;
   fields: {
     title: string;
     slug: string;
@@ -16,7 +17,6 @@ export interface mdx {
       childImageSharp: ImageSharp;
     };
   };
-
   code: {
     body: string;
   };
