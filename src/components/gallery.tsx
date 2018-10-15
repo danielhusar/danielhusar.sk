@@ -6,7 +6,7 @@ export default styled.div`
   p {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -1em;
+    margin: 0 -1em !important;
   }
 
   p > .gatsby-resp-image-link,
