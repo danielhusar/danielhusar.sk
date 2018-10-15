@@ -68,7 +68,7 @@ export default ({ data }: Props) => {
   const portrait = oc(data).portrait.childImageSharp.fluid();
   const intercomLogo = oc(data).intercom.childImageSharp.fixed();
   return (
-    <Layout>
+    <Layout image={portrait ? portrait.src : null}>
       <Headline>Daniel Husar</Headline>
       <Row>
         <Col xs={12} sm={5} md={5} lg={5}>

@@ -8,7 +8,7 @@ module.exports = {
         pluginOptions: {
           maxWidth: 920,
           sizeByPixelDensity: false,
-          linkImagesToOriginal: false,
+          linkImagesToOriginal: true,
         },
       },
     ],

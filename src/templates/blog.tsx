@@ -39,7 +39,7 @@ export default ({ data: { allMdx }, pageContext: { pagination, activeCategory } 
           const { node: post } = edge;
           const banner = oc(post).frontmatter.banner.childImageSharp.sizes();
           return (
-            <div key={post.id}>
+            <article key={post.id}>
               {banner ? (
                 <Link to={post.fields.url}>
                   <Img sizes={banner} />
@@ -54,7 +54,7 @@ export default ({ data: { allMdx }, pageContext: { pagination, activeCategory } 
                 <Small>Continue Reading</Small>
               </Link>
               <Spacer size={8} />
-            </div>
+            </article>
           );
         })}
         <Pagination nextPagePath={nextPagePath} previousPagePath={previousPagePath} />

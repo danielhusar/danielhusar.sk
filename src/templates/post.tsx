@@ -56,12 +56,14 @@ export default function Post({ data: { mdx: post } }: Props) {
       <Nav active="post" />
       <Layout title={post.fields.title} description={post.excerpt} image={banner ? banner.src : null}>
         <Spacer size={8} />
-        {banner ? <Img sizes={banner} /> : null}
-        <h1>{post.fields.title}</h1>
-        <Small>{post.fields.date}</Small>
-        <MDXProvider components={{ pre: PreComponent }}>
-          <MDXRenderer>{post.code.body}</MDXRenderer>
-        </MDXProvider>
+        <article>
+          {banner ? <Img sizes={banner} /> : null}
+          <h1>{post.fields.title}</h1>
+          <Small>{post.fields.date}</Small>
+          <MDXProvider components={{ pre: PreComponent }}>
+            <MDXRenderer>{post.code.body}</MDXRenderer>
+          </MDXProvider>
+        </article>
         <Spacer size={8} />
       </Layout>
     </>
