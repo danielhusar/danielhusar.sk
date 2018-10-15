@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "name": "Daniel Husar",
+  "description": "Daniel Husar",
+  "icons": {
+    "60": "/icons-cf3abc9af9add45cd0dc7f5350eebd51/firefox_app_60x60.png",
+    "128": "/icons-cf3abc9af9add45cd0dc7f5350eebd51/firefox_app_128x128.png",
+    "512": "/icons-cf3abc9af9add45cd0dc7f5350eebd51/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": "Daniel Husar",
+    "url": null
+  }
+}
