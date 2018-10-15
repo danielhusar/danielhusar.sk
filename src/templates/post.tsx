@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import { MDXProvider } from '@mdx-js/tag';
 import PrismCode from 'react-prism';
+import styled from 'styled-components';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { oc } from 'ts-optchain';
 import Spacer from '../components/spacer';
@@ -29,6 +30,25 @@ interface PreComponentProps {
     };
   };
 }
+
+const H1 = styled.h1`
+  margin-bottom: 0;
+  font-size: 2em;
+`;
+
+const PostContent = styled.div`
+  p {
+    margin: 1.4em 0;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  > div > :first-child {
+    margin-top: 0;
+  }
+`;
 
 const PreComponent = (props: PreComponentProps) =>
   props.children.props.props && props.children.props.props.className === 'language-.jsx' ? (
@@ -58,11 +78,14 @@ export default function Post({ data: { mdx: post } }: Props) {
         <Spacer size={8} />
         <article>
           {banner ? <Img sizes={banner} /> : null}
-          <h1>{post.fields.title}</h1>
+          <H1>{post.fields.title}</H1>
           <Small>{post.fields.date}</Small>
-          <MDXProvider components={{ pre: PreComponent }}>
-            <MDXRenderer>{post.code.body}</MDXRenderer>
-          </MDXProvider>
+          <Spacer size={3} />
+          <PostContent>
+            <MDXProvider components={{ pre: PreComponent }}>
+              <MDXRenderer>{post.code.body}</MDXRenderer>
+            </MDXProvider>
+          </PostContent>
         </article>
         <Spacer size={8} />
       </Layout>
