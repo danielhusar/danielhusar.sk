@@ -21,6 +21,11 @@ module.exports = {
       {
         serialize: ({ query: { site, allMdx } }) => {
           return allMdx.edges.map(edge => {
+            let banner;
+            try {
+              banner = edge.node.frontmatter.banner.childImageSharp.sizes.src;
+            } catch (e) {}
+
             return Object.assign(
               {},
               {
@@ -31,6 +36,16 @@ module.exports = {
                 guid: site.siteMetadata.siteUrl + edge.node.fields.url,
                 pubDate: edge.node.fields.date,
                 language: edge.node.fields.categories[0],
+                custom_elements: [
+                  {
+                    'media:content': {
+                      _attr: {
+                        url: site.siteMetadata.siteUrl + banner,
+                        medium: 'image',
+                      },
+                    },
+                  },
+                ],
               }
             );
           });
@@ -47,6 +62,15 @@ module.exports = {
                     url
                     date(formatString: "YYYY-MM-DDTHH:MM:SS")
                     categories
+                  }
+                  frontmatter {
+                    banner {
+                      childImageSharp {
+                        sizes(maxWidth: 500) {
+                          src
+                        }
+                      }
+                    }
                   }
                 }
               }
