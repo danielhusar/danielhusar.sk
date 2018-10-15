@@ -13,7 +13,7 @@ module.exports = {
     blogUrl: 'https://www.danielhusar.sk/blog',
 
     feed_url: 'https://www.danielhusar.sk/rss.xml',
-    image_url: 'https://www.danielhusar.sk/portrait.jpeg',
+    image_url: 'https://www.danielhusar.sk/portrait.png',
     custom_namespaces: {
       media: 'http://search.yahoo.com/mrss/',
     },
