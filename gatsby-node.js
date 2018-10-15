@@ -90,7 +90,7 @@ const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
 exports.createPages = ({ actions, graphql }) =>
   graphql(`
     query {
-      allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
+      allMdx(sort: { order: DESC, fields: [frontmatter___date] }, filter: { frontmatter: { draft: { ne: true } } }) {
         edges {
           node {
             id
@@ -135,6 +135,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({ node, name: 'title', value: node.frontmatter.title });
     createNodeField({ node, name: 'slug', value: node.frontmatter.slug });
     createNodeField({ node, name: 'date', value: node.frontmatter.date || '' });
+    createNodeField({ node, name: 'draft', value: node.frontmatter.draft });
     createNodeField({ node, name: 'categories', value: node.frontmatter.categories || [] });
     createNodeField({ node, name: 'url', value: `/blog/${node.frontmatter.slug}` });
   }
