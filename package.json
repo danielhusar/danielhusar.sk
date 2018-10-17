@@ -35,6 +35,7 @@
     "@mdx-js/mdx": "^0.15.4",
     "@mdx-js/tag": "^0.15.0",
     "@types/react-helmet": "^5.0.7",
+    "@types/styled-components": "^4.0.1",
     "babel-plugin-styled-components": "^1.7.1",
     "gatsby": "^2.0.0",
     "gatsby-image": "^2.0.8",
