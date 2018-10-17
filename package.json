@@ -9,7 +9,7 @@
     "build-post": "babel --presets @babel/preset-typescript ./src/templates/post.tsx --out-file ./src/templates/post.js",
     "start": "yarn build-post && gatsby develop --port 4000",
     "test": "yarn type-check && yarn build",
-    "type-check": "tsc --noEmit --skipLibCheck",
+    "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
@@ -61,7 +61,7 @@
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
-    "react-live": "^1.11.0",
+    "react-live": "^1.12.0",
     "react-prism": "^4.3.2",
     "react-social-icons": "^3.0.0",
     "react-styled-flexboxgrid": "^2.6.0",
