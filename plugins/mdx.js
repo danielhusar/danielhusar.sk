@@ -5,7 +5,7 @@ module.exports = {
     gatsbyRemarkPlugins: [
       {
         resolve: 'gatsby-remark-images',
-        pluginOptions: {
+        options: {
           maxWidth: 920,
           sizeByPixelDensity: false,
           linkImagesToOriginal: true,

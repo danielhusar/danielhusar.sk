@@ -71,6 +71,7 @@ const PreComponent = (props: PreComponentProps) =>
 
 export default function Post({ data: { mdx: post } }: Props) {
   const banner = oc(post).frontmatter.banner.childImageSharp.sizes();
+
   return (
     <>
       <Nav active="post" />
