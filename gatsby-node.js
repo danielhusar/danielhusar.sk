@@ -32,23 +32,13 @@ const createCategoryPages = (createPage, edges) => {
 };
 
 const createPosts = (createPage, edges) => {
-  // During the gatsby build we cant generate any new pages otherwise build fails
-  const command =
-    process.env.NODE_ENV === 'production'
-      ? 'echo 0'
-      : 'yarn babel --presets @babel/preset-typescript ./src/templates/post.tsx --out-file ./src/templates/post.js';
-  exec(command, (err, stdout, stderr) => {
-    if (err) throw err;
-    const postJs = path.resolve('./src/templates/post.js');
-
-    edges.forEach(({ node }, i) => {
-      createPage({
-        path: node.fields.url,
-        component: componentWithMDXScope(postJs, node.code.scope, __dirname),
-        context: {
-          id: node.id,
-        },
-      });
+  edges.forEach(({ node }, i) => {
+    createPage({
+      path: node.fields.url,
+      component: componentWithMDXScope(path.resolve('./src/templates/post.tsx'), node.code.scope, __dirname),
+      context: {
+        id: node.id,
+      },
     });
   });
 };
