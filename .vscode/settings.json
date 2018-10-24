@@ -5,7 +5,6 @@
     "**/.cache": true,
     "**/node_modules": true,
     "**/yarn-error.log": true,
-    "**/.DS_Store": true,
-    "src/templates/post.js": true
+    "**/.DS_Store": true
   }
 }
