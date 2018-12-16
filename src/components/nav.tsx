@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { Link, graphql, StaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import styled, { css } from 'styled-components';
@@ -68,7 +68,7 @@ export default ({ active }: Props) => (
           </Link>
         </NavItem>
         <NavItem active={active === 'home'}>
-          <Link to="/blog">Index</Link>
+          <Link to="/blog/">Index</Link>
         </NavItem>
         <NavItem active={active === 'en'}>
           <Link to="/">About me</Link>

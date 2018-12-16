@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { Col, Row } from 'react-styled-flexboxgrid';
@@ -120,6 +120,8 @@ export default ({ data }: Props) => {
             <SocialWrapper>
               <SocialIcon url="mailto:dano.husar@gmail.com" style={iconStyle} />
             </SocialWrapper>
+            <Spacer size={3} />
+            <Link to="/blog/">You can also read my blog here.</Link>
           </About>
         </Col>
       </Row>
