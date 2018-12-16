@@ -25,6 +25,8 @@ module.exports = {
             let banner;
             try {
               banner = edge.node.frontmatter.banner.childImageSharp.sizes.src;
+              console.log('=============');
+              console.log(banner);
             } catch (e) {}
 
             return Object.assign(
@@ -67,7 +69,7 @@ module.exports = {
                   frontmatter {
                     banner {
                       childImageSharp {
-                        sizes(maxWidth: 500) {
+                        sizes(maxWidth: 920) {
                           src
                         }
                       }
