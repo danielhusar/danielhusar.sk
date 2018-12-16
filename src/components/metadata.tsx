@@ -7,7 +7,7 @@ const Bullet = styled.span`
 `;
 
 interface Props {
-  date: string;
+  date: Date | String;
   timeToRead: number;
 }
 

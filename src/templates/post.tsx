@@ -10,6 +10,7 @@ import { oc } from 'ts-optchain';
 import Spacer from '../components/spacer';
 import Layout from '../components/layout';
 import Nav from '../components/nav';
+import Footer from '../components/footer';
 import MetaData from '../components/metadata';
 import Article from '../components/article';
 import PostContent from '../components/post-content';
@@ -62,9 +63,9 @@ export default function Post({ data: { mdx: post } }: Props) {
 
   return (
     <>
-      <Nav active="post" />
       <Layout title={post.fields.title} description={post.excerpt} image={banner ? banner.src : null}>
-        <Spacer size={8} />
+        <Nav active="post" />
+        <Spacer size={4} />
         <Article>
           {banner ? <Img sizes={banner} /> : null}
           <H1>{post.fields.title}</H1>
@@ -76,7 +77,8 @@ export default function Post({ data: { mdx: post } }: Props) {
             </MDXProvider>
           </PostContent>
         </Article>
-        <Spacer size={8} />
+        <Spacer size={4} />
+        <Footer active="post" />
       </Layout>
     </>
   );

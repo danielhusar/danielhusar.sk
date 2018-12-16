@@ -16,9 +16,7 @@ interface Data {
 const Nav = styled.div`
   display: flex;
   align-items: center;
-  position: absolute;
-  top: 5px;
-  left: 5px;
+  margin-top: 30px;
 `;
 
 const NavItem = styled.div`
@@ -40,14 +38,14 @@ const NavItem = styled.div`
 const NavPortrait = styled.div`
   overflow: hidden;
   border-radius: 5px;
-  height: 30px;
+  height: 50px;
 `;
 
 const query = graphql`
   query {
     portrait: file(relativePath: { eq: "images/portrait.jpeg" }) {
       childImageSharp {
-        fixed(width: 30, height: 30) {
+        fixed(width: 50, height: 50) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -71,6 +69,9 @@ export default ({ active }: Props) => (
         </NavItem>
         <NavItem active={active === 'home'}>
           <Link to="/blog">Index</Link>
+        </NavItem>
+        <NavItem active={active === 'en'}>
+          <Link to="/">About me</Link>
         </NavItem>
         {/*
         <NavItem active={active === 'en'}>

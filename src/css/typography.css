@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:500');
 
 html {
   -ms-text-size-adjust: 100%;
@@ -52,6 +53,10 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
+  font-weight: 500;
 }
 
+strong,
+b {
+  font-weight: 500;
+}

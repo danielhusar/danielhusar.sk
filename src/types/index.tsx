@@ -6,6 +6,7 @@ export interface allMdx {
 
 export interface mdx {
   excerpt: string;
+  timeToRead: number;
   fields: {
     title: string;
     slug: string;
@@ -29,6 +30,7 @@ export interface edge {
 export interface node {
   id: number;
   excerpt: string;
+  timeToRead: number;
   fields: {
     url: string;
     title: string;

@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
 import { graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
 import { oc } from 'ts-optchain';
+import styled from 'styled-components';
 import Layout from '../components/layout';
 import Nav from '../components/nav';
+import Footer from '../components/footer';
 import Pagination from '../components/pagination';
 import Spacer from '../components/spacer';
 import Small from '../components/small';
@@ -25,6 +26,10 @@ interface Props {
   };
 }
 
+const H2 = styled.h2`
+  margin: 0;
+`;
+
 export default ({ data: { allMdx }, pageContext: { pagination, activeCategory } }: Props) => {
   const { page, nextPagePath, previousPagePath } = pagination;
   const posts: (edge | undefined)[] = page.map(id => allMdx.edges.find(edge => edge.node.id === id));
@@ -33,33 +38,32 @@ export default ({ data: { allMdx }, pageContext: { pagination, activeCategory } 
 
   return (
     <>
-      <Nav active={activeCategory ? activeCategory : 'home'} />
       <Layout title="Blog" image={ogImage ? ogImage.src : null}>
-        <Spacer size={8} />
+        <Nav active={activeCategory ? activeCategory : 'home'} />
+        <Spacer size={4} />
         {posts.map((edge: edge | undefined) => {
           if (!edge) return;
           const { node: post } = edge;
-          const banner = oc(post).frontmatter.banner.childImageSharp.sizes();
           return (
             <Article key={post.id}>
-              {banner ? (
-                <Link to={post.fields.url}>
-                  <Img sizes={banner} />
-                </Link>
-              ) : null}
-              <h2>
+              <H2>
                 <Link to={post.fields.url}>{post.fields.title}</Link>
-              </h2>
+              </H2>
+              <Spacer size={1} />
               <MetaData date={post.fields.date} timeToRead={post.timeToRead} />
-              <p>{post.excerpt}</p>
+              <Spacer size={1} />
+              <div>{post.excerpt}</div>
+              <Spacer size={1} />
               <Link to={post.fields.url}>
                 <Small>Continue Reading</Small>
               </Link>
-              <Spacer size={8} />
+              <Spacer size={4} />
             </Article>
           );
         })}
         <Pagination nextPagePath={nextPagePath} previousPagePath={previousPagePath} />
+        <Spacer size={4} />
+        <Footer active={activeCategory ? activeCategory : 'home'} />
       </Layout>
     </>
   );
