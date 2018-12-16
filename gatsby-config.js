@@ -17,6 +17,8 @@ module.exports = {
     custom_namespaces: {
       media: 'http://search.yahoo.com/mrss/',
     },
+
+    pathPrefix: '/',
   },
   plugins: [
     filesystemPlugin,

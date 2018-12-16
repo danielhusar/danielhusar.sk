@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "NODE_ENV=production gatsby build",
-    "start": "gatsby develop --port 4000",
+    "start": "rm -rf ./.cache && gatsby develop --port 4000",
     "test": "yarn type-check && yarn build",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",

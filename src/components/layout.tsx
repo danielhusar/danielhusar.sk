@@ -37,7 +37,7 @@ export default ({ children, title: customTitle, description: customDescription, 
             <html lang="en" />
             <meta name="description" content={description} />
             <meta name="keywords" content={keywords} />
-            <meta property="og:title" content="Customer Messaging Platform | Intercom" />
+            <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
             {image ? <meta property="og:image" content={image} /> : null}
           </Helmet>
