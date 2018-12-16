@@ -10,7 +10,9 @@ import { oc } from 'ts-optchain';
 import Spacer from '../components/spacer';
 import Layout from '../components/layout';
 import Nav from '../components/nav';
-import Small from '../components/small';
+import MetaData from '../components/metadata';
+import Article from '../components/article';
+import PostContent from '../components/post-content';
 import { LiveEditWrap, LiveErrorWrap, LivePreviewWrap, LiveLabel } from '../components/live';
 import { mdx } from '../types'; // eslint-disable-line
 
@@ -34,20 +36,6 @@ interface PreComponentProps {
 const H1 = styled.h1`
   margin-bottom: 0;
   font-size: 2em;
-`;
-
-const PostContent = styled.div`
-  p {
-    margin: 1.4em 0;
-  }
-
-  h1 {
-    font-size: 2em;
-  }
-
-  > div > :first-child {
-    margin-top: 0;
-  }
 `;
 
 const PreComponent = (props: PreComponentProps) =>
@@ -77,17 +65,17 @@ export default function Post({ data: { mdx: post } }: Props) {
       <Nav active="post" />
       <Layout title={post.fields.title} description={post.excerpt} image={banner ? banner.src : null}>
         <Spacer size={8} />
-        <article>
+        <Article>
           {banner ? <Img sizes={banner} /> : null}
           <H1>{post.fields.title}</H1>
-          <Small>{post.fields.date}</Small>
+          <MetaData date={post.fields.date} timeToRead={post.timeToRead} />
           <Spacer size={3} />
           <PostContent>
             <MDXProvider components={{ pre: PreComponent }}>
               <MDXRenderer>{post.code.body}</MDXRenderer>
             </MDXProvider>
           </PostContent>
-        </article>
+        </Article>
         <Spacer size={8} />
       </Layout>
     </>
@@ -102,6 +90,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
       }
+      timeToRead
       frontmatter {
         banner {
           childImageSharp {

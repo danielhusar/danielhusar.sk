@@ -64,6 +64,17 @@ const iconStyle = {
   marginRight: '10px',
 };
 
+const SocialWrapper = styled.span`
+  .social-icon {
+    opacity: 0.7;
+    transition: opacity 0.3s;
+  }
+
+  .social-icon:hover {
+    opacity: 1;
+  }
+`;
+
 export default ({ data }: Props) => {
   const portrait = oc(data).portrait.childImageSharp.fluid();
   const intercomLogo = oc(data).intercom.childImageSharp.fixed();
@@ -94,11 +105,21 @@ export default ({ data }: Props) => {
             <Spacer size={3} />
             You can learn more about me here:
             <Spacer size={3} />
-            <SocialIcon url="http://twitter.com/DanoHusar" style={iconStyle} />
-            <SocialIcon url="https://github.com/danielhusar" style={iconStyle} />
-            <SocialIcon url="https://www.linkedin.com/in/daniel-husar-60783958/" style={iconStyle} />
-            <SocialIcon url="https://www.instagram.com/efrafa/" style={iconStyle} />
-            <SocialIcon url="mailto:dano.husar@gmail.com" style={iconStyle} />
+            <SocialWrapper>
+              <SocialIcon url="http://twitter.com/DanoHusar" style={iconStyle} />
+            </SocialWrapper>
+            <SocialWrapper>
+              <SocialIcon url="https://github.com/danielhusar" style={iconStyle} />
+            </SocialWrapper>
+            <SocialWrapper>
+              <SocialIcon url="https://www.linkedin.com/in/daniel-husar-60783958/" style={iconStyle} />
+            </SocialWrapper>
+            <SocialWrapper>
+              <SocialIcon url="https://www.instagram.com/efrafa/" style={iconStyle} />
+            </SocialWrapper>
+            <SocialWrapper>
+              <SocialIcon url="mailto:dano.husar@gmail.com" style={iconStyle} />
+            </SocialWrapper>
           </About>
         </Col>
       </Row>

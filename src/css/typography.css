@@ -51,30 +51,7 @@ a:hover {
   color: white;
 }
 
-.social-icon {
-  opacity: .7;
-  transition: opacity .3s;
-}
-
-.social-icon:hover {
-  opacity: 1;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-/* https://github.com/gatsbyjs/gatsby/issues/9174 */
-article .gatsby-resp-image-background-image {
-  font-size: 0;
-  padding: 0 !important;
-  position: static !important;
-  display: block;
-}
-
-article .gatsby-resp-image-background-image img {
-  position: static !important;
-  box-shadow: none !important;
-  height: auto !important;
-  width: auto !important;
-}

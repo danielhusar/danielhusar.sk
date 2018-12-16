@@ -7,6 +7,8 @@ import Nav from '../components/nav';
 import Pagination from '../components/pagination';
 import Spacer from '../components/spacer';
 import Small from '../components/small';
+import MetaData from '../components/metadata';
+import Article from '../components/article';
 import { allMdx, categories, edge } from '../types';
 
 interface Props {
@@ -39,7 +41,7 @@ export default ({ data: { allMdx }, pageContext: { pagination, activeCategory } 
           const { node: post } = edge;
           const banner = oc(post).frontmatter.banner.childImageSharp.sizes();
           return (
-            <article key={post.id}>
+            <Article key={post.id}>
               {banner ? (
                 <Link to={post.fields.url}>
                   <Img sizes={banner} />
@@ -48,13 +50,13 @@ export default ({ data: { allMdx }, pageContext: { pagination, activeCategory } 
               <h2>
                 <Link to={post.fields.url}>{post.fields.title}</Link>
               </h2>
-              <Small>{post.fields.date}</Small>
+              <MetaData date={post.fields.date} timeToRead={post.timeToRead} />
               <p>{post.excerpt}</p>
               <Link to={post.fields.url}>
                 <Small>Continue Reading</Small>
               </Link>
               <Spacer size={8} />
-            </article>
+            </Article>
           );
         })}
         <Pagination nextPagePath={nextPagePath} previousPagePath={previousPagePath} />
@@ -70,6 +72,7 @@ export const pageQuery = graphql`
         node {
           excerpt(pruneLength: 300)
           id
+          timeToRead
           fields {
             url
             title

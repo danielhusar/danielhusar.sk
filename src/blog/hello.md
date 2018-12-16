@@ -4,7 +4,7 @@ date: '2018-07-18'
 title: 'The Road to GraphQL'
 categories: ['en']
 banner: './images/san-francisco.jpg'
-draft: false
+draft: true
 ---
 
 import Gallery from "$components/gallery";
