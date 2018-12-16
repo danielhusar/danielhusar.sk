@@ -5,7 +5,7 @@
   "author": "Daniel Husar <dano.husar@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf ./public && NODE_ENV=production gatsby build",
+    "build": "rm -rf ./public && NODE_ENV=production gatsby build --prefix-paths",
     "start": "rm -rf ./.cache && gatsby develop --port 4000",
     "test": "yarn type-check && yarn build",
     "type-check": "tsc --noEmit",

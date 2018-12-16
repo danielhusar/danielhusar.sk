@@ -10,7 +10,7 @@ module.exports = {
     description: 'Product engineer based in San Francisco',
     keywords: 'blog,javascript,react',
     siteUrl: 'https://www.danielhusar.sk',
-    blogUrl: 'https://www.danielhusar.sk/blog',
+    blogUrl: 'https://www.danielhusar.sk/blog/',
 
     feed_url: 'https://www.danielhusar.sk/rss.xml',
     image_url: 'https://www.danielhusar.sk/portrait.png',
