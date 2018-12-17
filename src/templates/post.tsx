@@ -16,6 +16,7 @@ import Article from '../components/article';
 import PostContent from '../components/post-content';
 import { LiveEditWrap, LiveErrorWrap, LivePreviewWrap, LiveLabel } from '../components/live';
 import { mdx } from '../types'; // eslint-disable-line
+import '../lib/prism-extend';
 
 interface Props {
   data: {

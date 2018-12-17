@@ -32,6 +32,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^0.15.4",
     "@mdx-js/tag": "^0.15.0",
+    "@types/prismjs": "^1.9.0",
     "@types/react-helmet": "^5.0.7",
     "@types/styled-components": "^4.0.1",
     "babel-plugin-styled-components": "^1.7.1",
