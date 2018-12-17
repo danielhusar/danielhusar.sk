@@ -24,3 +24,55 @@ Prism.languages.css = Prism.languages.css || {
   function: /[-a-z0-9]+(?=\()/i,
   punctuation: /[(){};:,]/,
 };
+
+const javascript = Prism.util.clone(Prism.languages.javascript);
+
+Prism.languages.jsx = Prism.languages.extend('markup', javascript);
+// @ts-ignore
+Prism.languages.jsx.tag.pattern = /<\/?(?:[\w.:-]+\s*(?:\s+(?:[\w.:-]+(?:=(?:("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|[^\s{'">=]+|\{(?:\{(?:\{[^}]*\}|[^{}])*\}|[^{}])+\}))?|\{\.{3}[a-z_$][\w$]*(?:\.[a-z_$][\w$]*)*\}))*\s*\/?)?>/i;
+
+// @ts-ignore
+Prism.languages.jsx.tag.inside['tag'].pattern = /^<\/?[^\s>\/]*/i;
+// @ts-ignore
+Prism.languages.jsx.tag.inside['attr-value'].pattern = /=(?!\{)(?:("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|[^\s'">]+)/i;
+// @ts-ignore
+Prism.languages.jsx.tag.inside['tag'].inside['class-name'] = /^[A-Z]\w*$/;
+
+Prism.languages.insertBefore(
+  'inside',
+  'attr-name',
+  {
+    // @ts-ignore
+    spread: {
+      pattern: /\{\.{3}[a-z_$][\w$]*(?:\.[a-z_$][\w$]*)*\}/,
+      inside: {
+        punctuation: /\.{3}|[{}.]/,
+        'attr-value': /\w+/,
+      },
+    },
+  },
+  // @ts-ignore
+  Prism.languages.jsx.tag
+);
+
+Prism.languages.insertBefore(
+  'inside',
+  'attr-value',
+  {
+    // @ts-ignore
+    script: {
+      // Allow for two levels of nesting
+      pattern: /=(\{(?:\{(?:\{[^}]*\}|[^}])*\}|[^}])+\})/i,
+      inside: {
+        'script-punctuation': {
+          pattern: /^=(?={)/,
+          alias: 'punctuation',
+        },
+        rest: Prism.languages.jsx,
+      },
+      alias: 'language-javascript',
+    },
+  },
+  // @ts-ignore
+  Prism.languages.jsx.tag
+);
