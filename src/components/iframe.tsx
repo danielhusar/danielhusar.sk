@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import Overlay from './overlay';
 
 interface Props {
   width: number;
@@ -38,6 +39,7 @@ const Wrapper = styled.div`
       `};
   }
 
+  .disclaimer,
   iframe {
     position: absolute;
     top: 0;
@@ -54,7 +56,9 @@ export default ({ width, height, src }: Props) => (
   <Wrapper width={width} height={height}>
     <div className="iframe-outer">
       <div className="iframe-inner">
-        <iframe src={src} />
+        <Overlay>
+          <iframe src={src} />
+        </Overlay>
       </div>
     </div>
   </Wrapper>
