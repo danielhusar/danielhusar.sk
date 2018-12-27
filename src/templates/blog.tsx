@@ -38,7 +38,7 @@ export default ({ data: { allMdx }, pageContext: { pagination, activeCategory } 
 
   return (
     <>
-      <Layout title="Blog" image={ogImage ? ogImage.src : null}>
+      <Layout title="Blog" image={ogImage ? ogImage.src : null} maxWidth={880}>
         <Nav active={activeCategory ? activeCategory : 'home'} />
         <Spacer size={4} />
         {posts.map((edge: edge | undefined) => {
@@ -85,7 +85,7 @@ export const pageQuery = graphql`
           frontmatter {
             banner {
               childImageSharp {
-                sizes(maxWidth: 920) {
+                sizes(maxWidth: 800) {
                   ...GatsbyImageSharpSizes
                 }
               }

@@ -40,7 +40,7 @@ const FooterItem = styled.div`
 export default ({ active }: Props) => (
   <Footer>
     <FooterItem active={active === 'home'}>
-      <Link to="/blog/">Index</Link>
+      <Link to="/blog/">Blog Index</Link>
     </FooterItem>
     <FooterItem active={active === 'en'}>
       <Link to="/">About me</Link>

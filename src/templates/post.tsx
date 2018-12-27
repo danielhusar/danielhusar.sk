@@ -64,7 +64,7 @@ export default function Post({ data: { mdx: post } }: Props) {
 
   return (
     <>
-      <Layout title={post.fields.title} description={post.excerpt} image={banner ? banner.src : null}>
+      <Layout title={post.fields.title} description={post.excerpt} image={banner ? banner.src : null} maxWidth={880}>
         <Nav active="post" />
         <Spacer size={4} />
         <Article>
@@ -97,7 +97,7 @@ export const pageQuery = graphql`
       frontmatter {
         banner {
           childImageSharp {
-            sizes(maxWidth: 920) {
+            sizes(maxWidth: 800) {
               ...GatsbyImageSharpSizes
             }
           }

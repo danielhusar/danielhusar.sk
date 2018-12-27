@@ -68,7 +68,7 @@ export default ({ active }: Props) => (
           </Link>
         </NavItem>
         <NavItem active={active === 'home'}>
-          <Link to="/blog/">Index</Link>
+          <Link to="/blog/">Blog Index</Link>
         </NavItem>
         <NavItem active={active === 'en'}>
           <Link to="/">About me</Link>

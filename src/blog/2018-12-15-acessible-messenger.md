@@ -145,7 +145,7 @@ You can check out the focus traps in action here:
 
 Just as it’s important to set intentional focus traps, you should always provide a way for keyboard users to exit those focus traps. You can see that in the example below. We’ve also designed it so that after the modal is closed, the focus returns back to the element that originally opened the modal. Here it is in our Messenger:
 
-<Image width={920}>
+<Image width={800}>
 
 ![modal focus trap](./images/accessible-messenger/modal.gif)
 

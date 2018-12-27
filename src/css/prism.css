@@ -11,11 +11,11 @@ code {
   background: #2d2d2d;
   padding: 1px 5px;
   border-radius: 3px;
+  font-size: 15px;
   font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 
 code[class*="language-"] {
-  font-size: 15px;
   text-align: left;
   white-space: pre;
   word-spacing: normal;

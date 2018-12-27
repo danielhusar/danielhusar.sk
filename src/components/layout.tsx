@@ -10,6 +10,7 @@ interface Props {
   title?: string;
   description?: string;
   image?: string | null;
+  maxWidth?: number;
 }
 
 const query = graphql`
@@ -24,7 +25,7 @@ const query = graphql`
   }
 `;
 
-export default ({ children, title: customTitle, description: customDescription, image }: Props) => (
+export default ({ children, title: customTitle, description: customDescription, image, maxWidth }: Props) => (
   <StaticQuery
     query={query}
     render={data => {
@@ -41,7 +42,7 @@ export default ({ children, title: customTitle, description: customDescription, 
             <meta property="og:description" content={description} />
             {image ? <meta property="og:image" content={image} /> : null}
           </Helmet>
-          <Container>{children}</Container>
+          <Container maxWidth={maxWidth}>{children}</Container>
         </>
       );
     }}
