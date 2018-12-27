@@ -71,7 +71,7 @@ const Button = styled.button`
 
 export default class Overlay extends Component<Props, State> {
   state = {
-    render: window && window.navigator && window.navigator.doNotTrack !== '1',
+    render: typeof window !== 'undefined' && window.navigator && window.navigator.doNotTrack !== '1',
   };
 
   handleClick = () => {
