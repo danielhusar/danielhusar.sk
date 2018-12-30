@@ -92,7 +92,7 @@ export default ({ data }: Props) => {
         <Col xs={12} sm={7} md={7} lg={7}>
           <About>
             <SubHeadline>Hi!</SubHeadline>
-            My name is Daniel and I’m a product engineer based in San Francisco.
+            My name is Daniel, and I’m a product engineer based in San Francisco.
             <Spacer size={3} />
             Right now I’m working on{' '}
             {intercomLogo ? (
