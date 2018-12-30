@@ -40,8 +40,20 @@ const H1 = styled.h1`
   font-size: 2em;
 `;
 
-const PreComponent = (props: PreComponentProps) =>
-  props.children.props.props && props.children.props.props.className === 'language-.jsx' ? (
+const FileName = styled.div`
+  font-size: 12px;
+  margin-top: 2em;
+  padding: 0.2em 0.8em 0.3em;
+  border: 1px solid #2d2d2d;
+  border-radius: 3px;
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+`;
+
+const PreComponent = (props: PreComponentProps) => {
+  const [language, filename] = (props.children.props.props ? props.children.props.props.className : '').split('!');
+  return language === 'language-.jsx' ? (
     <LiveProvider mountStylesheet={false} code={props.children.props.children}>
       <LiveEditWrap className="language-jsx">
         <LiveLabel>Edit</LiveLabel>
@@ -56,8 +68,12 @@ const PreComponent = (props: PreComponentProps) =>
       </LivePreviewWrap>
     </LiveProvider>
   ) : (
-    <PrismCode className={props.children.props.props.className}>{props.children.props.children}</PrismCode>
+    <>
+      {filename ? <FileName className="filename">{filename}</FileName> : null}
+      <PrismCode className={language}>{props.children.props.children}</PrismCode>
+    </>
   );
+};
 
 export default function Post({ data: { mdx: post } }: Props) {
   const banner = oc(post).frontmatter.banner.childImageSharp.sizes();
