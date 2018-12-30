@@ -103,7 +103,7 @@ export default ({ data }: Props) => {
             <a href="https://www.intercom.com">Intercom</a> <a href="https://www.intercom.com/messenger">Messenger</a> to make internet business
             personal.
             <Spacer size={3} />
-            You can learn more about me here:
+            <Link to="/blog/">Read my blog here,</Link> or follow me on social media:
             <Spacer size={3} />
             <SocialWrapper>
               <SocialIcon url="http://twitter.com/DanoHusar" style={iconStyle} />
@@ -120,8 +120,6 @@ export default ({ data }: Props) => {
             <SocialWrapper>
               <SocialIcon url="mailto:dano.husar@gmail.com" style={iconStyle} />
             </SocialWrapper>
-            <Spacer size={3} />
-            <Link to="/blog/">You can also read my blog here.</Link>
           </About>
         </Col>
       </Row>
