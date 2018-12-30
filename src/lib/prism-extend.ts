@@ -84,6 +84,7 @@ Prism.languages.json = {
   punctuation: /[{}[\]);,]/g,
   operator: /:/g,
   boolean: /\b(true|false)\b/gi,
+  // @ts-ignore
   null: /\bnull\b/gi,
 };
 
