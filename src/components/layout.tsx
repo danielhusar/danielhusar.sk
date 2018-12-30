@@ -40,6 +40,7 @@ export default ({ children, title: customTitle, description: customDescription, 
             <meta name="keywords" content={keywords} />
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
+            <meta name="google-site-verification" content="8cQKXsfHMuCdSPV42iiMJB-KbCCykX8cdpZOcoW-U8M" />
             {image ? <meta property="og:image" content={image} /> : null}
           </Helmet>
           <Container maxWidth={maxWidth}>{children}</Container>
