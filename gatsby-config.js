@@ -32,6 +32,8 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-typescript',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-robots-txt',
     // 'gatsby-plugin-offline',
   ],
 };
