@@ -15,7 +15,7 @@ If you are using Webpack and Yarn, you can create two bundles of your app with d
 
 If your package.json looks like this:
 
-```json!package.json
+```json
 {
   "dependencies": {
     "react": "15.6.2",
