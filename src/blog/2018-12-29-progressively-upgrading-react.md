@@ -53,16 +53,16 @@ Webpack supports both single config export or exporting an array of configs.
 Using resolve alias for another entry, we can create two bundles of the same app with different React version:
 
 ```js!webpack.config.js
-const baseConfig = {
+const config = {
   entry: {
     main: ['./app/index.js'],
   },
 };
 
 module.exports = [
-  baseConfig,
+  config,
   {
-    ...baseConfig,
+    ...config,
     entry: {
       main_react_16: ['./app/index.js'],
     },
