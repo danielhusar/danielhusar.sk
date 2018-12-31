@@ -1,7 +1,7 @@
 ---
-slug: 'progressively-upgrading-react'
-date: '2018-12-29'
-title: 'Progressively upgrading React'
+slug: 'progressively-upgrading-react-in-your-app'
+date: '2018-12-30'
+title: 'Progressively upgrading React in your app'
 categories: ['en']
 banner: null
 draft: false
