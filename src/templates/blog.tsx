@@ -34,11 +34,10 @@ export default ({ data: { allMdx }, pageContext: { pagination, activeCategory } 
   const { page, nextPagePath, previousPagePath } = pagination;
   const posts: (edge | undefined)[] = page.map(id => allMdx.edges.find(edge => edge.node.id === id));
   const latestPost = posts[0];
-  const ogImage = oc(latestPost).node.frontmatter.banner.childImageSharp.sizes();
 
   return (
     <>
-      <Layout title="Blog" image={ogImage ? ogImage.src : null} maxWidth={880}>
+      <Layout title="Blog" maxWidth={780}>
         <Nav active={activeCategory ? activeCategory : 'home'} />
         <Spacer size={4} />
         {posts.map((edge: edge | undefined) => {
@@ -81,15 +80,6 @@ export const pageQuery = graphql`
             url
             title
             date(formatString: "MMMM DD, YYYY")
-          }
-          frontmatter {
-            banner {
-              childImageSharp {
-                sizes(maxWidth: 800) {
-                  ...GatsbyImageSharpSizes
-                }
-              }
-            }
           }
         }
       }
