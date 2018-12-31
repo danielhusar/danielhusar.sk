@@ -85,3 +85,5 @@ Sentry.configureScope(scope => {
   scope.setTag('react.version', React.version);
 });
 ```
+
+While React is my framework of choice, you could use the same approach for Ember, Angular, Vue or any NPM library.
