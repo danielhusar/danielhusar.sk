@@ -36,7 +36,7 @@ interface PreComponentProps {
 }
 
 const H1 = styled.h1`
-  margin-bottom: 0;
+  margin: 0;
   font-size: 2em;
 `;
 
@@ -80,11 +80,16 @@ export default function Post({ data: { mdx: post } }: Props) {
 
   return (
     <>
-      <Layout title={post.fields.title} description={post.excerpt} image={banner ? banner.src : null} maxWidth={880}>
+      <Layout title={post.fields.title} description={post.excerpt} image={banner ? banner.src : null} maxWidth={780}>
         <Nav active="post" />
         <Spacer size={4} />
         <Article>
-          {banner ? <Img sizes={banner} /> : null}
+          {banner ? (
+            <>
+              <Img sizes={banner} />
+              <Spacer size={3} />
+            </>
+          ) : null}
           <H1>{post.fields.title}</H1>
           <MetaData date={post.fields.date} timeToRead={post.timeToRead} />
           <Spacer size={3} />
@@ -113,7 +118,7 @@ export const pageQuery = graphql`
       frontmatter {
         banner {
           childImageSharp {
-            sizes(maxWidth: 800) {
+            sizes(maxWidth: 700) {
               ...GatsbyImageSharpSizes
             }
           }

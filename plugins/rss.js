@@ -67,7 +67,7 @@ module.exports = {
                   frontmatter {
                     banner {
                       childImageSharp {
-                        sizes(maxWidth: 800) {
+                        sizes(maxWidth: 700) {
                           src
                         }
                       }
