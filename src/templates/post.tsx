@@ -1,9 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import { MDXProvider } from '@mdx-js/tag';
-import PrismCode from 'react-prism';
 import styled from 'styled-components';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { oc } from 'ts-optchain';
@@ -15,8 +14,9 @@ import MetaData from '../components/metadata';
 import Article from '../components/article';
 import PostContent from '../components/post-content';
 import { LiveEditWrap, LiveErrorWrap, LivePreviewWrap, LiveLabel } from '../components/live';
-import { mdx } from '../types'; // eslint-disable-line
-import '../lib/prism-extend';
+import { mdx } from '../types';
+// @ts-ignore
+import Prism from '../vendor/prism';
 
 interface Props {
   data: {
@@ -53,24 +53,30 @@ const FileName = styled.div`
 
 const PreComponent = (props: PreComponentProps) => {
   const [language, filename] = (props.children.props.props ? props.children.props.props.className : '').split('!');
-  return language === 'language-.jsx' ? (
-    <LiveProvider mountStylesheet={false} code={props.children.props.children}>
-      <LiveEditWrap className="language-jsx">
-        <LiveLabel>Edit</LiveLabel>
-        <LiveEditor tabIndex={-1} />
-      </LiveEditWrap>
-      <LiveErrorWrap>
-        <LiveError />
-      </LiveErrorWrap>
-      <LivePreviewWrap>
-        <LiveLabel onWhiteBg={true}>Preview</LiveLabel>
-        <LivePreview />
-      </LivePreviewWrap>
-    </LiveProvider>
-  ) : (
+
+  if (language === 'language-.jsx')
+    return (
+      <LiveProvider mountStylesheet={false} code={props.children.props.children}>
+        <LiveEditWrap className="language-jsx">
+          <LiveLabel>Edit</LiveLabel>
+          <LiveEditor tabIndex={-1} />
+        </LiveEditWrap>
+        <LiveErrorWrap>
+          <LiveError />
+        </LiveErrorWrap>
+        <LivePreviewWrap>
+          <LiveLabel onWhiteBg={true}>Preview</LiveLabel>
+          <LivePreview />
+        </LivePreviewWrap>
+      </LiveProvider>
+    );
+
+  const grammar = Prism.languages[language.replace('language-', '')];
+  const highlighted = Prism.highlight(props.children.props.children, grammar);
+  return (
     <>
       {filename ? <FileName className="filename">{filename}</FileName> : null}
-      <PrismCode className={language}>{props.children.props.children}</PrismCode>
+      <code className={language} dangerouslySetInnerHTML={{ __html: highlighted }} />
     </>
   );
 };
@@ -79,30 +85,28 @@ export default function Post({ data: { mdx: post } }: Props) {
   const banner = oc(post).frontmatter.banner.childImageSharp.sizes();
 
   return (
-    <>
-      <Layout title={post.fields.title} description={post.excerpt} image={banner ? banner.src : null} maxWidth={780}>
-        <Nav active="post" />
-        <Spacer size={4} />
-        <Article>
-          {banner ? (
-            <>
-              <Img sizes={banner} />
-              <Spacer size={3} />
-            </>
-          ) : null}
-          <H1>{post.fields.title}</H1>
-          <MetaData date={post.fields.date} timeToRead={post.timeToRead} />
-          <Spacer size={3} />
-          <PostContent>
-            <MDXProvider components={{ pre: PreComponent }}>
-              <MDXRenderer>{post.code.body}</MDXRenderer>
-            </MDXProvider>
-          </PostContent>
-        </Article>
-        <Spacer size={4} />
-        <Footer active="post" />
-      </Layout>
-    </>
+    <Layout title={post.fields.title} description={post.excerpt} image={banner ? banner.src : null} maxWidth={780}>
+      <Nav active="post" />
+      <Spacer size={4} />
+      <Article>
+        {banner ? (
+          <>
+            <Img sizes={banner} />
+            <Spacer size={3} />
+          </>
+        ) : null}
+        <H1>{post.fields.title}</H1>
+        <MetaData date={post.fields.date} timeToRead={post.timeToRead} />
+        <Spacer size={3} />
+        <PostContent>
+          <MDXProvider components={{ pre: PreComponent }}>
+            <MDXRenderer>{post.code.body}</MDXRenderer>
+          </MDXProvider>
+        </PostContent>
+      </Article>
+      <Spacer size={4} />
+      <Footer active="post" />
+    </Layout>
   );
 }
 
