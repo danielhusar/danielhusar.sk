@@ -120,6 +120,9 @@ export default ({ data }: Props) => {
             <SocialWrapper>
               <SocialIcon url="mailto:dano.husar@gmail.com" style={iconStyle} />
             </SocialWrapper>
+            <SocialWrapper>
+              <SocialIcon url="/rss.xml" style={iconStyle} network="rss" />
+            </SocialWrapper>
           </About>
         </Col>
       </Row>
