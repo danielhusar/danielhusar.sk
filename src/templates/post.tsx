@@ -15,8 +15,9 @@ import Article from '../components/article';
 import PostContent from '../components/post-content';
 import { LiveEditWrap, LiveErrorWrap, LivePreviewWrap, LiveLabel } from '../components/live';
 import { mdx } from '../types';
-// @ts-ignore
-import Prism from '../vendor/prism';
+import Prism from 'prismjs/components/prism-core';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-json';
 
 interface Props {
   data: {
