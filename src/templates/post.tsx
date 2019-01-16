@@ -15,6 +15,8 @@ import Article from '../components/article';
 import PostContent from '../components/post-content';
 import { LiveEditWrap, LiveErrorWrap, LivePreviewWrap, LiveLabel } from '../components/live';
 import { mdx } from '../types';
+
+// Prism is not in dependencies but its pulled from react-live to use same version
 import Prism from 'prismjs/components/prism-core';
 import 'prismjs/components/prism-css';
 import 'prismjs/components/prism-json';
