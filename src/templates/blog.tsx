@@ -36,35 +36,33 @@ export default ({ data: { allMdx }, pageContext: { pagination, activeCategory } 
   const latestPost = posts[0];
 
   return (
-    <>
-      <Layout title="Blog" maxWidth={780}>
-        <Nav active={activeCategory ? activeCategory : 'home'} />
-        <Spacer size={4} />
-        {posts.map((edge: edge | undefined) => {
-          if (!edge) return;
-          const { node: post } = edge;
-          return (
-            <Article key={post.id}>
-              <H2>
-                <Link to={post.fields.url}>{post.fields.title}</Link>
-              </H2>
-              <Spacer size={1} />
-              <MetaData date={post.fields.date} timeToRead={post.timeToRead} />
-              <Spacer size={1} />
-              <div>{post.excerpt}</div>
-              <Spacer size={1} />
-              <Link to={post.fields.url}>
-                <Small>Continue Reading</Small>
-              </Link>
-              <Spacer size={4} />
-            </Article>
-          );
-        })}
-        <Pagination nextPagePath={nextPagePath} previousPagePath={previousPagePath} />
-        <Spacer size={4} />
-        <Footer active={activeCategory ? activeCategory : 'home'} />
-      </Layout>
-    </>
+    <Layout title="Blog" maxWidth={780}>
+      <Nav active={activeCategory ? activeCategory : 'home'} />
+      <Spacer size={4} />
+      {posts.map((edge: edge | undefined) => {
+        if (!edge) return;
+        const { node: post } = edge;
+        return (
+          <Article key={post.id}>
+            <H2>
+              <Link to={post.fields.url}>{post.fields.title}</Link>
+            </H2>
+            <Spacer size={1} />
+            <MetaData date={post.fields.date} timeToRead={post.timeToRead} />
+            <Spacer size={1} />
+            <div>{post.excerpt}</div>
+            <Spacer size={1} />
+            <Link to={post.fields.url}>
+              <Small>Continue Reading</Small>
+            </Link>
+            <Spacer size={4} />
+          </Article>
+        );
+      })}
+      <Pagination nextPagePath={nextPagePath} previousPagePath={previousPagePath} />
+      <Spacer size={4} />
+      <Footer active={activeCategory ? activeCategory : 'home'} />
+    </Layout>
   );
 };
 
