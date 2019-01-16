@@ -73,6 +73,7 @@ const PreComponent = (props: PreComponentProps) => {
 
   const grammar = Prism.languages[language.replace('language-', '')];
   const highlighted = Prism.highlight(props.children.props.children, grammar);
+  console.log(Prism);
   return (
     <>
       {filename ? <FileName className="filename">{filename}</FileName> : null}
