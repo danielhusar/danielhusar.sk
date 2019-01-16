@@ -170,7 +170,7 @@ var Prism = (function() {
     highlightAllUnder: function(container, async, callback) {
       var env = {
         callback: callback,
-        selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code',
+        selector: '',
       };
 
       _.hooks.run('before-highlightall', env);
