@@ -24,15 +24,16 @@ module.exports = {
           return allMdx.edges.map(edge => {
             let banner;
             try {
-              banner = edge.node.frontmatter.banner.childImageSharp.sizes.src;
+              banner = site.siteMetadata.siteUrl + edge.node.frontmatter.banner.childImageSharp.sizes.src;
             } catch (e) {}
 
+            const image = banner ? `<img src="${banner}" /> ` : '';
             return Object.assign(
               {},
               {
                 author: 'Daniel Husar',
                 title: edge.node.fields.title,
-                description: edge.node.excerpt,
+                description: `${image}${edge.node.excerpt}`,
                 url: site.siteMetadata.siteUrl + edge.node.fields.url,
                 guid: site.siteMetadata.siteUrl + edge.node.fields.url,
                 pubDate: edge.node.fields.date,
@@ -41,7 +42,7 @@ module.exports = {
                   {
                     'media:content': {
                       _attr: {
-                        url: site.siteMetadata.siteUrl + banner,
+                        url: banner,
                         medium: 'image',
                       },
                     },
