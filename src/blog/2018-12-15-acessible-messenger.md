@@ -3,7 +3,7 @@ slug: 'how-we-made-the-intercom-messenger-accessible'
 date: '2018-12-15'
 title: 'How we made the Intercom Messenger accessible'
 categories: ['en']
-banner: './images/accessible-messenger/banner.png'
+banner: './accessible-messenger/banner.png'
 draft: false
 ---
 
@@ -125,7 +125,7 @@ In our case, while the Messenger is open, we’ve set a focus trap so users are 
 
 <Image width={396}>
 
-![focus trap](./images/accessible-messenger/focus-trap.gif)
+![focus trap](./accessible-messenger/focus-trap.gif)
 
 </Image>
 
@@ -147,7 +147,7 @@ Just as it’s important to set intentional focus traps, you should always provi
 
 <Image width={700}>
 
-![modal focus trap](./images/accessible-messenger/modal.gif)
+![modal focus trap](./accessible-messenger/modal.gif)
 
 </Image>
 
@@ -178,7 +178,7 @@ We have added the `aria-label` attribute to all elements that have onClick handl
 
 <Image width={376}>
 
-![close button focus](./images/accessible-messenger/close.png)
+![close button focus](./accessible-messenger/close.png)
 
 </Image>
 
@@ -186,7 +186,7 @@ We also support an [ecosystem of apps](https://www.intercom.com/app-store/) that
 
 <Image width={343}>
 
-![articles app](./images/accessible-messenger/articles.png)
+![articles app](./accessible-messenger/articles.png)
 
 </Image>
 
@@ -204,7 +204,7 @@ All error states need to be properly announced to screen readers. Previously, er
 
 <Image width={338}>
 
-![mailchimp app](./images/accessible-messenger/mailchimp.png)
+![mailchimp app](./accessible-messenger/mailchimp.png)
 
 </Image>
 
@@ -216,7 +216,7 @@ The typing bubble in our Messenger is good example of this:
 
 <Image width={145}>
 
-![typing indicator](./images/accessible-messenger/typing.gif)
+![typing indicator](./accessible-messenger/typing.gif)
 
 </Image>
 
@@ -246,7 +246,7 @@ Any functionality that is available just on mouse hover, such as tooltips, shoul
 
 <Image width={355}>
 
-![timestamp on hover](./images/accessible-messenger/timestamp-hover.png)
+![timestamp on hover](./accessible-messenger/timestamp-hover.png)
 
 </Image>
 
@@ -254,7 +254,7 @@ Since timestamps are very useful information for screen readers, we have opted t
 
 <Image width={355}>
 
-![timestamp always visible](./images/accessible-messenger/timestamp-keyboard.png)
+![timestamp always visible](./accessible-messenger/timestamp-keyboard.png)
 
 </Image>
 
@@ -274,7 +274,7 @@ These are issues caused by customers who customize the Messenger and choose colo
 
 <Image width={403}>
 
-![color settings in intercom app](./images/accessible-messenger/color-settings.png)
+![color settings in intercom app](./accessible-messenger/color-settings.png)
 
 </Image>
 
@@ -286,7 +286,7 @@ These are issues caused by the colors that are hardcoded in our codebase. We hav
 
 <Image width={812}>
 
-![color contrast before and after](./images/accessible-messenger/color-contrast.png)
+![color contrast before and after](./accessible-messenger/color-contrast.png)
 
 </Image>
 
@@ -298,7 +298,7 @@ We’ve even added support for [high contrast mode in Microsoft Windows 10](http
 
 <Image width={385}>
 
-![window 10 high contrast](./images/accessible-messenger/high-contrast.png)
+![window 10 high contrast](./accessible-messenger/high-contrast.png)
 
 </Image>
 
