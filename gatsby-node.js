@@ -1,6 +1,5 @@
 const path = require('path');
 const { exec } = require('child_process');
-const componentWithMDXScope = require('gatsby-mdx/component-with-mdx-scope');
 
 const PAGINATION_OFFSET = 10;
 
@@ -35,7 +34,7 @@ const createPosts = (createPage, edges) => {
   edges.forEach(({ node }, i) => {
     createPage({
       path: node.fields.url,
-      component: componentWithMDXScope(path.resolve('./src/templates/post.tsx'), node.code.scope, __dirname),
+      component: path.resolve('./src/templates/post.tsx'),
       context: {
         id: node.id,
       },
