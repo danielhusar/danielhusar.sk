@@ -28,8 +28,8 @@ export const LiveLabel = styled.div`
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 
-  ${({ onWhiteBg }: LiveLabelProps = { onWhiteBg: false }) =>
-    onWhiteBg &&
+  ${(props: LiveLabelProps) =>
+    props.onWhiteBg &&
     css`
       right: -1px;
     `};
