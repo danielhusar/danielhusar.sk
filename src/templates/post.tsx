@@ -89,7 +89,7 @@ const PreComponent = (props: PreComponentProps) => {
 };
 
 export default function Post({ data: { mdx: post } }: Props) {
-  const banner = oc(post).frontmatter.banner.childImageSharp.sizes();
+  const banner = oc(post).frontmatter.banner.childImageSharp.fluid();
 
   return (
     <Layout title={post.fields.title} description={post.excerpt} image={banner ? banner.src : null} maxWidth={780}>
@@ -137,8 +137,8 @@ export const pageQuery = graphql`
       frontmatter {
         banner {
           childImageSharp {
-            sizes(maxWidth: 700) {
-              ...GatsbyImageSharpSizes
+            fluid(maxWidth: 700) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

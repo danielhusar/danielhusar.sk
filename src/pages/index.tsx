@@ -1,21 +1,24 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import Img, { FluidObject, FixedObject } from 'gatsby-image';
 import styled from 'styled-components';
 import { Col, Row } from 'react-styled-flexboxgrid';
 import { SocialIcon } from 'react-social-icons';
 import { oc } from 'ts-optchain';
 import Layout from '../components/layout';
 import Spacer from '../components/spacer';
-import { ImageSharp } from '../types/graphql';
 
 interface Props {
   data: {
     portrait: {
-      childImageSharp?: ImageSharp;
+      childImageSharp: {
+        fluid: FluidObject;
+      };
     };
     intercom: {
-      childImageSharp?: ImageSharp;
+      childImageSharp: {
+        fixed: FixedObject;
+      };
     };
   };
 }

@@ -1,3 +1,4 @@
+import { FluidObject } from 'gatsby-image';
 import { ImageSharp } from './graphql';
 
 export interface allMdx {
@@ -18,7 +19,9 @@ export interface mdx {
   };
   frontmatter: {
     banner?: {
-      childImageSharp: ImageSharp;
+      childImageSharp: {
+        fluid: FluidObject;
+      };
     };
   };
   code: {
