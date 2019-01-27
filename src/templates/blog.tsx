@@ -47,7 +47,6 @@ export default ({ data: { allMdx }, pageContext: { pagination, activeCategory } 
             <H2>
               <Link to={post.fields.url}>{post.fields.title}</Link>
             </H2>
-            <Spacer size={1} />
             <MetaData date={post.fields.date} timeToRead={post.timeToRead} />
             <Spacer size={1} />
             <div>{post.excerpt}</div>

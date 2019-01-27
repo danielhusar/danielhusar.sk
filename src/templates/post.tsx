@@ -8,6 +8,7 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { oc } from 'ts-optchain';
 import Spacer from '../components/spacer';
 import Layout from '../components/layout';
+import Small from '../components/small';
 import Nav from '../components/nav';
 import Footer from '../components/footer';
 import MetaData from '../components/metadata';
@@ -20,6 +21,7 @@ import { mdx } from '../types';
 import Prism from 'prismjs/components/prism-core';
 import 'prismjs/components/prism-css';
 import 'prismjs/components/prism-json';
+import 'prismjs/components/prism-typescript';
 
 interface Props {
   data: {
@@ -56,6 +58,8 @@ const FileName = styled.div`
 
 const PreComponent = (props: PreComponentProps) => {
   const [language, filename] = (props.children.props.props ? props.children.props.props.className : '').split('!');
+  // https://github.com/ChristopherBiscardi/gatsby-mdx/issues/184
+  const code = props.children.props.children.replace(/_export/g, 'export');
 
   if (language === 'language-.jsx')
     return (
@@ -75,7 +79,7 @@ const PreComponent = (props: PreComponentProps) => {
     );
 
   const grammar = Prism.languages[language.replace('language-', '')];
-  const highlighted = Prism.highlight(props.children.props.children, grammar);
+  const highlighted = Prism.highlight(code, grammar);
   return (
     <>
       {filename ? <FileName className="filename">{filename}</FileName> : null}
@@ -106,6 +110,11 @@ export default function Post({ data: { mdx: post } }: Props) {
             <MDXRenderer>{post.code.body}</MDXRenderer>
           </MDXProvider>
         </PostContent>
+
+        <Spacer size={1} />
+        <a href={`https://github.com/danielhusar/danielhusar.sk/blob/master/src/blog/${post.fields.filename.name}.md`} target="_blank">
+          <Small>Found a mistake? Edit on github →</Small>
+        </a>
       </Article>
       <Spacer size={4} />
       <Footer active="post" />
@@ -120,6 +129,9 @@ export const pageQuery = graphql`
       fields {
         title
         date(formatString: "MMMM DD, YYYY")
+        filename {
+          name
+        }
       }
       timeToRead
       frontmatter {

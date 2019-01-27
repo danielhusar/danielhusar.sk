@@ -127,5 +127,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({ node, name: 'draft', value: node.frontmatter.draft });
     createNodeField({ node, name: 'categories', value: node.frontmatter.categories || [] });
     createNodeField({ node, name: 'url', value: `/blog/${node.frontmatter.slug}/` });
+    createNodeField({ node, name: 'filename', value: node.fileAbsolutePath.split('/').reverse()[0] });
   }
 };

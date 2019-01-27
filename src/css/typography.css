@@ -59,3 +59,7 @@ strong,
 b {
   font-weight: 500;
 }
+
+#gatsby-noscript {
+  display: none;
+}

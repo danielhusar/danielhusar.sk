@@ -31,8 +31,8 @@ code[class*="language-"] {
   -ms-hyphens: none;
   hyphens: none;
   padding: .8em;
-  margin: 2em 0;
   overflow: auto;
+  font-size: 14px;
 }
 
 .filename + code[class*="language-"] {

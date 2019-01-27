@@ -7,7 +7,10 @@ interface Props {
 }
 
 const Wrapper = styled.div`
-  margin: 1.4em auto;
+  margin: ${props =>
+    css`
+      ${props.theme.margin} auto
+    `};
   text-align: center;
 
   span {
@@ -24,8 +27,15 @@ const Wrapper = styled.div`
   }
 `;
 
-export default ({ width, children }: Props) => (
+const Caption = styled.div`
+  margin-top: 10px;
+  color: #857272;
+  font-size: 12px;
+`;
+
+export default ({ width, children, caption }: Props) => (
   <Wrapper width={width}>
     <span>{children}</span>
+    {caption ? <Caption>{caption}</Caption> : null}
   </Wrapper>
 );

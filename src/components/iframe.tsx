@@ -14,7 +14,10 @@ interface WrapperProps {
 }
 
 const Wrapper = styled.div`
-  margin: 1.4em 0;
+  margin: ${props =>
+    css`
+      ${props.theme.margin} 0
+    `};
   text-align: center;
 
   .iframe-outer {
