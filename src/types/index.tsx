@@ -12,6 +12,9 @@ export interface mdx {
     slug: string;
     categories: string[];
     date: Date;
+    filename: {
+      name: string;
+    };
   };
   frontmatter: {
     banner?: {

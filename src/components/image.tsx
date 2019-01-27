@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 interface Props {
   width: number;
   children: ReactNode;
+  caption: string | null;
 }
 
 const Wrapper = styled.div`
@@ -35,7 +36,9 @@ const Caption = styled.div`
 
 export default ({ width, children, caption }: Props) => (
   <Wrapper width={width}>
-    <span>{children}</span>
-    {caption ? <Caption>{caption}</Caption> : null}
+    <>
+      <span>{children}</span>
+      {caption ? <Caption>{caption}</Caption> : null}
+    </>
   </Wrapper>
 );
