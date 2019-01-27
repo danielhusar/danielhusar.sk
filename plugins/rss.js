@@ -39,14 +39,16 @@ module.exports = {
                 pubDate: edge.node.fields.date,
                 language: edge.node.fields.categories[0],
                 custom_elements: [
-                  {
-                    'media:content': {
-                      _attr: {
-                        url: banner,
-                        medium: 'image',
-                      },
-                    },
-                  },
+                  banner
+                    ? {
+                        'media:content': {
+                          _attr: {
+                            url: banner,
+                            medium: 'image',
+                          },
+                        },
+                      }
+                    : undefined,
                 ],
               }
             );

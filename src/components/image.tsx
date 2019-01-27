@@ -7,6 +7,11 @@ interface Props {
   caption: string | null;
 }
 
+interface WrapperProps {
+  width: number;
+  children: ReactNode;
+}
+
 const Wrapper = styled.div`
   margin: ${props =>
     css`
@@ -17,7 +22,7 @@ const Wrapper = styled.div`
   span {
     display: inline-block;
 
-    ${(props: Props) =>
+    ${(props: WrapperProps) =>
       css`
       max-width: ${props.width}px };
     `};
@@ -36,9 +41,7 @@ const Caption = styled.div`
 
 export default ({ width, children, caption }: Props) => (
   <Wrapper width={width}>
-    <>
-      <span>{children}</span>
-      {caption ? <Caption>{caption}</Caption> : null}
-    </>
+    <span>{children}</span>
+    {caption ? <Caption>{caption}</Caption> : null}
   </Wrapper>
 );

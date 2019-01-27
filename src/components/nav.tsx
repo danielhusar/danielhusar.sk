@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql, StaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
+import Img, { FixedObject } from 'gatsby-image';
 import styled, { css } from 'styled-components';
 import { categories } from '../types';
 import { File } from '../types/graphql';
@@ -10,7 +10,11 @@ interface Props {
 }
 
 interface Data {
-  portrait: File;
+  portrait: {
+    childImageSharp: {
+      fixed: FixedObject;
+    };
+  };
 }
 
 const Nav = styled.div`
