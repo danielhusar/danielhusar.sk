@@ -1,15 +1,32 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export default styled.div`
   p,
+  blockquote,
   ul,
-  ol {
-    margin: 1.4em 0;
+  ol,
+  code[class*='language-'] {
+    margin: ${props =>
+      css`
+        ${props.theme.margin} 0
+      `};
   }
 
   h2,
-  h3 {
-    margin-top: 1.4em;
+  h3,
+  h4 {
+    margin-top: ${props =>
+      css`
+        ${props.theme.margin}
+      `};
+
+    + p,
+    + blockquote,
+    + ul,
+    + ol,
+    + code[class*='language-'] {
+      margin-top: 1em;
+    }
   }
 
   h1 {
@@ -30,5 +47,18 @@ export default styled.div`
 
   li + li {
     margin-top: 0.8em;
+  }
+
+  blockquote {
+    border-left: 5px solid #d4d4d4;
+    margin-left: 0;
+    padding-left: 20px;
+    color: #857272;
+    font-style: italic;
+    font-size: 14px;
+
+    p {
+      margin: 0;
+    }
   }
 `;
