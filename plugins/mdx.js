@@ -17,6 +17,13 @@ module.exports = {
           linkImagesToOriginal: true,
         },
       },
+      {
+        resolve: 'gatsby-remark-autolink-headers',
+        options: {
+          className: 'header-anchor-link',
+          maintainCase: false,
+        },
+      },
     ],
   },
 };

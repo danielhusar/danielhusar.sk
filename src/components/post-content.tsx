@@ -61,4 +61,32 @@ export default styled.div`
       margin: 0;
     }
   }
+
+  .header-anchor-link {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.2s;
+    font-size: 1.2em;
+    margin-top: -0.15em;
+
+    &:after {
+      content: '#';
+      font-weight: 100;
+    }
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+    padding-left: 20px;
+    margin-left: -20px;
+
+    &:hover .header-anchor-link {
+      opacity: 1;
+    }
+  }
 `;
