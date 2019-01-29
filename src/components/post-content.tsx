@@ -89,4 +89,9 @@ export default styled.div`
       opacity: 1;
     }
   }
+
+  p + ul,
+  p + ol {
+    margin-top: -1em;
+  }
 `;
