@@ -94,4 +94,10 @@ export default styled.div`
   p + ol {
     margin-top: -1em;
   }
+
+  .filename + code[class*='language-'] {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 `;
