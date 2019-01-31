@@ -7,7 +7,7 @@ banner: null
 draft: false
 ---
 
-## Intercom Messenger is an app our customers embed on their website. Because of that, performance and bundle size has always been a top priority for us.
+## Intercom Messenger is an app our customers embed on their website. Because of that, performance and bundle size have always been a top priority for us.
 
 <Image width={80} caption="This is the entry point to our messenger which we call launcher">
 
