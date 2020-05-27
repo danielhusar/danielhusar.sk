@@ -18,13 +18,14 @@ module.exports = {
         }
       }
     `,
+
     feeds: [
       {
         serialize: ({ query: { site, allMdx } }) => {
           return allMdx.edges.map(edge => {
             let banner;
             try {
-              banner = site.siteMetadata.siteUrl + edge.node.frontmatter.banner.childImageSharp.sizes.src;
+              banner = `${site.siteMetadata.siteUrl}${edge.node.frontmatter.banner.childImageSharp.sizes.src}`.replace(/\/\//, '/');
             } catch (e) {}
 
             const image = banner ? `<img src="${banner}" /> ` : '';
@@ -34,8 +35,8 @@ module.exports = {
                 author: 'Daniel Husar',
                 title: edge.node.fields.title,
                 description: `${image}${edge.node.excerpt}`,
-                url: site.siteMetadata.siteUrl + edge.node.fields.url,
-                guid: site.siteMetadata.siteUrl + edge.node.fields.url,
+                url: `${site.siteMetadata.siteUrl}${edge.node.fields.url}`.replace(/\/\//, '/'),
+                guid: `${site.siteMetadata.siteUrl}${edge.node.fields.url}`.replace(/\/\//, '/'),
                 pubDate: edge.node.fields.date,
                 language: edge.node.fields.categories[0],
                 custom_elements: [

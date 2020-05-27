@@ -15,7 +15,7 @@ interface WrapperProps {
 const Wrapper = styled.div`
   margin: ${props =>
     css`
-      ${props.theme.margin} auto
+      ${props.theme.margin} auto;
     `};
   text-align: center;
 

@@ -63,7 +63,7 @@ const PreComponent = (props: PreComponentProps) => {
 
   if (language === 'language-.jsx')
     return (
-      <LiveProvider mountStylesheet={false} code={props.children.props.children}>
+      <LiveProvider mountStylesheet={false} code={props.children.props.children} theme={undefined}>
         <LiveEditWrap className="language-jsx">
           <LiveLabel>Edit</LiveLabel>
           <LiveEditor tabIndex={-1} />
