@@ -34,8 +34,12 @@ const MyHeaderStyled = styled.header`
     border-radius: 5px;
   }
 
+  p {
+    margin: 0.2em 0;
+  }
+
   .social-icon {
-    margin: 0 5px;
+    margin: 20px 5px 0 5px;
   }
 `
 
@@ -51,6 +55,7 @@ export default function Header() {
       <div>
         <SocialIcon url="https://twitter.com/danohusar" style={{ height: 35, width: 35 }} />
         <SocialIcon url="https://github.com/danielhusar" style={{ height: 35, width: 35 }} />
+        <SocialIcon url="https://www.linkedin.com/in/daniel-husar-60783958/" style={{ height: 35, width: 35 }} />
         <SocialIcon url="https://www.instagram.com/efrafa/" style={{ height: 35, width: 35 }} />
       </div>
     </MyHeaderStyled>
