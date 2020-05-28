@@ -996,9 +996,9 @@
     yargs "^13.2.4"
 
 "@daniel.husar/gatsby-theme-spring@*":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@daniel.husar/gatsby-theme-spring/-/gatsby-theme-spring-1.1.0.tgz#811dbf9df67c2df2d02fb494c7bacd0cc33f8dcf"
-  integrity sha512-7ZDEcgrKDkQl/hxNPDaK79OdlI7TDIvSxgBXcv5sFm8vd28hcAd2kQLju7GhsTJvk9QLQjKnKP69rg0OqTQ4Uw==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@daniel.husar/gatsby-theme-spring/-/gatsby-theme-spring-1.1.1.tgz#dc1d7482aeafacf4268671ff8a780241efc11cd2"
+  integrity sha512-fZlS5uEdBUi7QlC/h8qBpVvorUs+uJJncRZ4/HUNUDckwyVSs9wvKTDdmf5CtSA9HmYhJizYHbTtNoTrZnRPwA==
   dependencies:
     "@emotion/core" "^10.0.28"
     "@emotion/styled" "^10.0.27"
