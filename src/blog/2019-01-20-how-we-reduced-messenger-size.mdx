@@ -1,8 +1,7 @@
 ---
-slug: 'how-we-have-reduced-messenger-size-by-50-percent'
+url: 'how-we-have-reduced-messenger-size-by-50-percent'
 date: '2019-01-20'
 title: 'Reducing Intercom Messenger bundle size by 50%'
-categories: ['en']
 banner: null
 draft: false
 ---
@@ -81,7 +80,7 @@ Investigating further revealed it's getting pulled only because one of our dev d
 A quick search in codebase finds the offender:
 
 ```js
-import { throttle } from 'underscore';
+import { throttle } from 'underscore'
 ```
 
 Since we already use lodash, we can import throttle from lodash. Eslint will ensure we don't accidentally import underscore any more:
@@ -128,15 +127,15 @@ The whole library is almost 60kb, but we can use just one translation at a time.
 The logic for importing those translations looks like:
 
 ```js
-let currentLocale = 'en';
+let currentLocale = 'en'
 export const defaultLocales = supportedLocales.reduce((locales, locale) => {
-  locales[locale] = require(`intercom-js-translations/${locale}.json`);
-  return locales;
-}, {});
+  locales[locale] = require(`intercom-js-translations/${locale}.json`)
+  return locales
+}, {})
 
-export const setLocale = locale => {
-  currentLocale = locale;
-};
+export const setLocale = (locale) => {
+  currentLocale = locale
+}
 ```
 
 We can use dynamic imports to bundle only English locale to the main bundle, and dynamically import any other only when it's needed.
@@ -157,17 +156,16 @@ To add support for dynamic imports, we need to add this two packages to our babe
 > @babel/plugin-syntax-dynamic-import will allow parsing of import(), and dynamic-import-node will transpile import() to a deferred require() in our tests.
 
 ```js
-let currentLocale = 'en';
-defaultLocales['en'] = require(`intercom-js-translations/en.json`);
+let currentLocale = 'en'
+defaultLocales['en'] = require(`intercom-js-translations/en.json`)
 
-export const setLocale = async locale => {
+export const setLocale = async (locale) => {
   if (!defaultLocales[locale]) {
-    const data = await import(/* webpackChunkName: "locale-[request]" */
-    `intercom-js-translations/${locale}.json`);
-    defaultLocales[locale] = data;
+    const data = await import(/* webpackChunkName: "locale-[request]" */ `intercom-js-translations/${locale}.json`)
+    defaultLocales[locale] = data
   }
-  currentLocale = locale;
-};
+  currentLocale = locale
+}
 ```
 
 This will add additional request to small 3kb file when using non-English locale but will reduce our initial bundle size by 55kb after gzip.
@@ -192,15 +190,13 @@ The truth is, most of our customers will not need this client to be bundled in, 
 Our simplified sentry integration looks like:
 
 ```js!errors.js
-import * as Sentry from '@sentry/browser';
+import * as Sentry from '@sentry/browser'
 Sentry.init({
   dsn: config['sentry_dsn'],
-  integrations: integrations => integrations.filter(
-    integration => integration.name !== 'GlobalHandlers'
-  ),
-});
+  integrations: (integrations) => integrations.filter((integration) => integration.name !== 'GlobalHandlers'),
+})
 
-_export const logError = error => Sentry.captureException(error);
+export const logError = (error) => Sentry.captureException(error)
 ```
 
 > Our setup already disables global handlers and only expose logError function that captures the errors manually.
@@ -208,23 +204,19 @@ _export const logError = error => Sentry.captureException(error);
 Using the dynamic imports we can again import sentry client only when needed.
 
 ```js!sentry.js
-import * as Sentry from '@sentry/browser';
+import * as Sentry from '@sentry/browser'
 Sentry.init({
   dsn: config['sentry_dsn'],
-  integrations: integrations => integrations.filter(
-    integration => integration.name !== 'GlobalHandlers'
-  ),
-});
+  integrations: (integrations) => integrations.filter((integration) => integration.name !== 'GlobalHandlers'),
+})
 
-_export const captureException = error => Sentry.captureException(error);
+export const captureException = (error) => Sentry.captureException(error)
 ```
 
 ```js!errors.js
-_export const logError = async error => {
-  const {
-   captureException,
-  } = await import(/* webpackChunkName: "sentry" */ './sentry');
-  captureException(error);
+export const logError = async (error) => {
+  const { captureException } = await import(/* webpackChunkName: "sentry" */ './sentry')
+  captureException(error)
 }
 ```
 
@@ -258,13 +250,13 @@ It exposes [two methods](https://github.com/reworkcss/css/blob/64910e8474385e4fd
 Looking into the codebase, I found out that we are using only parse API:
 
 ```js
-import { parse } from 'css';
+import { parse } from 'css'
 ```
 
 After changing our import to parse source:
 
 ```js
-import parse from 'css/lib/parse';
+import parse from 'css/lib/parse'
 ```
 
 pre gzip size suddenly drops from 122kb to 10kb:
@@ -282,18 +274,18 @@ After the vendor, we started to look into the application. A proposed solution w
 Our simplified App component looks like:
 
 ```jsx!App.js
-import React from 'react';
-import Launcher from './launcher';
-import Messenger from './messenger';
+import React from 'react'
+import Launcher from './launcher'
+import Messenger from './messenger'
 
-_export default class App extends React.Component {
+export default class App extends React.Component {
   render() {
     return (
       <>
         <Launcher />
         {messengerIsOpen ? <Messenger /> : null}
       </>
-    );
+    )
   }
 }
 ```
@@ -301,22 +293,22 @@ _export default class App extends React.Component {
 Code splitting Messenger component using Loadable looks like this:
 
 ```jsx!App.js
-import React from 'react';
-import Loadable from 'react-loadable';
-import Launcher from './launcher';
+import React from 'react'
+import Loadable from 'react-loadable'
+import Launcher from './launcher'
 
 const Messenger = Loadable({
   loader: () => import(/* webpackChunkName: "messenger" */ './messenger'),
-});
+})
 
-_export default class App extends React.Component {
+export default class App extends React.Component {
   render() {
     return (
       <>
         <Launcher />
         {messengerIsOpen ? <Messenger /> : null}
       </>
-    );
+    )
   }
 }
 ```
