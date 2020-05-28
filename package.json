@@ -9,7 +9,7 @@
     "develop": "gatsby develop --port 8002",
     "start": "gatsby clean && npm run develop",
     "serve": "gatsby serve",
-    "type-check": "tsc",
+    "lint:tsc": "tsc",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
@@ -24,7 +24,8 @@
     "@daniel.husar/a11y-static-report": "^1.0.1",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.6",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.3"
   },
   "husky": {
     "hooks": {
