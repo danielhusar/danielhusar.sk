@@ -2,7 +2,6 @@
 slug: 'how-we-made-the-intercom-messenger-accessible'
 date: '2018-12-15'
 title: 'How we made the Intercom Messenger accessible'
-categories: ['en']
 banner: './accessible-messenger/banner.png'
 draft: false
 ---
@@ -136,7 +135,7 @@ We have created an [open-source library](https://github.com/danielhusar/focus-tr
 ```js
 const trap = new FocusTrap({
   node: document,
-});
+})
 ```
 
 You can check out the focus traps in action here:

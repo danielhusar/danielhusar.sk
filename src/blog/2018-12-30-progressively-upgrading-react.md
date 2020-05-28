@@ -2,7 +2,6 @@
 slug: 'progressively-upgrading-react-in-your-app'
 date: '2018-12-30'
 title: 'Progressively upgrading React in your app'
-categories: ['en']
 banner: null
 draft: false
 ---
@@ -46,7 +45,7 @@ module.exports = {
   entry: {
     main: ['./app/index.js'],
   },
-};
+}
 ```
 
 Webpack supports both single config export or exporting an array of configs.
@@ -57,7 +56,7 @@ const config = {
   entry: {
     main: ['./app/index.js'],
   },
-};
+}
 
 module.exports = [
   config,
@@ -73,7 +72,7 @@ module.exports = [
       },
     },
   },
-];
+]
 ```
 
 The config above will create a new `main_react_16` bundle with React 16 in addition to our original `main` bundle, with both bundles being in sync every time you deploy a new version of your app.
@@ -81,9 +80,9 @@ The config above will create a new `main_react_16` bundle with React 16 in addit
 If you are using error tracking software like [Sentry](https://sentry.io), you can also add a tag with React version to each event:
 
 ```js
-Sentry.configureScope(scope => {
-  scope.setTag('react.version', React.version);
-});
+Sentry.configureScope((scope) => {
+  scope.setTag('react.version', React.version)
+})
 ```
 
 While React is my framework of choice, you could use the same approach for Ember, Angular, Vue or any NPM library.

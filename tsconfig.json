@@ -1,11 +1,26 @@
 {
   "compilerOptions": {
-    "jsx": "react",
-    "target": "esnext",
-    "module": "commonjs",
-    "strict": true,
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "jsx": "react",
+    "lib": ["dom", "es2017"],
+    "module": "esnext",
+    "moduleResolution": "node",
     "esModuleInterop": true,
-    "noImplicitAny": true
+    "noEmit": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "esnext",
+    "resolveJsonModule": true,
+    "noImplicitAny": false,
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@types/*": ["./src/types/*"]
+    }
   }
 }
