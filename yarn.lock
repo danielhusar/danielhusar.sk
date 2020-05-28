@@ -996,9 +996,9 @@
     yargs "^13.2.4"
 
 "@daniel.husar/gatsby-theme-spring@*":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@daniel.husar/gatsby-theme-spring/-/gatsby-theme-spring-1.0.2.tgz#93d7f5f7d9667ab4145e528d243ad9631a75ff04"
-  integrity sha512-izyhzfEirCgWYzjDVU6hMThF5zX7+i2C4pk6LUqGSQpL4Gnd/xm85K34BwHfxfk2Lj1yTpdW8lIspwTb0nxMYg==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@daniel.husar/gatsby-theme-spring/-/gatsby-theme-spring-1.1.0.tgz#811dbf9df67c2df2d02fb494c7bacd0cc33f8dcf"
+  integrity sha512-7ZDEcgrKDkQl/hxNPDaK79OdlI7TDIvSxgBXcv5sFm8vd28hcAd2kQLju7GhsTJvk9QLQjKnKP69rg0OqTQ4Uw==
   dependencies:
     "@emotion/core" "^10.0.28"
     "@emotion/styled" "^10.0.27"
@@ -6882,9 +6882,9 @@ gatsby-plugin-manifest@^2.4.9:
     sharp "^0.25.1"
 
 gatsby-plugin-mdx@^1.2.12:
-  version "1.2.12"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.2.12.tgz#9afa731071674a9aebd99791e9256a165dd28cec"
-  integrity sha512-zoVXdn3WD1aAmrQikQAzLRrKYjT3h9cTr1Qh3tsHB6tTwjlf+Nbo3liITPVvJ9GwVfgcbL69/uuQ0q/BjU2kJQ==
+  version "1.2.13"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.2.13.tgz#c24d207e4682e435f2e0c2d022091e729a0b9991"
+  integrity sha512-+V2Krem/XzSq9GW+eE6HmggaI9gnbxKHBEN1feNW61AvXY5rEOEJ2SntC9lmO2QliYwuVcdxJ7X8jsimqZoiEw==
   dependencies:
     "@babel/core" "^7.9.6"
     "@babel/generator" "^7.9.6"
@@ -10313,9 +10313,9 @@ min-document@^2.19.0:
     dom-walk "^0.1.0"
 
 min-indent@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.0.tgz#cfc45c37e9ec0d8f0a0ec3dd4ef7f7c3abe39256"
-  integrity sha1-z8RcN+nsDY8KDsPdTvf3w6vjklY=
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.1.tgz#a63f681673b30571fbe8bc25686ae746eefa9869"
+  integrity sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==
 
 mini-css-extract-plugin@^0.8.2:
   version "0.8.2"
@@ -14945,9 +14945,9 @@ ts-invariant@^0.4.0:
     tslib "^1.9.3"
 
 ts-node@^8.3.0:
-  version "8.10.1"
-  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-8.10.1.tgz#77da0366ff8afbe733596361d2df9a60fc9c9bd3"
-  integrity sha512-bdNz1L4ekHiJul6SHtZWs1ujEKERJnHs4HxN7rjTyyVOFf3HaJ6sLqe6aPG62XTzAB/63pKRh5jTSWL0D7bsvw==
+  version "8.10.2"
+  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-8.10.2.tgz#eee03764633b1234ddd37f8db9ec10b75ec7fb8d"
+  integrity sha512-ISJJGgkIpDdBhWVu3jufsWpK3Rzo7bdiIXJjQc0ynKxVOVcg2oIrf2H2cejminGrptVc6q6/uynAHNCuWGbpVA==
   dependencies:
     arg "^4.1.0"
     diff "^4.0.1"
