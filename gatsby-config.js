@@ -1,39 +1,34 @@
-const rssPlugin = require('./plugins/rss');
-const filesystemPlugin = require('./plugins/filesystem');
-const faviconPlugin = require('./plugins/favicon');
-const googleAnalyticsPlugin = require('./plugins/google-analytics');
-const mdxPlugin = require('./plugins/mdx');
-
 module.exports = {
   siteMetadata: {
     title: 'Daniel Husar',
     description: 'Product engineer based in San Francisco',
-    keywords: 'blog,javascript,react',
+    keywords: 'blog,javascript,react,graphql,next.js,gatsby',
+    language: 'en',
     siteUrl: 'https://www.danielhusar.sk',
-    blogUrl: 'https://www.danielhusar.sk/blog/',
-
     feed_url: 'https://www.danielhusar.sk/rss.xml',
-    image_url: 'https://www.danielhusar.sk/portrait.png',
-    custom_namespaces: {
-      media: 'http://search.yahoo.com/mrss/',
-    },
-
-    pathPrefix: '/',
+    image_url: 'https://www.danielhusar.sk/author.png',
   },
   plugins: [
-    filesystemPlugin,
-    faviconPlugin,
-    googleAnalyticsPlugin,
-    mdxPlugin,
-    rssPlugin,
-    'gatsby-plugin-catch-links',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-typescript',
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-robots-txt',
-    // 'gatsby-plugin-offline',
+    {
+      resolve: '@daniel.husar/gatsby-theme-spring',
+      options: {
+        author: 'Daniel Husar',
+        blogPath: '/blog',
+        paginationOffset: 5,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: './src/img/author.png',
+        name: 'Daniel Husar',
+        short_name: 'Daniel Husar',
+        lang: 'en-US',
+        theme_color: '#209cee',
+        display: 'standalone',
+        orientation: 'any',
+        start_url: '/',
+      },
+    },
   ],
-};
+}

@@ -1,9 +1,15 @@
-import React from 'react';
-import Layout from '../components/layout';
+import React from 'react'
+import { Link } from 'gatsby'
+import Layout from '@daniel.husar/gatsby-theme-spring/src/components/layout'
+import { H1 } from '@daniel.husar/gatsby-theme-spring/src/styles/header'
 
-export default () => (
-  <Layout>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
-);
+export default function FourOFour() {
+  return (
+    <Layout>
+      <H1>That page doesn’t exist.</H1>
+      <p>
+        Head to the <Link to="/">homepage</Link> that does exist.
+      </p>
+    </Layout>
+  )
+}
