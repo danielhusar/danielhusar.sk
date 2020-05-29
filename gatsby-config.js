@@ -7,6 +7,7 @@ module.exports = {
     siteUrl: 'https://www.danielhusar.sk',
     feed_url: 'https://www.danielhusar.sk/rss.xml',
     image_url: 'https://www.danielhusar.sk/author.png',
+    twitterHandle: '@DanoHusar',
   },
   plugins: [
     {
