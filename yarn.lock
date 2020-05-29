@@ -996,9 +996,9 @@
     yargs "^13.2.4"
 
 "@daniel.husar/gatsby-theme-spring@*":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@daniel.husar/gatsby-theme-spring/-/gatsby-theme-spring-1.1.4.tgz#24401defbe6059bce354b94ce66074021fe1d03d"
-  integrity sha512-hgH7J54kAX9RtwnfJtTjGHPLPXuWnvQOpE0KYk1lqZTaFUpYiL9Ozj3GTpZo2IqeT1412dBQ34PcK+LDcQNbgw==
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@daniel.husar/gatsby-theme-spring/-/gatsby-theme-spring-1.1.5.tgz#1acdd7e985a4d5a0e1c05a54321e01fbef1b5228"
+  integrity sha512-wb4+X4ZMdj1zP7UF2zArW5yMC8CEPdfLt4RsZfMgVW1/UhR+ApNo9RmRgyFQF/9CuzBK8a34NJ/C97XLyERk4A==
   dependencies:
     "@emotion/core" "^10.0.28"
     "@emotion/styled" "^10.0.27"
@@ -12564,6 +12564,13 @@ react-hot-loader@^4.12.21:
     react-lifecycles-compat "^3.0.4"
     shallowequal "^1.1.0"
     source-map "^0.7.3"
+
+react-icons@^3.10.0:
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.10.0.tgz#6c217a2dde2e8fa8d293210023914b123f317297"
+  integrity sha512-WsQ5n1JToG9VixWilSo1bHv842Cj5aZqTGiS3Ud47myF6aK7S/IUY2+dHcBdmkQcCFRuHsJ9OMUI0kTDfjyZXQ==
+  dependencies:
+    camelcase "^5.0.0"
 
 react-is@^16.12.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
