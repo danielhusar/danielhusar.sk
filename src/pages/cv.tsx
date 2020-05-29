@@ -9,8 +9,8 @@ const Wrap = styled.div`
   max-width: 840px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 270px 1fr;
-  font-size: 16px;
+  grid-template-columns: 258px 1fr;
+  font-size: 15px;
   font-weight: 300;
   overflow: hidden;
   position: relative;
@@ -24,22 +24,27 @@ const Wrap = styled.div`
   a:hover {
     text-decoration: underline;
   }
+
+  p {
+    margin: 0.5em 0;
+    font-size: 16px;
+  }
 `
 
 const Sidebar = styled.div`
   background: ${SIDEBAR_COLOR};
   color: white;
-  padding: 40px;
+  padding: 30px;
   min-height: 100vh;
 `
 
 const Content = styled.div`
   background: white;
-  padding: 40px;
+  padding: 30px;
   min-height: 100%;
 
   ul {
-    margin: 10px 0 0;
+    margin: 15px 0 0;
     padding-left: 18px;
     font-size: 15px;
   }
@@ -47,10 +52,6 @@ const Content = styled.div`
   li + li {
     margin-top: 5px;
   }
-`
-
-const Profile = styled.img`
-  border-radius: 5px;
 `
 
 const H1 = styled.h1`
@@ -65,18 +66,12 @@ const H1 = styled.h1`
 const H2 = styled.h2`
   font-size: 22px;
   text-transform: uppercase;
-  margin: 40px 0 20px;
+  margin: 30px 0 18px;
   letter-spacing: 1px;
   font-weight: 500;
 `
 const ContentH2 = styled(H2)`
   color: ${SIDEBAR_COLOR};
-`
-
-const H3 = styled.h2`
-  font-size: 18px;
-  margin: 0 0 20px;
-  font-weight: 300;
 `
 
 const Contact = styled.div`
@@ -107,28 +102,36 @@ const Uppercase = styled.div`
   text-transform: uppercase;
 `
 
-const Year = styled.h4`
-  margin: -4px 0 0;
-  font-size: 15px;
-  font-weight: 300;
-  text-transform: uppercase;
+const Work = styled.div`
+  margin: 25px 0 0;
+
+  & + & {
+    margin-top: 35px;
+  }
 `
 
-const Position = styled.h4`
-  font-size: 18px;
-  margin: 5px 0;
-  font-weight: 400;
-  line-height: 1;
-`
-
-const PositionHeader = styled.div`
-  margin: 40px 0 0;
+const WorkHeader = styled.div`
   display: grid;
   grid-template-columns: 50px 1fr;
 
   img {
+    width: 38px;
     border-radius: 5px;
+    filter: grayscale(100%) contrast(3);
   }
+`
+
+const Company = styled.h4`
+  margin: -4px 0 0;
+  font-size: 18px;
+  font-weight: 300;
+`
+
+const Position = styled.h4`
+  font-size: 15px;
+  margin: 2px 0 0;
+  font-weight: 400;
+  line-height: 1;
 `
 
 export default function CV() {
@@ -168,92 +171,123 @@ export default function CV() {
             </Small>
             <a href="https://www.tuke.sk/">Technical University of Kosice</a>
           </div>
-
-          <div>Engineer's degree</div>
+          <div>Masters Degree</div>
         </Sidebar>
         <Content>
           <H1>Daniel Husar</H1>
-          <H3>Full stack engineer focusing on building beautiful UIs.</H3>
+          <p>Hi! I'm a full stack engineer that loves solving real world problems and focus on building functional and beautiful UIs.</p>
+          <p>
+            For the last 6 years I have been part of the Intercom engineering, where I worked with all teams from product, marketing, gtm to the
+            growth.
+          </p>
 
           <ContentH2>Experience</ContentH2>
           <HR width="100" />
 
-          <PositionHeader>
-            <img src="/intercom.svg" width="40" />
-            <div>
-              <Year>
-                Aug 2016 - Present &nbsp;•&nbsp; <a href="https://www.intercom.com/">Intercom</a>
-              </Year>
-              <Position>Product Engineer - San Francisco, California</Position>
-            </div>
-          </PositionHeader>
-          <ul>
-            <li>
-              Tech lead on the messenger accessibility project (<a href="https://www.intercom.com/blog/messenger-accessibility/">blog post</a>)
-            </li>
-            <li>
-              Introducing bundle splitting and reducing the messenger size by 65% (
-              <a href="https://www.intercom.com/blog/reducing-intercom-messenger-bundle-size/">blog post</a>)
-            </li>
-            <li>Tech lead on sass to css-in-js (emotion) rewrite in the messenger</li>
-          </ul>
+          <Work>
+            <Uppercase>Aug 2016 - Present</Uppercase>
+            <Spacer height={10} />
+            <WorkHeader>
+              <img src="/intercom.svg" />
+              <div>
+                <Company>
+                  <a href="https://www.intercom.com/">Intercom</a>
+                </Company>
+                <Position>Product Engineer - San Francisco, California</Position>
+              </div>
+            </WorkHeader>
+            <ul>
+              <li>
+                Tech lead on the Messenger accessibility project that made Messenger AA accessible. (
+                <a href="https://www.intercom.com/blog/messenger-accessibility/">link to a blog post</a>)
+              </li>
+              <li>
+                Introducing bundle splitting and reducing the Messenger size by 65%. (
+                <a href="https://www.intercom.com/blog/reducing-intercom-messenger-bundle-size/">link to a blog post</a>)
+              </li>
+              <li>Tech lead on sass to css-in-js (emotion) rewrite in the Messenger which improved speed and size of the Messenger.</li>
+            </ul>
+          </Work>
 
-          <PositionHeader>
-            <img src="/slovensko-digital.png" width="40" />
-            <div>
-              <Year>
-                May 2019 - Present &nbsp;•&nbsp; <a href="https://slovensko.digital/">Slovensko Digital</a>
-              </Year>
-              <Position>Full stack Engineer - San Francisco, California</Position>
-            </div>
-          </PositionHeader>
+          <Work>
+            <Uppercase>May 2019 - Present</Uppercase>
+            <Spacer height={10} />
+            <WorkHeader>
+              <img src="/slovensko-digital.png" />
+              <div>
+                <Company>
+                  <a href="https://slovensko.digital/">Slovensko Digital </a> (non profit organization)
+                </Company>
+                <Position>Full stack Engineer - San Francisco, California</Position>
+              </div>
+            </WorkHeader>
+            <ul>
+              <li>
+                Tech lead on the online application that helped people to vote in the last parliament elections. This roughly increased elections
+                attendance by 1%.
+              </li>
+            </ul>
+          </Work>
 
-          <ul>
-            <li>Tech lead on the online application project that helped people to vote in the last parliament elections.</li>
-          </ul>
+          <Work>
+            <Uppercase>Sep 2014 - Aug 2016</Uppercase>
+            <Spacer height={10} />
+            <WorkHeader>
+              <img src="/intercom.svg" />
+              <div>
+                <Company>
+                  <a href="https://www.intercom.com/">Intercom</a>
+                </Company>
+                <Position>Product Engineer - Dublin, Ireland</Position>
+              </div>
+            </WorkHeader>
+            <ul>
+              <li>Front-end lead on the Intercom help center articles product.</li>
+              <li>
+                Working closely with gtm, marketing and sales teams. Shipped several iterations of the marketing site and annual contracts for the
+                sales team.
+              </li>
+            </ul>
+          </Work>
 
-          <PositionHeader>
-            <img src="/intercom.svg" width="40" />
-            <div>
-              <Year>
-                Sep 2014 - Aug 2016 &nbsp;•&nbsp; <a href="https://www.intercom.com/">Intercom</a>
-              </Year>
-              <Position>Product Engineer - Dublin, Ireland</Position>
-            </div>
-          </PositionHeader>
-          <ul>
-            <li>Front-end lead on the Intercom help center articles product.</li>
-            <li>Working closely with gtm, marketing and sales teams.</li>
-          </ul>
+          <Work>
+            <Uppercase>Sep 2013 - Sep 2014</Uppercase>
+            <Spacer height={10} />
+            <WorkHeader>
+              <img src="/each-and-other.png" />
+              <div>
+                <Company>
+                  <a href="https://www.eachandother.com/">Each and Other</a>
+                </Company>
+                <Position>Front-end Engineer - Dublin, Ireland</Position>
+              </div>
+            </WorkHeader>
+            <ul>
+              <li>Front-end lead on the Pernament TSB new internet banking, working closely with Pernament TSB backend team.</li>
+              <li>Front-end lead on the Liberty Insurance Ireland new website.</li>
+              <li>Helping shipping the new Vodafone Ireland web site.</li>
+            </ul>
+          </Work>
 
-          <PositionHeader>
-            <img src="/each-and-other.png" width="40" />
-            <div>
-              <Year>
-                Sep 2013 - Sep 2014 • <a href="https://www.eachandother.com/">Each and Other</a>
-              </Year>
-              <Position>Front-end Engineer - Dublin, Ireland</Position>
-            </div>
-          </PositionHeader>
-          <ul>
-            <li>Front-end lead on the Pernament TSB new internet banking.</li>
-            <li>Front-end lead on the Liberty Insurance Ireland new website.</li>
-            <li>Helping shipping the new Vodafone Ireland site.</li>
-          </ul>
-
-          <PositionHeader>
-            <img src="/perform.jpeg" width="40" />
-            <div>
-              <Year>
-                Nov 2011 – Aug 2013 &nbsp;•&nbsp; <a href="https://www.eachandother.com/">Perform Group</a>
-              </Year>
-              <Position>Web Developer - Kosice Slovakia</Position>
-            </div>
-          </PositionHeader>
-
-          <ul>
-            <li>Working on biggest live sport streaming service in UK.</li>
-          </ul>
+          <Work>
+            <Uppercase>Nov 2011 – Aug 2013</Uppercase>
+            <Spacer height={10} />
+            <WorkHeader>
+              <img src="/perform.jpeg" />
+              <div>
+                <Company>
+                  <a href="https://www.eachandother.com/">Perform Group</a>
+                </Company>
+                <Position>Web Developer - Kosice Slovakia</Position>
+              </div>
+            </WorkHeader>
+            <ul>
+              <li>
+                Working on biggest live sport streaming service in UK. Adding new feature such as converting live flash player into html5 for mobile
+                visitors and shipping new live sport portal.
+              </li>
+            </ul>
+          </Work>
         </Content>
       </Wrap>
     </>
