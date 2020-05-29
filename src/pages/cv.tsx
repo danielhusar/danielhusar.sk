@@ -100,6 +100,7 @@ const Small = styled.div`
 
 const Uppercase = styled.div`
   text-transform: uppercase;
+  letter-spacing: 1px;
 `
 
 const Work = styled.div`
@@ -175,7 +176,7 @@ export default function CV() {
         </Sidebar>
         <Content>
           <H1>Daniel Husar</H1>
-          <p>Hi! I'm a full stack engineer that loves solving real world problems and focus on building functional and beautiful UIs.</p>
+          <p>Hi! I'm a full stack engineer that loves solving real world problems and focuses on building functional and beautiful UIs.</p>
           <p>
             For the last 6 years I have been part of the Intercom engineering, where I worked with all teams from product, marketing, gtm to the
             growth.
@@ -205,7 +206,7 @@ export default function CV() {
                 Introducing bundle splitting and reducing the Messenger size by 65%. (
                 <a href="https://www.intercom.com/blog/reducing-intercom-messenger-bundle-size/">link to a blog post</a>)
               </li>
-              <li>Tech lead on sass to css-in-js (emotion) rewrite in the Messenger which improved speed and size of the Messenger.</li>
+              <li>Tech lead on sass to css-in-js (emotion) rewrite in the Messenger which improved the speed and size.</li>
             </ul>
           </Work>
 
@@ -263,7 +264,7 @@ export default function CV() {
               </div>
             </WorkHeader>
             <ul>
-              <li>Front-end lead on the Pernament TSB new internet banking, working closely with Pernament TSB backend team.</li>
+              <li>Front-end lead on the Pernament TSB new internet banking, where I worked closely with Pernament TSB backend team.</li>
               <li>Front-end lead on the Liberty Insurance Ireland new website.</li>
               <li>Helping shipping the new Vodafone Ireland web site.</li>
             </ul>
@@ -283,8 +284,8 @@ export default function CV() {
             </WorkHeader>
             <ul>
               <li>
-                Working on biggest live sport streaming service in UK. Adding new feature such as converting live flash player into html5 for mobile
-                visitors and shipping new live sport portal.
+                Working on biggest live sport streaming service in UK. Converted the flash live player into html5 for the mobile visitors and
+                redesigned the new live sport portal.
               </li>
             </ul>
           </Work>
