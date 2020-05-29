@@ -13,7 +13,7 @@ const Wrap = styled.div`
   overflow: hidden;
   position: relative;
 
-  &:before {
+  /* &:before {
     content: '';
     width: 120%;
     height: 200px;
@@ -23,7 +23,7 @@ const Wrap = styled.div`
     right: 0;
     transform: rotate(10deg);
     background: #323244;
-  }
+  } */
 
   a {
     color: inherit;
@@ -37,6 +37,7 @@ const Wrap = styled.div`
 
 const Sidebar = styled.div`
   background: #304656;
+  background: black;
   color: white;
   padding: 40px;
   min-height: 100%;
@@ -51,12 +52,14 @@ const Content = styled.div`
 const Profile = styled.img`
   border-radius: 5px;
   margin-top: 40px;
+  margin-top: 0;
 `
 
 const H1 = styled.h1`
   font-size: 40px;
   text-transform: uppercase;
   margin: 161px 0 20px;
+  margin-top: 0;
   line-height: 1;
   letter-spacing: 5px;
 `
@@ -78,7 +81,7 @@ const Contact = styled.div`
   display: grid;
   grid-template-columns: 30px 1fr;
   grid-row-gap: 10px;
-  margin-top: 20px;
+  margin-top: 25px;
   align-items: center;
 
   svg {
@@ -90,9 +93,18 @@ const HR = styled.div`
   border-top: 1px solid #ccc;
   width: ${({ width }) => width}px;
 `
+const Spacer = styled.div`
+  height: ${({ height }) => height}px;
+`
+
+const Year = styled.h4`
+  margin: 40px 0 0;
+  font-weight: 300;
+  text-transform: uppercase;
+`
 
 const CompanyHeader = styled.div`
-  margin-top: 40px;
+  margin-top: 10px;
   display: grid;
   grid-template-columns: 100px 1fr;
 
@@ -102,14 +114,16 @@ const CompanyHeader = styled.div`
 
   h4 {
     font-size: 20px;
-    margin: 0;
+    margin: 0 0 10px;
     font-weight: 400;
+    line-height: 1;
   }
 
   h5 {
-    font-size: 16px;
+    font-size: 15px;
     margin: 0 0 5px;
     font-weight: 400;
+    line-height: 1;
   }
 
   h6 {
@@ -136,12 +150,30 @@ export default function CV() {
             <FiGithub size="20" /> <a href="https://github.com/danielhusar">danielhusar</a>
             <FiTwitter size="20" /> <a href="https://twitter.com/DanoHusar">DanoHusar</a>
           </Contact>
+
+          <H2>Technologies</H2>
+          <HR width="100" />
+          <Spacer height={20} />
+          <div>JavaScript</div>
+          <div>CSS</div>
+          <div>Ruby</div>
+          <div>German (basics)</div>
+
+          <H2>Languages</H2>
+          <HR width="100" />
+          <Spacer height={20} />
+          <div>Slovak (native)</div>
+          <div>Czech</div>
+          <div>English</div>
+          <div>German (basics)</div>
         </Sidebar>
         <Content>
           <H1>Daniel Husar</H1>
           <H3>Full stack engineer focusing on building beautiful UIs.</H3>
           <H2>Experience</H2>
           <HR width="100" />
+
+          <Year>Aug 2016 - Present</Year>
           <CompanyHeader>
             <img src="/intercom.svg" width="80" />
             <div>
@@ -149,10 +181,11 @@ export default function CV() {
                 <a href="https://www.intercom.com/">Intercom</a>
               </h4>
               <h5>Product Engineer</h5>
-              <h6>San Francisco | 2016 - Present</h6>
+              <h6>San Francisco, California</h6>
             </div>
           </CompanyHeader>
 
+          <Year>Sep 2014 - Aug 2016</Year>
           <CompanyHeader>
             <img src="/intercom.svg" width="80" />
             <div>
@@ -160,10 +193,11 @@ export default function CV() {
                 <a href="https://www.intercom.com/">Intercom</a>
               </h4>
               <h5>Product Engineer</h5>
-              <h6>Dublin, Ireland | 2014 - 2016</h6>
+              <h6>Dublin, Ireland</h6>
             </div>
           </CompanyHeader>
 
+          <Year>Sep 2013 - Sep 2014</Year>
           <CompanyHeader>
             <img src="/each-and-other.png" width="80" />
             <div>
@@ -171,7 +205,7 @@ export default function CV() {
                 <a href="https://www.eachandother.com/">Each and Other</a>
               </h4>
               <h5>Front-end Engineer</h5>
-              <h6>Dublin, Ireland | 2013 - 2014</h6>
+              <h6>Dublin, Ireland</h6>
             </div>
           </CompanyHeader>
         </Content>
