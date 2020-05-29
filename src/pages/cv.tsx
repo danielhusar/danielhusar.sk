@@ -9,11 +9,12 @@ const Wrap = styled.div`
   max-width: 840px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 270px 1fr;
   font-size: 16px;
   font-weight: 300;
   overflow: hidden;
   position: relative;
+  -webkit-font-smoothing: antialiased;
 
   a {
     color: inherit;
@@ -255,21 +256,6 @@ export default function CV() {
           </ul>
         </Content>
       </Wrap>
-      <style>
-        {`
-          html,
-          body,
-          #___gatsby,
-          #gatsby-focus-wrapper {
-            min-height: 100vh;
-            padding: 0;
-            margin: 0;
-            -webkit-font-smoothing: antialiased;
-          }
-
-
-        `}
-      </style>
     </>
   )
 }
