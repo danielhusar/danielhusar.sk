@@ -156,7 +156,7 @@ export default function CV() {
           <H2>Technologies</H2>
           <HR width="100" />
           <Spacer height={20} />
-          <div>JavaScript, CSS, Ruby, PHP, SQL, GraphQL, React, Ember, Ruby on Rails</div>
+          <div>JavaScript, TypeScript, CSS, Ruby, PHP, SQL, GraphQL, React, Ember, Ruby on Rails</div>
 
           <H2>Languages</H2>
           <HR width="100" />
@@ -178,8 +178,8 @@ export default function CV() {
           <H1>Daniel Husar</H1>
           <p>Hi! I'm a full stack engineer that loves solving real world problems and focuses on building functional and beautiful UIs.</p>
           <p>
-            For the last 6 years I have been part of the Intercom engineering, where I worked with all teams from product, marketing, gtm to the
-            growth.
+            For the last 6 years I have been part of the Intercom engineering, where I have been working with all teams from product, marketing, gtm
+            to the growth.
           </p>
 
           <ContentH2>Experience</ContentH2>
@@ -206,7 +206,7 @@ export default function CV() {
                 Introducing bundle splitting and reducing the Messenger size by 65%. (
                 <a href="https://www.intercom.com/blog/reducing-intercom-messenger-bundle-size/">link to a blog post</a>)
               </li>
-              <li>Tech lead on sass to css-in-js (emotion) rewrite in the Messenger which improved the speed and size.</li>
+              <li>Tech lead on sass to css-in-js (emotion) rewrite which improved the speed and size of the Messenger.</li>
             </ul>
           </Work>
 
@@ -284,7 +284,7 @@ export default function CV() {
             </WorkHeader>
             <ul>
               <li>
-                Working on biggest live sport streaming service in UK. Converted the flash live player into html5 for the mobile visitors and
+                Working on biggest live sport streaming service in the UK. Converted the flash live player into html5 for the mobile visitors and
                 redesigned the new live sport portal.
               </li>
             </ul>
