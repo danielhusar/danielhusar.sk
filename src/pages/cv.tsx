@@ -186,7 +186,7 @@ export default function CV() {
           <HR width="100" />
 
           <Work>
-            <Uppercase>Aug 2016 - Present</Uppercase>
+            <Uppercase>Sep 2014 - Present</Uppercase>
             <Spacer height={10} />
             <WorkHeader>
               <img src="/intercom.svg" />
@@ -207,6 +207,11 @@ export default function CV() {
                 <a href="https://www.intercom.com/blog/reducing-intercom-messenger-bundle-size/">link to a blog post</a>)
               </li>
               <li>Tech lead on sass to css-in-js (emotion) rewrite which improved the speed and size of the Messenger.</li>
+              <li>Front-end lead on the Intercom help center articles product.</li>
+              <li>
+                Working closely with gtm, marketing and sales teams. Shipped several iterations of the marketing site and annual contracts for the
+                sales team.
+              </li>
             </ul>
           </Work>
 
@@ -226,27 +231,6 @@ export default function CV() {
               <li>
                 Tech lead on the online application that helped people to vote in the last parliament elections. This roughly increased elections
                 attendance by 1%.
-              </li>
-            </ul>
-          </Work>
-
-          <Work>
-            <Uppercase>Sep 2014 - Aug 2016</Uppercase>
-            <Spacer height={10} />
-            <WorkHeader>
-              <img src="/intercom.svg" />
-              <div>
-                <Company>
-                  <a href="https://www.intercom.com/">Intercom</a>
-                </Company>
-                <Position>Product Engineer - Dublin, Ireland</Position>
-              </div>
-            </WorkHeader>
-            <ul>
-              <li>Front-end lead on the Intercom help center articles product.</li>
-              <li>
-                Working closely with gtm, marketing and sales teams. Shipped several iterations of the marketing site and annual contracts for the
-                sales team.
               </li>
             </ul>
           </Work>
