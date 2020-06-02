@@ -5,7 +5,7 @@
   "author": "Daniel Husar <dano.husar@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "develop": "gatsby develop --port 8002",
     "start": "gatsby clean && npm run develop",
     "serve": "gatsby serve",
