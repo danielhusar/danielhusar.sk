@@ -173,7 +173,7 @@ export default function CV() {
           <H2>Technologies</H2>
           <HR width="100" />
           <Spacer height={20} />
-          <div>JavaScript, TypeScript, CSS, Ruby, PHP, SQL, GraphQL, React, Ember, Ruby on Rails</div>
+          <div>JavaScript, TypeScript, React, GraphQL, CSS, Ruby, Ruby on Rails, PHP, SQL, Ember</div>
 
           <H2>Languages</H2>
           <HR width="100" />
