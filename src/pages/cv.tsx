@@ -311,7 +311,7 @@ export default function CV() {
                 <Company>
                   <a href="https://www.eachandother.com/">Perform Group</a>
                 </Company>
-                <Position>Web Developer - Kosice Slovakia</Position>
+                <Position>Full Stack Engineer - Kosice Slovakia</Position>
               </div>
             </WorkHeader>
             <ul>
