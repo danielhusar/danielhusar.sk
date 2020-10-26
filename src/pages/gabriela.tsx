@@ -183,7 +183,7 @@ export default function CV() {
           <H2>Computer skills</H2>
           <HR width="100" />
           <Spacer height={20} />
-          <div>Microsoft WIndows</div>
+          <div>Microsoft Windows</div>
           <div>Mac OS</div>
           <div>Word</div>
           <div>Excel</div>
@@ -236,14 +236,11 @@ export default function CV() {
         </Sidebar>
         <Content>
           <H1>Gabriela Husarova</H1>
-          {/* <p>
-            Hi! I'm a full-stack engineer with a decade of experience that loves solving real-world problems and focuses on building functional and
-            beautiful UIs.
-          </p>
           <p>
-            For the last six years, I have been part of the Intercom engineering, where I have been working with all teams from the product,
-            marketing, GTM to the growth.
-          </p> */}
+            Hi! I'm a Kosice based professional with experience in finance and project management. For the last seven years, I have lived in San
+            Francisco and Dublin, working for companies like Wells Fargo and Microsoft.
+          </p>
+          <p>I am very excited to be back home, where I would be able to use and share all my experiences from abroad.</p>
           <ContentH2>Experience</ContentH2>
           <HR width="100" />
           <Work>
