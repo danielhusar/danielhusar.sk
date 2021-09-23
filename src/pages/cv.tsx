@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import styled from '@emotion/styled'
 import { FiPhone, FiCompass, FiGithub, FiMail, FiTwitter } from 'react-icons/fi'
 
+// Color
 const SIDEBAR_COLOR = '#304656'
 
 const Wrap = styled.div`
